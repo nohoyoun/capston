@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity6"
+    android:orientation="vertical">
+
+  <LinearLayout
+      android:layout_height="match_parent"
+      android:layout_width="match_parent"
+      android:gravity="center"
+      android:orientation="horizontal"
+      android:layout_weight="2"
+      android:background="@drawable/wanted"
+      >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="성 별 : "
+        android:textSize="20dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginLeft="100dp"
+      ></TextView>
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="220dp"
+          android:layout_marginStart="-57dp"
+          android:text="성 씨 : "
+          android:textSize="20dp"></TextView>
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="260dp"
+          android:layout_marginStart="-57dp"
+          android:text="염색 : "
+          android:textSize="20dp"></TextView>
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="상의 색깔 : "
+        android:textSize="20dp"
+          android:layout_marginTop="300dp"
+          android:layout_marginStart="-57dp"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="하의 색깔 : "
+        android:textSize="20dp"
+        android:layout_marginTop="340dp"
+        android:layout_marginLeft="-95dp"
+        ></TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1">
+
+      <TextView
+          android:id="@+id/txt1"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="180dp"
+          android:layout_marginStart="43dp"
+          android:text=""
+          android:textSize="20dp"></TextView>
+      <TextView
+          android:id="@+id/txt2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="220dp"
+          android:layout_marginStart="0dp"
+          android:text=""
+          android:textSize="20dp"></TextView>
+      <TextView
+          android:id="@+id/txt3"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="260dp"
+          android:text=""
+          android:textSize="20dp"></TextView>
+      <TextView
+          android:id="@+id/txt4"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="300dp"
+          android:text=""
+          android:textSize="20dp"></TextView>
+      <TextView
+          android:id="@+id/txt5"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="340dp"
+          android:text=""
+          android:textSize="20dp"></TextView>
+
+
+    </LinearLayout>
+  </LinearLayout>
+  <LinearLayout
+      android:layout_height="match_parent"
+      android:layout_width="match_parent"
+      android:gravity="center"
+      android:orientation="vertical"
+      android:layout_weight="25"
+      >
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="당첨자의 인적사항 불러오기"
+      ></Button>
+  </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,88 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string-array name="gender">
+        <item>남자</item>
+        <item>여자</item>
+    </string-array>
+
+    <string-array name="firstname">
+        <item>김</item>
+        <item>이</item>
+        <item>박</item>
+        <item>최</item>
+        <item>정</item>
+        <item>강</item>
+        <item>조</item>
+        <item>윤</item>
+        <item>장</item>
+        <item>임</item>
+        <item>한</item>
+        <item>오</item>
+        <item>서</item>
+        <item>신</item>
+        <item>권</item>
+        <item>황</item>
+        <item>안</item>
+        <item>송</item>
+        <item>전</item>
+        <item>홍</item>
+        <item>유</item>
+        <item>고</item>
+        <item>문</item>
+        <item>양</item>
+        <item>손</item>
+        <item>배</item>
+        <item>백</item>
+        <item>허</item>
+        <item>남</item>
+        <item>심</item>
+        <item>노</item>
+        <item>하</item>
+        <item>곽</item>
+        <item>성</item>
+        <item>차</item>
+        <item>주</item>
+        <item>우</item>
+        <item>구</item>
+        <item>민</item>
+        <item>류</item>
+        <item>나</item>
+        <item>진</item>
+        <item>지</item>
+        <item>엄</item>
+        <item>채</item>
+        <item>원</item>
+        <item>천</item>
+        <item>방</item>
+        <item>공</item>
+        <item>현</item>
+        <item>함</item>
+        <item>변</item>
+        <item>염</item>
+        <item>여</item>
+    </string-array>
+
+    <string-array name="hair">
+        <item>염색함</item>
+        <item>염색안함</item>
+    </string-array>
+
+    <string-array name="shirt">
+        <item>검정</item>
+        <item>하양</item>
+        <item>빨강, 핑크</item>
+        <item>주황, 노랑</item>
+        <item>파랑, 네이비</item>
+        <item>갈색, 베이지</item>
+    </string-array>
+
+    <string-array name="pants">
+        <item>검정</item>
+        <item>하양</item>
+        <item>빨강, 핑크</item>
+        <item>주황, 노랑</item>
+        <item>파랑, 네이비</item>
+        <item>갈색, 베이지</item>
+    </string-array>
+</resources>
