@@ -8,6 +8,7 @@
     tools:context=".MainActivity5">
 
     <TextView
+        android:id="@+id/nametag"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="주사위의 갯수를 선택하세요"
@@ -25,6 +26,7 @@
             android:layout_weight="1"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:checked="true"
             android:text="주사위 1개"
             android:textSize="24dp"
             />
@@ -34,7 +36,6 @@
             android:layout_weight="1"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:checked="true"
             android:text="주사위 2개"
             android:textSize="24dp" />
 
@@ -71,8 +72,23 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="나온 숫자 : "
+            android:textSize="30dp"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/pushnum"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="0"
+            android:textSize="30dp"
+            >
+        </TextView>
     </LinearLayout>
 
     <Button

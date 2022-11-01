@@ -1,7 +1,12 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -16,32 +21,60 @@ public class MainActivity5 extends AppCompatActivity {
     private RadioGroup choiceDice;
     RadioButton dice_one;
     Button throwDice;
+    TextView pushnum;
     int whichRadioButton = 1;
+    int a;
+    String b;
 
     ImageView dice_image;
     ImageView dice_image2;
     Random random = new Random();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main5);
 
+        //Intent intent = new Intent(MainActivity5.this, MainActivity13.class);
+       // startActivity(intent);
+
         throwDice = findViewById(R.id.throwbtn);
         choiceDice = findViewById(R.id.dicesel);
         dice_one = findViewById(R.id.onedice);
         dice_image = findViewById(R.id.dice1);
         dice_image2 = findViewById(R.id.dice2);
+        pushnum = findViewById(R.id.pushnum);
+
+        a = 1;
+
+        pushnum.setText(String.valueOf(a));
+        dice_image2.setVisibility(View.INVISIBLE);
+
+        Intent intent1 = getIntent();
+        String num = intent1.getStringExtra("num");
+        b = num;
+
+        Intent intent2 = getIntent();
+        String pushname1 = intent2.getStringExtra("pushname1");
+
+
+
         choiceDice.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.onedice) whichRadioButton = 1;
-                else if (checkedId == R.id.twodice) whichRadioButton = 2;
+                if (checkedId == R.id.onedice) {
+                    whichRadioButton = 1;
+                    dice_image2.setVisibility(View.INVISIBLE);
+                }
+                else if (checkedId == R.id.twodice) {
+                    whichRadioButton = 2;
+                    dice_image2.setVisibility(View.VISIBLE);
+                }
             }
         });
         throwDice.setOnClickListener(new View.OnClickListener() {
-
 
             @Override
             public void onClick(View view) {
@@ -56,7 +89,7 @@ public class MainActivity5 extends AppCompatActivity {
                 }
 
                 if(whichRadioButton == 1) {
-                    dice_image2.setVisibility(View.INVISIBLE);
+
                     switch (numberofDice) {
                         case 1:
                             dice_image.setImageResource(R.drawable.dice_1);
@@ -77,9 +110,10 @@ public class MainActivity5 extends AppCompatActivity {
                             dice_image.setImageResource(R.drawable.dice_6);
                             break;
                     }
+                        a = numberofDice;
+
                 }
                     if (whichRadioButton == 2) {
-                        dice_image2.setVisibility(View.VISIBLE);
                         switch (numberofDice) {
                             case 1:
                                 dice_image.setImageResource(R.drawable.dice_1);
@@ -120,10 +154,12 @@ public class MainActivity5 extends AppCompatActivity {
                                 dice_image2.setImageResource(R.drawable.dice_6);
                                 break;
                         }
+
+                        a = numberofDice+numberofDice2;
                     }
+
+                pushnum.setText(String.valueOf(a));
                 }//end
-
-
 
         });
 

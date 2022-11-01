@@ -32,6 +32,15 @@ public class select_main extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        ImageButton button3 = findViewById(R.id.selectcafe);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(select_main.this, MapsView.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 }

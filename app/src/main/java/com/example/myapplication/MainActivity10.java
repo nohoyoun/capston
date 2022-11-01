@@ -8,16 +8,22 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity10 extends AppCompatActivity {
 
 
+    TextView pushtxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main10);
+
+
+
+        pushtxt = findViewById(R.id.pushtxt);
 
         Button button2 = findViewById(R.id.restartmain);
         button2.setOnClickListener(new View.OnClickListener() {
@@ -32,7 +38,11 @@ public class MainActivity10 extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String temp = pushtxt.getText().toString();
+
                 Intent intent = new Intent(MainActivity10.this, MainActivity9.class);
+                intent.putExtra("push", temp);
+
                 startActivity(intent);
             }
         });
