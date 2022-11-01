@@ -28,12 +28,6 @@ public class MainActivity8 extends AppCompatActivity {
         setContentView(R.layout.activity_main8);
 
         btn1 = findViewById(R.id.hamburger);
-        go = findViewById(R.id.go8);
-        restart = findViewById(R.id.restart8);
-
-        go.setVisibility(View.INVISIBLE);
-        restart.setVisibility(View.INVISIBLE);
-
 
 
         one = (ImageView)findViewById(R.id.one);
@@ -62,31 +56,6 @@ public class MainActivity8 extends AppCompatActivity {
 
         number = random.nextInt(7) + 1;
         a=0;
-
-        //다음 단계
-        go.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity8.this, MainActivity2.class);
-                startActivity(intent);
-
-            }
-
-        });
-
-        //재시작
-        restart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity8.this, MainActivity8.class);
-                startActivity(intent);
-
-            }
-
-        });
-
-
-
 
 
         //1은 베이컨, 2는 토마토, 3은 고기, 4는 피클 5는 치즈, 6은 양배추, 7은 윗빵
@@ -123,8 +92,8 @@ public class MainActivity8 extends AppCompatActivity {
                         two.setImageResource(R.drawable.bunup);
                         two.setVisibility(View.VISIBLE);
                         //코드입력
-                        go.setVisibility(View.VISIBLE);
-                        restart.setVisibility(View.VISIBLE);
+                        Intent intent = new Intent(MainActivity8.this, MainActivity10.class);
+                        startActivity(intent);
                         btn1.setVisibility(View.INVISIBLE);
 
                     }
@@ -153,8 +122,8 @@ public class MainActivity8 extends AppCompatActivity {
                         three.setImageResource(R.drawable.bunup);
                         three.setVisibility(View.VISIBLE);
                         //코드입력
-                        go.setVisibility(View.VISIBLE);
-                        restart.setVisibility(View.VISIBLE);
+                        Intent intent = new Intent(MainActivity8.this, MainActivity10.class);
+                        startActivity(intent);
                         btn1.setVisibility(View.INVISIBLE);
                     }
                 } else if (a == 3) {
@@ -182,8 +151,8 @@ public class MainActivity8 extends AppCompatActivity {
                         four.setImageResource(R.drawable.bunup);
                         four.setVisibility(View.VISIBLE);
                         //코드입력
-                        go.setVisibility(View.VISIBLE);
-                        restart.setVisibility(View.VISIBLE);
+                        Intent intent = new Intent(MainActivity8.this, MainActivity10.class);
+                        startActivity(intent);
                         btn1.setVisibility(View.INVISIBLE);
                     }
                 } else if (a == 4) {
@@ -211,8 +180,8 @@ public class MainActivity8 extends AppCompatActivity {
                         five.setImageResource(R.drawable.bunup);
                         five.setVisibility(View.VISIBLE);
                         //코드입력
-                        go.setVisibility(View.VISIBLE);
-                        restart.setVisibility(View.VISIBLE);
+                        Intent intent = new Intent(MainActivity8.this, MainActivity10.class);
+                        startActivity(intent);
                         btn1.setVisibility(View.INVISIBLE);
                     }
                 } else if (a == 5) {
@@ -240,8 +209,8 @@ public class MainActivity8 extends AppCompatActivity {
                         six.setImageResource(R.drawable.bunup);
                         six.setVisibility(View.VISIBLE);
                         //코드입력
-                        go.setVisibility(View.VISIBLE);
-                        restart.setVisibility(View.VISIBLE);
+                        Intent intent = new Intent(MainActivity8.this, MainActivity10.class);
+                        startActivity(intent);
                         btn1.setVisibility(View.INVISIBLE);
                     }
                 } else if (a == 6) {
@@ -269,8 +238,8 @@ public class MainActivity8 extends AppCompatActivity {
                         seven.setImageResource(R.drawable.bunup);
                         seven.setVisibility(View.VISIBLE);
                         //코드입력
-                        go.setVisibility(View.VISIBLE);
-                        restart.setVisibility(View.VISIBLE);
+                        Intent intent = new Intent(MainActivity8.this, MainActivity10.class);
+                        startActivity(intent);
                         btn1.setVisibility(View.INVISIBLE);
                     }
                 } else if (a == 7) {
@@ -298,8 +267,8 @@ public class MainActivity8 extends AppCompatActivity {
                         eight.setImageResource(R.drawable.bunup);
                         eight.setVisibility(View.VISIBLE);
                         //코드입력
-                        go.setVisibility(View.VISIBLE);
-                        restart.setVisibility(View.VISIBLE);
+                        Intent intent = new Intent(MainActivity8.this, MainActivity10.class);
+                        startActivity(intent);
                         btn1.setVisibility(View.INVISIBLE);
                     }
                 } else if (a == 8) {
@@ -327,8 +296,8 @@ public class MainActivity8 extends AppCompatActivity {
                         nine.setImageResource(R.drawable.bunup);
                         nine.setVisibility(View.VISIBLE);
                         //코드입력
-                        go.setVisibility(View.VISIBLE);
-                        restart.setVisibility(View.VISIBLE);
+                        Intent intent = new Intent(MainActivity8.this, MainActivity10.class);
+                        startActivity(intent);
                         btn1.setVisibility(View.INVISIBLE);
                     }
                 } else if (a == 9) {
@@ -356,17 +325,17 @@ public class MainActivity8 extends AppCompatActivity {
                     ten.setImageResource(R.drawable.bunup);
                     ten.setVisibility(View.VISIBLE);
                     //코드입력
-                        go.setVisibility(View.VISIBLE);
-                        restart.setVisibility(View.VISIBLE);
+                        Intent intent = new Intent(MainActivity8.this, MainActivity10.class);
+                        startActivity(intent);
                         btn1.setVisibility(View.INVISIBLE);
                     }
             }else if(a==10)
             {
                 eleven.setImageResource(R.drawable.bunup);
                 eleven.setVisibility(View.VISIBLE);
-                go.setVisibility(View.VISIBLE);
-                restart.setVisibility(View.VISIBLE);
                 btn1.setVisibility(View.INVISIBLE);
+                Intent intent = new Intent(MainActivity8.this, MainActivity10.class);
+                startActivity(intent);
             }
 
         }

@@ -1,160 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:orientation="vertical"
     tools:context=".MainActivity7">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="16"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="마음에드는 선물을 클릭하세요!"
+            android:textSize="20dp"
+            android:gravity="center"
+            >
+        </TextView>
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text="마음에 드는 버튼을 클릭하세요"
-        android:textColor="#000362"
-        android:textSize="24sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/room">
+        <ImageView
+            android:id="@+id/gift1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/gift1"
+            android:layout_marginTop="480dp"
+            android:layout_marginStart="-20dp"
+            android:onClick="showgift1">
+        </ImageView>
+        <ImageView
+            android:id="@+id/gift2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/gift2"
+            android:layout_marginTop="250dp"
+            android:layout_marginStart="-90dp">
+        </ImageView>
+        <ImageView
+            android:id="@+id/gift3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/gift3"
+            android:layout_marginTop="420dp"
+            android:layout_marginStart="-20dp">
+        </ImageView>
+        <ImageView
+            android:id="@+id/gift4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/gift1"
+            android:layout_marginTop="450dp"
+            android:layout_marginStart="30dp">
+        </ImageView>
+        <ImageView
+            android:id="@+id/gift5"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/gift3"
+            android:layout_marginTop="300dp"
+            android:layout_marginStart="-20dp">
+        </ImageView>
+        <ImageView
+            android:id="@+id/gift6"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/gift1"
+            android:layout_marginTop="120dp"
+            android:layout_marginStart="-80dp">
+        </ImageView>
+        <ImageView
+            android:id="@+id/gift7"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/gift3"
+            android:layout_marginTop="200dp"
+            android:layout_marginStart="-300dp"
+            >
+        </ImageView>
+        <ImageView
+            android:id="@+id/gift8"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/gift2"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="-60dp">
+        </ImageView>
+
+    </LinearLayout>
 
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="27dp"
-        android:text="Button" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button"
-        android:layout_marginStart="37dp"
-        android:layout_marginTop="0dp"
-        android:layout_toEndOf="@+id/button"
-        android:text="Button" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button2"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="30dp"
-        android:text="Button" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button3"
-        android:layout_marginTop="63dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginBottom="30dp"
-        android:layout_toStartOf="@+id/button3"
-        android:text="Button" />
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button3"
-        android:layout_marginTop="63dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="30dp"
-        android:layout_toStartOf="@+id/button3"
-        android:text="Button" />
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button3"
-        android:layout_marginTop="63dp"
-        android:layout_marginEnd="-94dp"
-        android:layout_marginBottom="30dp"
-        android:layout_toStartOf="@+id/button3"
-        android:text="Button" />
-
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button3"
-        android:layout_marginTop="124dp"
-        android:layout_marginEnd="-93dp"
-        android:layout_marginBottom="30dp"
-        android:layout_toStartOf="@+id/button3"
-        android:text="Button" />
-
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button3"
-        android:layout_marginTop="125dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="30dp"
-        android:layout_toStartOf="@+id/button3"
-        android:text="Button" />
-
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button3"
-        android:layout_marginTop="124dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginBottom="30dp"
-        android:layout_toStartOf="@+id/button3"
-        android:text="Button" />
-
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button3"
-        android:layout_marginTop="184dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginBottom="30dp"
-        android:layout_toStartOf="@+id/button3"
-        android:text="Button" />
-
-    <Button
-        android:id="@+id/button11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button3"
-        android:layout_marginTop="183dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="30dp"
-        android:layout_toStartOf="@+id/button3"
-        android:text="Button" />
-
-    <Button
-        android:id="@+id/button12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button3"
-        android:layout_marginTop="184dp"
-        android:layout_marginEnd="-92dp"
-        android:layout_marginBottom="30dp"
-        android:layout_toStartOf="@+id/button3"
-        android:text="Button" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="100dp"
-        android:text="판정결과"
-        android:textSize="24sp" />
-</RelativeLayout>
+</LinearLayout>

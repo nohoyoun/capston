@@ -33,6 +33,15 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
 
+        Button button3 = findViewById(R.id.horseracing);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity2.this, MainActivity12.class);
+                startActivity(intent);
+            }
+        });
+
 
         Button button4 = findViewById(R.id.catbtn);
         button4.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +66,14 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity2.this, MainActivity9.class);
+                startActivity(intent);
+            }
+        });
+        Button button7 = findViewById(R.id.end);
+        button7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity2.this, select_main.class);
                 startActivity(intent);
             }
         });

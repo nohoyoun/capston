@@ -28,6 +28,12 @@
         android:layout_height="wrap_content"
         android:text="화살표 돌리기" />
 
+        <Button
+            android:id="@+id/horseracing"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="경마게임" />
+
 
         <Button
             android:id="@+id/catbtn"
@@ -48,7 +54,7 @@
         android:id="@+id/end"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="종료" />
+        android:text="뒤로가기" />
     </LinearLayout>
 
 </LinearLayout>

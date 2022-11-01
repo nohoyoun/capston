@@ -56,7 +56,7 @@ public class MainActivity4 extends AppCompatActivity {
                     cat_image.setVisibility(View.VISIBLE);
                     sound.play(soundId, 1f, 1f, 0, 0, 1f);
 
-                    Intent intent = new Intent(MainActivity4.this, popup.class);
+                    Intent intent = new Intent(MainActivity4.this, MainActivity10.class);
                     startActivity(intent);
                 }else {
                     btn1.setVisibility(View.INVISIBLE);
@@ -80,7 +80,7 @@ public class MainActivity4 extends AppCompatActivity {
                     cat_image.setVisibility(View.VISIBLE);
                     sound.play(soundId, 1f, 1f, 0, 0, 1f);
 
-                    Intent intent = new Intent(MainActivity4.this, popup.class);
+                    Intent intent = new Intent(MainActivity4.this, MainActivity10.class);
                     startActivity(intent);
                 }else {
                     btn2.setVisibility(View.INVISIBLE);
@@ -103,7 +103,7 @@ public class MainActivity4 extends AppCompatActivity {
                     cat_image.setVisibility(View.VISIBLE);
                     sound.play(soundId, 1f, 1f, 0, 0, 1f);
 
-                    Intent intent = new Intent(MainActivity4.this, popup.class);
+                    Intent intent = new Intent(MainActivity4.this, MainActivity10.class);
                     startActivity(intent);
                 }
                 else {
@@ -127,7 +127,7 @@ public class MainActivity4 extends AppCompatActivity {
                     cat_image.setVisibility(View.VISIBLE);
                     sound.play(soundId, 1f, 1f, 0, 0, 1f);
 
-                    Intent intent = new Intent(MainActivity4.this, popup.class);
+                    Intent intent = new Intent(MainActivity4.this, MainActivity10.class);
                     startActivity(intent);
                 }
                 else {
@@ -151,7 +151,7 @@ public class MainActivity4 extends AppCompatActivity {
                     cat_image.setVisibility(View.VISIBLE);
                     sound.play(soundId, 1f, 1f, 0, 0, 1f);
 
-                    Intent intent = new Intent(MainActivity4.this, popup.class);
+                    Intent intent = new Intent(MainActivity4.this, MainActivity10.class);
                     startActivity(intent);
                 }
                 else {

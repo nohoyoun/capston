@@ -34,21 +34,8 @@
             android:onClick="rotate"
             android:src="@drawable/chicken"
             android:layout_marginStart="7dp"
-            android:layout_marginTop="60dp"/>
-        <Button
-            android:id="@+id/restart3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="110dp"
-            android:layout_marginTop="300dp"
-            android:text="다시하기"></Button>
-        <Button
-            android:id="@+id/go3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="210dp"
-            android:layout_marginTop="300dp"
-            android:text="쏘러가기"></Button>
+            android:layout_marginTop="140dp"/>
+
     </FrameLayout>
     <RadioGroup
         android:id="@+id/sel"

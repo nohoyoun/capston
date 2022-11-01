@@ -24,7 +24,7 @@
                 android:layout_width="240dp"
                 android:layout_height="240dp"
                 android:layout_marginStart="90dp"
-                android:layout_marginTop="190dp"
+                android:layout_marginTop="250dp"
                 android:src="@drawable/bundown">
             </ImageView>
             <ImageView
@@ -32,7 +32,7 @@
                 android:layout_width="240dp"
                 android:layout_height="240dp"
                 android:layout_marginStart="90dp"
-                android:layout_marginTop="180dp"
+                android:layout_marginTop="230dp"
                 android:src="@drawable/lettus">
             </ImageView>
             <ImageView
@@ -40,7 +40,7 @@
                 android:layout_width="240dp"
                 android:layout_height="240dp"
                 android:layout_marginStart="90dp"
-                android:layout_marginTop="160dp"
+                android:layout_marginTop="210dp"
                 android:src="@drawable/meat">
             </ImageView>
             <ImageView
@@ -48,7 +48,7 @@
                 android:layout_width="240dp"
                 android:layout_height="240dp"
                 android:layout_marginStart="90dp"
-                android:layout_marginTop="140dp"
+                android:layout_marginTop="190dp"
                 android:src="@drawable/bacon">
             </ImageView>
             <ImageView
@@ -56,7 +56,7 @@
                 android:layout_width="240dp"
                 android:layout_height="240dp"
                 android:layout_marginStart="90dp"
-                android:layout_marginTop="120dp"
+                android:layout_marginTop="170dp"
                 android:src="@drawable/tamato">
             </ImageView>
             <ImageView
@@ -64,7 +64,7 @@
                 android:layout_width="240dp"
                 android:layout_height="240dp"
                 android:layout_marginStart="90dp"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="150dp"
                 android:src="@drawable/piccle">
             </ImageView>
             <ImageView
@@ -72,7 +72,7 @@
                 android:layout_width="240dp"
                 android:layout_height="240dp"
                 android:layout_marginStart="90dp"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="130dp"
                 android:src="@drawable/piccle">
             </ImageView>
             <ImageView
@@ -80,7 +80,7 @@
                 android:layout_width="240dp"
                 android:layout_height="240dp"
                 android:layout_marginStart="90dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="110dp"
                 android:src="@drawable/piccle">
             </ImageView>
             <ImageView
@@ -88,7 +88,7 @@
                 android:layout_width="240dp"
                 android:layout_height="240dp"
                 android:layout_marginStart="90dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="90dp"
                 android:src="@drawable/piccle">
             </ImageView>
             <ImageView
@@ -96,7 +96,7 @@
                 android:layout_width="240dp"
                 android:layout_height="240dp"
                 android:layout_marginStart="90dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="70dp"
                 android:src="@drawable/piccle">
             </ImageView>
             <ImageView
@@ -104,23 +104,10 @@
                 android:layout_width="240dp"
                 android:layout_height="240dp"
                 android:layout_marginStart="90dp"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="50dp"
                 android:src="@drawable/bunup">
             </ImageView>
-            <Button
-                android:id="@+id/restart8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="120dp"
-                android:layout_marginTop="280dp"
-                android:text="다시하기"></Button>
-            <Button
-                android:id="@+id/go8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="220dp"
-                android:layout_marginTop="280dp"
-                android:text="쏘러가기"></Button>
+
         </FrameLayout>
 
 

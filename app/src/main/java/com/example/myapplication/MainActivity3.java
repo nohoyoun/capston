@@ -25,8 +25,7 @@ public class MainActivity3 extends AppCompatActivity {
     private RadioGroup sel;
     int whichRadioButton = 1;
     boolean flag1;
-    Button go;
-    Button restart;
+
 
 
 
@@ -35,33 +34,6 @@ public class MainActivity3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
 
-        go = findViewById(R.id.go3);
-        restart = findViewById(R.id.restart3);
-
-        go.setVisibility(View.INVISIBLE);
-        restart.setVisibility(View.INVISIBLE);
-
-        //다음 단계
-        go.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity3.this, MainActivity2.class);
-                startActivity(intent);
-
-            }
-
-        });
-
-        //재시작
-        restart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity3.this, MainActivity3.class);
-                startActivity(intent);
-
-            }
-
-        });
 
 
 
@@ -118,10 +90,8 @@ public class MainActivity3 extends AppCompatActivity {
                 public void onAnimationEnd(Animator animation) {
                     super.onAnimationEnd(animation);
                     if(flag1){
-                        go.setVisibility(View.VISIBLE);
-                        restart.setVisibility(View.VISIBLE);
-                    //팝업메세지 출력으로 변환예정
-
+                        Intent intent = new Intent(MainActivity3.this, MainActivity10.class);
+                        startActivity(intent);
 
                     }else
                         flag1 = !flag1;
