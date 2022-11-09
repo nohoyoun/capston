@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -30,14 +31,37 @@ public class MainActivity5 extends AppCompatActivity {
     ImageView dice_image2;
     Random random = new Random();
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        MenuInflater inflater = getMenuInflater();
+
+        inflater.inflate(R.menu.selmenu, menu);
+
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected (MenuItem item)
+    {
+
+        switch(item.getItemId())
+        {
+            case R.id.personscore: {
+                Intent intent = new Intent(MainActivity5.this, MainActivity14.class);
+                startActivity(intent);
+            }
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main5);
 
-        //Intent intent = new Intent(MainActivity5.this, MainActivity13.class);
-       // startActivity(intent);
+        Intent intent = new Intent(MainActivity5.this, MainActivity13.class);
+        startActivity(intent);
 
         throwDice = findViewById(R.id.throwbtn);
         choiceDice = findViewById(R.id.dicesel);

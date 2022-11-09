@@ -16,6 +16,7 @@ public class MainActivity13 extends AppCompatActivity {
     Button minus, plus, play;
     TextView selnum;
     LinearLayout playone, playtwo, playthree, playfour, playfive, playsix;
+    TextView pushname1, pushname2,pushname3,pushname4,pushname5,pushname6;
     int num;
 
     @Override
@@ -37,6 +38,13 @@ public class MainActivity13 extends AppCompatActivity {
         playfive = findViewById(R.id.playfive);
         playsix = findViewById(R.id.playsix);
 
+        pushname1 = findViewById(R.id.pushname1);
+        pushname2 = findViewById(R.id.pushname2);
+        pushname3 = findViewById(R.id.pushname3);
+        pushname4 = findViewById(R.id.pushname4);
+        pushname5 = findViewById(R.id.pushname5);
+        pushname6 = findViewById(R.id.pushname6);
+
         playthree.setVisibility(View.INVISIBLE);
         playfour.setVisibility(View.INVISIBLE);
         playfive.setVisibility(View.INVISIBLE);
@@ -49,7 +57,24 @@ public class MainActivity13 extends AppCompatActivity {
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String temp1 = pushname1.getText().toString();
+                String temp2 = pushname2.getText().toString();
+                String temp3 = pushname3.getText().toString();
+                String temp4 = pushname4.getText().toString();
+                String temp5 = pushname5.getText().toString();
+                String temp6 = pushname6.getText().toString();
 
+
+                Intent intent = new Intent(MainActivity13.this, MainActivity5.class);
+                intent.putExtra("name1", temp1);
+                intent.putExtra("name2", temp2);
+                intent.putExtra("name3", temp3);
+                intent.putExtra("name4", temp4);
+                intent.putExtra("name5", temp5);
+                intent.putExtra("name6", temp6);
+
+                startActivity(intent);
+                finish();
             }
         });
 

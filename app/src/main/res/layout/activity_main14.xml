@@ -5,13 +5,13 @@
     android:layout_width="300dp"
     android:layout_height="500dp"
     android:orientation="vertical"
-    tools:context=".MainActivity13">
+    tools:context=".MainActivity14">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
         <TextView
-            android:text="옵션"
+            android:text="점수판"
             android:textSize="20sp"
             android:textColor="@color/white"
             android:gravity="center"
@@ -20,37 +20,7 @@
             android:layout_height="40dp" />
 
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_weight="5"
-        android:gravity="center_horizontal"
-        >
-        <Button
-            android:id="@+id/minus"
-            android:layout_width="40dp"
-            android:layout_height="50dp"
-            android:textSize="20dp"
-            android:text="-"
-            />
-        <TextView
-            android:id="@+id/num"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:hint="3"
-            android:gravity="center"
-            >
-        </TextView>
-        <Button
-            android:id="@+id/plus"
-            android:layout_width="40dp"
-            android:layout_height="50dp"
-            android:textSize="20dp"
-            android:text="+"
-            />
-    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -61,7 +31,7 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:layout_weight="1"
-            android:id="@+id/playone"
+            android:id="@+id/scoreone"
             >
             <TextView
                 android:layout_weight="3"
@@ -71,9 +41,9 @@
                 android:textSize="20dp"
                 android:gravity="center"
                 ></TextView>
-            <EditText
+            <TextView
                 android:layout_weight="1"
-                android:id="@+id/pushname1"
+                android:id="@+id/pushscore1"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:hint=""
@@ -81,14 +51,23 @@
                 android:maxLength="10"
                 android:gravity="center"
                 >
-            </EditText>
+            </TextView>
+            <TextView
+                android:id="@+id/score1"
+                android:layout_weight="3"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="12"
+                android:textSize="20dp"
+                android:gravity="center"
+                ></TextView>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:layout_weight="1"
-            android:id="@+id/playtwo"
+            android:id="@+id/scoretwo"
             >
             <TextView
                 android:layout_weight="3"
@@ -98,9 +77,9 @@
                 android:textSize="20dp"
                 android:gravity="center"
                 ></TextView>
-            <EditText
+            <TextView
                 android:layout_weight="1"
-                android:id="@+id/pushname2"
+                android:id="@+id/pushscore2"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:hint=""
@@ -108,14 +87,23 @@
                 android:maxLength="10"
                 android:gravity="center"
                 >
-            </EditText>
+            </TextView>
+            <TextView
+                android:id="@+id/score2"
+                android:layout_weight="3"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="12"
+                android:textSize="20dp"
+                android:gravity="center"
+                ></TextView>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:layout_weight="1"
-            android:id="@+id/playthree"
+            android:id="@+id/scorethree"
             >
             <TextView
                 android:layout_weight="3"
@@ -125,9 +113,9 @@
                 android:textSize="20dp"
                 android:gravity="center"
                 ></TextView>
-            <EditText
+            <TextView
                 android:layout_weight="1"
-                android:id="@+id/pushname3"
+                android:id="@+id/pushscore3"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:hint=""
@@ -135,14 +123,23 @@
                 android:maxLength="10"
                 android:gravity="center"
                 >
-            </EditText>
+            </TextView>
+            <TextView
+                android:id="@+id/score3"
+                android:layout_weight="3"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="12"
+                android:textSize="20dp"
+                android:gravity="center"
+                ></TextView>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:layout_weight="1"
-            android:id="@+id/playfour"
+            android:id="@+id/scorefour"
             >
             <TextView
                 android:layout_weight="3"
@@ -152,9 +149,9 @@
                 android:textSize="20dp"
                 android:gravity="center"
                 ></TextView>
-            <EditText
+            <TextView
                 android:layout_weight="1"
-                android:id="@+id/pushname4"
+                android:id="@+id/pushscore4"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:hint=""
@@ -162,14 +159,23 @@
                 android:maxLength="10"
                 android:gravity="center"
                 >
-            </EditText>
+            </TextView>
+            <TextView
+                android:id="@+id/score4"
+                android:layout_weight="3"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="12"
+                android:textSize="20dp"
+                android:gravity="center"
+                ></TextView>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:layout_weight="1"
-            android:id="@+id/playfive"
+            android:id="@+id/scorefive"
             >
             <TextView
                 android:layout_weight="3"
@@ -179,9 +185,9 @@
                 android:textSize="20dp"
                 android:gravity="center"
                 ></TextView>
-            <EditText
+            <TextView
                 android:layout_weight="1"
-                android:id="@+id/pushname5"
+                android:id="@+id/pushscore5"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:hint=""
@@ -189,14 +195,23 @@
                 android:maxLength="10"
                 android:gravity="center"
                 >
-            </EditText>
+            </TextView>
+            <TextView
+                android:id="@+id/score5"
+                android:layout_weight="3"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="12"
+                android:textSize="20dp"
+                android:gravity="center"
+                ></TextView>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:layout_weight="1"
-            android:id="@+id/playsix"
+            android:id="@+id/scoresix"
             >
             <TextView
                 android:layout_weight="3"
@@ -206,9 +221,9 @@
                 android:textSize="20dp"
                 android:gravity="center"
                 ></TextView>
-            <EditText
+            <TextView
                 android:layout_weight="1"
-                android:id="@+id/pushname6"
+                android:id="@+id/pushscore6"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:hint=""
@@ -216,16 +231,17 @@
                 android:maxLength="10"
                 android:gravity="center"
                 >
-            </EditText>
+            </TextView>
+            <TextView
+                android:id="@+id/score6"
+                android:layout_weight="3"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="12"
+                android:textSize="20dp"
+                android:gravity="center"
+                ></TextView>
         </LinearLayout>
-        <Button
-            android:id="@+id/play"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:textSize="20dp"
-            android:text="play"
-            android:layout_gravity="center"
-            />
-    </LinearLayout>
+        </LinearLayout>
 
-</LinearLayout>
+    </LinearLayout>

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <item
-        android:title="인원수 결정"
-        android:id="@+id/personnum"/>
-
+        android:title="점수 현황"
+        android:id="@+id/personscore"/>
 </menu>
