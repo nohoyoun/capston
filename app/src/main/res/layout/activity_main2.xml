@@ -20,7 +20,8 @@
         android:id="@+id/Dicebtn"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="주사위 굴리기"/>
+        android:text="주사위 굴리기"
+        />
 
     <Button
         android:id="@+id/spearbtn"
