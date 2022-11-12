@@ -28,7 +28,7 @@ public class select_main extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(select_main.this, MainActivity7.class);
+                Intent intent = new Intent(select_main.this, MainActivity15.class);
                 startActivity(intent);
             }
         });

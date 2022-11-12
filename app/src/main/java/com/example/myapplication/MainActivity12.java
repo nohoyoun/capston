@@ -54,25 +54,25 @@ public class MainActivity12 extends AppCompatActivity {
 
 
                     TranslateAnimation ani = new TranslateAnimation(
-                            0, 2900, 0, 0);
+                            0, 2200, 0, 0);
                     ani.setDuration(number1);
                     img.startAnimation(ani);
 
 
                     TranslateAnimation ani2 = new TranslateAnimation(
-                            0, 2900, 0, 0);
+                            0, 2200, 0, 0);
                     ani2.setDuration(number2);
                     img2.startAnimation(ani2);
 
 
                     TranslateAnimation ani3 = new TranslateAnimation(
-                            0, 2900, 0, 0);
+                            0, 2200, 0, 0);
                     ani3.setDuration(number3);
                     img3.startAnimation(ani3);
 
 
                     TranslateAnimation ani4 = new TranslateAnimation(
-                            0, 2900, 0, 0);
+                            0, 2200, 0, 0);
                     ani4.setDuration(number4);
                     img4.startAnimation(ani4);
 
