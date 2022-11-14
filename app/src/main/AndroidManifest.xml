@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" >
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -16,12 +16,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
-        tools:targetApi="31"
         tools:replace="android:label"
-        >
+        tools:targetApi="31">
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.myapplication.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".MainActivity16"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".MainActivity15"
-            android:exported="false" >
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -29,7 +46,7 @@
         <activity
             android:name=".MainActivity14"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.DayNight.Dialog" >
+            android:theme="@style/Theme.AppCompat.DayNight.Dialog">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -37,7 +54,7 @@
         <activity
             android:name=".MainActivity13"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.DayNight.Dialog" >
+            android:theme="@style/Theme.AppCompat.DayNight.Dialog">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -45,7 +62,8 @@
         <activity
             android:name=".MainActivity11"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.DayNight.Dialog" >
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.DayNight.Dialog">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -53,7 +71,7 @@
         <activity
             android:name=".MainActivity12"
             android:exported="false"
-            android:screenOrientation="landscape" >
+            android:screenOrientation="landscape">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -61,63 +79,63 @@
         <activity
             android:name=".MainActivity10"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.DayNight.Dialog" >
+            android:theme="@style/Theme.AppCompat.DayNight.Dialog">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".select_main"
-            android:exported="false" >
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".MainActivity9"
-            android:exported="false" >
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".MainActivity8"
-            android:exported="false" >
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".MainActivity6"
-            android:exported="false" >
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".MainActivity7"
-            android:exported="false" >
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".MainActivity5"
-            android:exported="false" >
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".MainActivity4"
-            android:exported="false" >
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".MainActivity3"
-            android:exported="false" >
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -143,7 +161,7 @@
             android:label="@string/title_activity_maps" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
