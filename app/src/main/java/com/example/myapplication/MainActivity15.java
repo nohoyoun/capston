@@ -78,6 +78,8 @@ public class MainActivity15 extends AppCompatActivity {
         Drawable d = getResources().getDrawable(R.drawable.cathand2, null);
 
         Bitmap bitmap = drawableToBitmap(d);
+
+
         wheelItems.add(new WheelItem(Color.parseColor("#F44336"), bitmap, "중식"));
         wheelItems.add(new WheelItem(Color.parseColor("#E91E63"), bitmap, "피자"));
         wheelItems.add(new WheelItem(Color.parseColor("#9C27B0"), bitmap, "패스트푸드"));

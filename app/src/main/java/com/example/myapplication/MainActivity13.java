@@ -3,10 +3,8 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.Layout;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -27,19 +25,13 @@ public class MainActivity13 extends AppCompatActivity {
 
     String name1, name2, name3, name4, name5, name6;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main13);
 
-
-
         pref = getSharedPreferences("pref1", Activity.MODE_PRIVATE);
-        editor = pref.edit();
-        editor.clear().apply();
-
 
         minus = findViewById(R.id.minus);
         plus = findViewById(R.id.plus);
@@ -69,12 +61,12 @@ public class MainActivity13 extends AppCompatActivity {
 
         selnum.setText(String.valueOf(num));
 
-
+        editor = pref.edit();
+        editor.clear().apply();
 
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 name1 = pushname1.getText().toString();
                 editor.putString("name1", name1);
                 name2 = pushname2.getText().toString();
@@ -87,6 +79,7 @@ public class MainActivity13 extends AppCompatActivity {
                 editor.putString("name5", name5);
                 name6 = pushname6.getText().toString();
                 editor.putString("name6", name6);
+                editor.putInt("num0", num);
 
                 editor.apply();
                 finish();

@@ -18,6 +18,13 @@
         android:theme="@style/Theme.MyApplication"
         tools:replace="android:label"
         tools:targetApi="31">
+        <activity
+            android:name=".MainActivity17"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
 
         <provider
             android:name="androidx.core.content.FileProvider"
