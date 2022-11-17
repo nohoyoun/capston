@@ -156,8 +156,40 @@ public class MainActivity17 extends AppCompatActivity {
         angle = angle % 360;
 
         Log.d("roulette", "getResult : " + angle);
-
-        if (num_roulette == 5) {
+//여기 숫자별로 수정
+        if(num_roulette == 2) {
+            if (angle > 270 || angle <= 90) { // 11   2
+                text = STRINGS.get(1);
+                buildAlert(text);
+            } else if (angle > 90 && angle <= 270) { // 333   3
+                text = STRINGS.get(0);
+                buildAlert(text);}
+        }else if (num_roulette == 3) {
+            if (angle > 270 || angle <= 30) { // 11   2
+                text = STRINGS.get(2);
+                buildAlert(text);
+            } else if (angle > 150 && angle <= 270) { // 333   3
+                text = STRINGS.get(0);
+                buildAlert(text);
+            } else if (angle > 30 && angle <= 150) { // 222   4
+                text = STRINGS.get(1);
+                buildAlert(text);
+            }
+        }else if (num_roulette == 4) {
+            if (angle > 270 && angle <= 0) { // 11   2
+                text = STRINGS.get(3);
+                buildAlert(text);
+            } else if (angle > 0 && angle <= 90) { // 333   3
+                text = STRINGS.get(2);
+                buildAlert(text);
+            } else if (angle > 90 && angle <= 180) { // 222   4
+                text = STRINGS.get(1);
+                buildAlert(text);
+            } else if (angle > 180 && angle <= 270) { // 111    0
+                text = STRINGS.get(0);
+                buildAlert(text);
+            }
+        } else if (num_roulette == 5) {
             if (angle > 342 || angle <= 54) { // 11   2
                 text = STRINGS.get(3);
                 buildAlert(text);
@@ -200,9 +232,14 @@ public class MainActivity17 extends AppCompatActivity {
 
     // if you want use AlertDialog then use this
     private void buildAlert(String text) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Congratulations")
-                .setMessage("You have earned " + text + " points!")
+
+        Intent intent = new Intent(MainActivity17.this, MainActivity11.class);
+        intent.putExtra("team", text);
+        startActivity(intent);
+
+        /*AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("알림")
+                .setMessage(text + " 님 당첨입니다!")
                 .setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -210,7 +247,7 @@ public class MainActivity17 extends AppCompatActivity {
                     }
                 });
         AlertDialog alertDialog = builder.create();
-        alertDialog.show();
+        alertDialog.show();*/
     }
 
     public class CircleManager extends View {

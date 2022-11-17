@@ -50,7 +50,7 @@
             android:id="@+id/share"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="공유(실험용)" />
+            android:text="룰렛 돌리기" />
         <Button
         android:id="@+id/end"
         android:layout_width="150dp"

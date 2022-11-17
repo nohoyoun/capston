@@ -26,16 +26,10 @@ public class MainActivity3 extends AppCompatActivity {
     int whichRadioButton = 1;
     boolean flag1;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
-
-
-
 
         // 애니메이션 이미지 인식
         sel = findViewById(R.id.sel);
@@ -69,7 +63,7 @@ public class MainActivity3 extends AppCompatActivity {
 
 // 룰렛 이미지 터치 시에 호출되는 메소드
         public void rotate (View view){
-        int r;
+
             // ---------- 회전각도 설정 ----------
             startDegree = endDegree;    // 이전 정지 각도를 시작 각도로 설정
             Random rand = new Random(); // 랜덤 객체 생성
@@ -81,7 +75,7 @@ public class MainActivity3 extends AppCompatActivity {
             ObjectAnimator object = ObjectAnimator.ofFloat(iv_needle, "rotation", startDegree, endDegree);
 
             object.setInterpolator(new AccelerateDecelerateInterpolator()); // 애니메이션 속력 설정
-            object.setDuration(3000);   // 애니메이션 시간(5초)
+            object.setDuration(1800);   // 애니메이션 시간(5초)
             object.start();   // 애니메이션 시작
 
 
@@ -89,12 +83,9 @@ public class MainActivity3 extends AppCompatActivity {
                 @Override
                 public void onAnimationEnd(Animator animation) {
                     super.onAnimationEnd(animation);
-                    if(flag1){
-                        Intent intent = new Intent(MainActivity3.this, MainActivity10.class);
-                        startActivity(intent);
+                    Intent intent = new Intent(MainActivity3.this, MainActivity10.class);
+                    startActivity(intent);
 
-                    }else
-                        flag1 = !flag1;
                 }
             });
 

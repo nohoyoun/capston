@@ -7,6 +7,8 @@ import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -29,6 +31,8 @@ public class MainActivity8 extends AppCompatActivity {
 
         btn1 = findViewById(R.id.hamburger);
 
+        final Animation shake = AnimationUtils.loadAnimation(
+                this,R.anim.shake);
 
         one = (ImageView)findViewById(R.id.one);
         two = (ImageView)findViewById(R.id.two);
@@ -64,10 +68,13 @@ public class MainActivity8 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+
                 if (a == 0) {
+                    one.startAnimation(shake);
                     one.setVisibility(View.VISIBLE);
                     a++;
                 } else if (a == 1) {
+                    two.startAnimation(shake);
                     number = random.nextInt(7) + 1;
                     a++;
                     if (number == 1) {
@@ -98,6 +105,7 @@ public class MainActivity8 extends AppCompatActivity {
 
                     }
                 } else if (a == 2) {
+                    three.startAnimation(shake);
                     number = random.nextInt(7) + 1;
                     a++;
                     if (number == 1) {
@@ -127,6 +135,8 @@ public class MainActivity8 extends AppCompatActivity {
                         btn1.setVisibility(View.INVISIBLE);
                     }
                 } else if (a == 3) {
+                    four.startAnimation(shake);
+
                     number = random.nextInt(7) + 1;
                     a++;
                     if (number == 1) {
@@ -156,6 +166,8 @@ public class MainActivity8 extends AppCompatActivity {
                         btn1.setVisibility(View.INVISIBLE);
                     }
                 } else if (a == 4) {
+                    five.startAnimation(shake);
+
                     number = random.nextInt(7) + 1;
                     a++;
                     if (number == 1) {
@@ -185,6 +197,8 @@ public class MainActivity8 extends AppCompatActivity {
                         btn1.setVisibility(View.INVISIBLE);
                     }
                 } else if (a == 5) {
+                    six.startAnimation(shake);
+
                     number = random.nextInt(7) + 1;
                     a++;
                     if (number == 1) {
@@ -214,6 +228,8 @@ public class MainActivity8 extends AppCompatActivity {
                         btn1.setVisibility(View.INVISIBLE);
                     }
                 } else if (a == 6) {
+                    seven.startAnimation(shake);
+
                     number = random.nextInt(7) + 1;
                     a++;
                     if (number == 1) {
@@ -243,6 +259,8 @@ public class MainActivity8 extends AppCompatActivity {
                         btn1.setVisibility(View.INVISIBLE);
                     }
                 } else if (a == 7) {
+                    eight.startAnimation(shake);
+
                     number = random.nextInt(7) + 1;
                     a++;
                     if (number == 1) {
@@ -272,6 +290,8 @@ public class MainActivity8 extends AppCompatActivity {
                         btn1.setVisibility(View.INVISIBLE);
                     }
                 } else if (a == 8) {
+                    nine.startAnimation(shake);
+
                     number = random.nextInt(7) + 1;
                     a++;
                     if (number == 1) {
@@ -301,6 +321,8 @@ public class MainActivity8 extends AppCompatActivity {
                         btn1.setVisibility(View.INVISIBLE);
                     }
                 } else if (a == 9) {
+                    ten.startAnimation(shake);
+
                     number = random.nextInt(7) + 1;
                     a++;
                     if (number == 1) {
@@ -330,7 +352,7 @@ public class MainActivity8 extends AppCompatActivity {
                         btn1.setVisibility(View.INVISIBLE);
                     }
             }else if(a==10)
-            {
+            {eleven.startAnimation(shake);
                 eleven.setImageResource(R.drawable.bunup);
                 eleven.setVisibility(View.VISIBLE);
                 btn1.setVisibility(View.INVISIBLE);

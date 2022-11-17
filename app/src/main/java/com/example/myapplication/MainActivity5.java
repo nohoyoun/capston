@@ -12,6 +12,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -71,6 +73,9 @@ public class MainActivity5 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main5);
 
+        final Animation shake = AnimationUtils.loadAnimation(
+                this,R.anim.shake);
+
         pref = getSharedPreferences("pref2", Activity.MODE_PRIVATE);
         editor = pref.edit();
         editor.clear().apply();
@@ -118,8 +123,11 @@ public class MainActivity5 extends AppCompatActivity {
         });
         throwDice.setOnClickListener(new View.OnClickListener() {
 
+
             @Override
             public void onClick(View view) {
+
+
                 int numberofDice = 1;
                 int numberofDice2 = 1;
 
@@ -131,6 +139,7 @@ public class MainActivity5 extends AppCompatActivity {
                 }
 
                 if(whichRadioButton == 1) {
+                    dice_image.startAnimation(shake);
 
                     switch (numberofDice) {
                         case 1:
@@ -156,6 +165,9 @@ public class MainActivity5 extends AppCompatActivity {
 
                 }
                     if (whichRadioButton == 2) {
+                        dice_image.startAnimation(shake);
+                        dice_image2.startAnimation(shake);
+
                         switch (numberofDice) {
                             case 1:
                                 dice_image.setImageResource(R.drawable.dice_1);

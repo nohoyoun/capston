@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity4b"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="25"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="버튼을 클릭하여 숨어있는 고양이를 찾으세요!"
+            android:textSize="18sp"
+            android:layout_gravity="center"
+            ></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@drawable/bathroom">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn1"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="290dp"
+            android:background="@drawable/cathand"
+            android:backgroundTint="@color/black"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn2"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="-200dp"
+            android:layout_toEndOf="@+id/btn1"
+            android:background="@drawable/cathand"
+            android:backgroundTint="@color/black"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn3"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="250dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/cathand"
+            android:backgroundTint="@color/black"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn4"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/cathand"
+            android:backgroundTint="@color/black"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn5"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="-380dp"
+            android:background="@drawable/cathand"
+            android:backgroundTint="@color/black"/>
+
+        <ImageView
+            android:id="@+id/cat1"
+            android:layout_width="400dp"
+            android:layout_height="500dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/cat2">
+        </ImageView>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -15,6 +15,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/startbtn17"
             android:text="룰렛 그리기"
+            android:textSize="30dp"
             >
         </Button>
     </LinearLayout>
@@ -26,6 +27,7 @@
         android:background="@drawable/sharp_label_black_18dp2" />
 
     <RelativeLayout
+
         android:id="@+id/layoutRoulette"
         android:layout_width="300dp"
         android:layout_height="300dp"
@@ -39,6 +41,7 @@
         <!--            android:text="돌리기"-->
         <!--            android:layout_centerInParent="true"-->
         <!--            android:background="@drawable/button_selector"/>-->
+
 
     </RelativeLayout>
 

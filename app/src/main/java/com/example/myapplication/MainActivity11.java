@@ -34,6 +34,7 @@ public class MainActivity11 extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity11.this, MainActivity2.class);
                 startActivity(intent);
             }
+
         });
 
         Button button1 = findViewById(R.id.gomain);

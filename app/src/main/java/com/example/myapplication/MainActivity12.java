@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.animation.AnimatorListenerAdapter;
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -32,6 +33,8 @@ public class MainActivity12 extends AppCompatActivity {
     int number1, number2, number3, number4;
     int rank1, rank2, rank3, rank4;
 
+    AnimationDrawable ania, anib, anic, anid;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,42 +47,48 @@ public class MainActivity12 extends AppCompatActivity {
         img4 = (ImageView)findViewById(R.id.horse4);
         img5 = (ImageView)findViewById(R.id.flag);
 
-
-
-        number1 = random.nextInt(200)*100;
-        number2 = random2.nextInt(200)*100;
-        number3 = random3.nextInt(200)*100;
-        number4 = random4.nextInt(200)*100;
+        number1 = random.nextInt(200)*3+15000;
+        number2 = random2.nextInt(200)*3+15000;
+        number3 = random3.nextInt(200)*3+15000;
+        number4 = random4.nextInt(200)*3+15000;
 
         Button button = findViewById(R.id.start1);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-
                     TranslateAnimation ani = new TranslateAnimation(
                             0, 2200, 0, 0);
                     ani.setDuration(number1);
                     img.startAnimation(ani);
+                    img.setImageResource(R.drawable.horserun);
+                    ania= (AnimationDrawable) img.getDrawable();
+                    ania.start();
 
 
                     TranslateAnimation ani2 = new TranslateAnimation(
                             0, 2200, 0, 0);
                     ani2.setDuration(number2);
                     img2.startAnimation(ani2);
-
+                    img2.setImageResource(R.drawable.horserun2);
+                    anib= (AnimationDrawable) img2.getDrawable();
+                    anib.start();
 
                     TranslateAnimation ani3 = new TranslateAnimation(
                             0, 2200, 0, 0);
                     ani3.setDuration(number3);
                     img3.startAnimation(ani3);
-
+                    img3.setImageResource(R.drawable.horserun3);
+                    anic= (AnimationDrawable) img3.getDrawable();
+                    anic.start();
 
                     TranslateAnimation ani4 = new TranslateAnimation(
                             0, 2200, 0, 0);
                     ani4.setDuration(number4);
                     img4.startAnimation(ani4);
-
+                    img4.setImageResource(R.drawable.horserun4);
+                    anid= (AnimationDrawable) img4.getDrawable();
+                    anid.start();
 
                 LinkedList<Integer> list = new LinkedList<Integer>();
 

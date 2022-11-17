@@ -59,6 +59,7 @@ public class MainActivity13 extends AppCompatActivity {
         playfive.setVisibility(View.INVISIBLE);
         playsix.setVisibility(View.INVISIBLE);
 
+
         selnum.setText(String.valueOf(num));
 
         editor = pref.edit();
