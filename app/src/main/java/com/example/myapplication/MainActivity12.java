@@ -3,7 +3,9 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +15,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -35,6 +38,11 @@ public class MainActivity12 extends AppCompatActivity {
 
     AnimationDrawable ania, anib, anic, anid;
 
+    private ArrayList<Integer> list;
+
+    SharedPreferences pref;          // 프리퍼런스
+    SharedPreferences.Editor editor; // 에디터
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +59,16 @@ public class MainActivity12 extends AppCompatActivity {
         number2 = random2.nextInt(200)*3+15000;
         number3 = random3.nextInt(200)*3+15000;
         number4 = random4.nextInt(200)*3+15000;
+
+        Intent intent = new Intent(MainActivity12.this, MainActivity16.class);
+        startActivity(intent);
+
+
+        pref = getSharedPreferences("pref1", Activity.MODE_PRIVATE);
+
+        editor = pref.edit();
+        editor.clear().apply();
+
 
         Button button = findViewById(R.id.start1);
         button.setOnClickListener(new View.OnClickListener() {
@@ -90,21 +108,20 @@ public class MainActivity12 extends AppCompatActivity {
                     anid= (AnimationDrawable) img4.getDrawable();
                     anid.start();
 
-                LinkedList<Integer> list = new LinkedList<Integer>();
-
+                list = new ArrayList<Integer>();
                 list.add(number1);
                 list.add(number2);
                 list.add(number3);
                 list.add(number4);
 
-                Integer h = number1+number2+number3+number4;
-                Integer i = Collections.min(list);
-                Integer j = Collections.max(list);
-                Integer k = (h - (Collections.min(list) + Collections.max(list)))/2;
-                Integer n1 = number1 - k;
-                Integer n2 = number2 - k;
-                Integer n3 = number3 - k;
-                Integer n4 = number4 - k;
+                int h = number1+number2+number3+number4;
+                int i = Collections.min(list);
+                int j = Collections.max(list);
+                double k = (h - (i + j))/2;
+                double n1 = number1 - k;
+                double n2 = number2 - k;
+                double n3 = number3 - k;
+                double n4 = number4 - k;
 
                 if(number1 == i) {//1번말이 1위일때 각자의 말 순위 코드
                     rank1 = 1;
@@ -113,29 +130,61 @@ public class MainActivity12 extends AppCompatActivity {
                         if(n3>0) {
                             rank3 = 2;
                             rank4 = 3;
+                            editor.putInt("rank1", rank1);
+                            editor.putInt("rank2", rank2);
+                            editor.putInt("rank3", rank3);
+                            editor.putInt("rank4", rank4);
+                            editor.apply();
                         }else if(n4>0) {
                             rank4 = 2;
                             rank3 = 3;
+                            editor.putInt("rank1", rank1);
+                            editor.putInt("rank2", rank2);
+                            editor.putInt("rank3", rank3);
+                            editor.putInt("rank4", rank4);
+                            editor.apply();
+
                         }
                     }else if(number3 == j) {
                         rank3 = 4;
                         if(n2>0) {
                             rank2 = 2;
                             rank4 = 3;
+                            editor.putInt("rank1", rank1);
+                            editor.putInt("rank2", rank2);
+                            editor.putInt("rank3", rank3);
+                            editor.putInt("rank4", rank4);
+                            editor.apply();
                         }else if(n4>0) {
                             rank4 = 2;
                             rank2 = 3;
+                            editor.putInt("rank1", rank1);
+                            editor.putInt("rank2", rank2);
+                            editor.putInt("rank3", rank3);
+                            editor.putInt("rank4", rank4);
+                            editor.apply();
                         }
                     }else if(number4 == j) {
                         rank4 = 4;
                         if(n2>0) {
                             rank2 = 2;
                             rank3 = 3;
+                            editor.putInt("rank1", rank1);
+                            editor.putInt("rank2", rank2);
+                            editor.putInt("rank3", rank3);
+                            editor.putInt("rank4", rank4);
+                            editor.apply();
                         }else if(n3>0) {
                             rank3 = 2;
                             rank2 = 3;
+                            editor.putInt("rank1", rank1);
+                            editor.putInt("rank2", rank2);
+                            editor.putInt("rank3", rank3);
+                            editor.putInt("rank4", rank4);
+                            editor.apply();
                         }
                     }
+
                 }else if (number2 == i) {//2번말이 1위일때 각자의 말 순위 코드
                     rank2 = 1;
                     if(number1 == j) {
@@ -143,29 +192,60 @@ public class MainActivity12 extends AppCompatActivity {
                         if(n3>0) {
                             rank3 = 2;
                             rank4 = 3;
+                            editor.putInt("rank1", rank1);
+                            editor.putInt("rank2", rank2);
+                            editor.putInt("rank3", rank3);
+                            editor.putInt("rank4", rank4);
+                            editor.apply();
                         }else if(n4>0) {
                             rank4 = 2;
                             rank3 = 3;
+                            editor.putInt("rank1", rank1);
+                            editor.putInt("rank2", rank2);
+                            editor.putInt("rank3", rank3);
+                            editor.putInt("rank4", rank4);
+                            editor.apply();
                         }
                     }else if(number3 == j) {
                         rank3 = 4;
                         if(n2>0) {
-                            rank2 = 2;
+                            rank1 = 2;
                             rank4 = 3;
+                            editor.putInt("rank1", rank1);
+                            editor.putInt("rank2", rank2);
+                            editor.putInt("rank3", rank3);
+                            editor.putInt("rank4", rank4);
+                            editor.apply();
                         }else if(n4>0) {
                             rank4 = 2;
-                            rank2 = 3;
+                            rank1 = 3;
+                            editor.putInt("rank1", rank1);
+                            editor.putInt("rank2", rank2);
+                            editor.putInt("rank3", rank3);
+                            editor.putInt("rank4", rank4);
+                            editor.apply();
                         }
                     }else if(number4 == j) {
                         rank4 = 4;
                         if(n2>0) {
-                            rank2 = 2;
+                            rank1 = 2;
                             rank3 = 3;
+                            editor.putInt("rank1", rank1);
+                            editor.putInt("rank2", rank2);
+                            editor.putInt("rank3", rank3);
+                            editor.putInt("rank4", rank4);
+                            editor.apply();
                         }else if(n3>0) {
                             rank3 = 2;
-                            rank2 = 3;
+                            rank1 = 3;
+                            editor.putInt("rank1", rank1);
+                            editor.putInt("rank2", rank2);
+                            editor.putInt("rank3", rank3);
+                            editor.putInt("rank4", rank4);
+                            editor.apply();
                         }
                     }
+
                 }else if (number3 == i) {//3번말이 1위일때 각자의 말 순위 코드
                     rank3 = 1;
                     if(number1 == j) {
@@ -173,29 +253,60 @@ public class MainActivity12 extends AppCompatActivity {
                         if(n2>0) {
                             rank2 = 2;
                             rank4 = 3;
+                            editor.putInt("rank1", rank1);
+                            editor.putInt("rank2", rank2);
+                            editor.putInt("rank3", rank3);
+                            editor.putInt("rank4", rank4);
+                            editor.apply();
                         }else if(n4>0) {
                             rank4 = 2;
                             rank2 = 3;
+                            editor.putInt("rank1", rank1);
+                            editor.putInt("rank2", rank2);
+                            editor.putInt("rank3", rank3);
+                            editor.putInt("rank4", rank4);
+                            editor.apply();
                         }
                     }else if(number2 == j) {
                         rank2 = 4;
                         if(n1>0) {
                             rank1 = 2;
                             rank4 = 3;
+                            editor.putInt("rank1", rank1);
+                            editor.putInt("rank2", rank2);
+                            editor.putInt("rank3", rank3);
+                            editor.putInt("rank4", rank4);
+                            editor.apply();
                         }else if(n4>0) {
                             rank4 = 2;
                             rank1 = 3;
+                            editor.putInt("rank1", rank1);
+                            editor.putInt("rank2", rank2);
+                            editor.putInt("rank3", rank3);
+                            editor.putInt("rank4", rank4);
+                            editor.apply();
                         }
                     }else if(number4 == j) {
                         rank4 = 4;
                         if(n1>0) {
                             rank2 = 2;
                             rank1 = 3;
+                            editor.putInt("rank1", rank1);
+                            editor.putInt("rank2", rank2);
+                            editor.putInt("rank3", rank3);
+                            editor.putInt("rank4", rank4);
+                            editor.apply();
                         }else if(n3>0) {
                             rank1 = 2;
                             rank2 = 3;
+                            editor.putInt("rank1", rank1);
+                            editor.putInt("rank2", rank2);
+                            editor.putInt("rank3", rank3);
+                            editor.putInt("rank4", rank4);
+                            editor.apply();
                         }
                     }
+
                 }else if (number4 == i) {//4번말이 1위일때 각자의 말 순위 코드
                     rank4 = 1;
                     if(number1 == j) {
@@ -203,27 +314,57 @@ public class MainActivity12 extends AppCompatActivity {
                         if(n3>0) {
                             rank3 = 2;
                             rank2 = 3;
+                            editor.putInt("rank1", rank1);
+                            editor.putInt("rank2", rank2);
+                            editor.putInt("rank3", rank3);
+                            editor.putInt("rank4", rank4);
+                            editor.apply();
                         }else if(n2>0) {
                             rank2 = 2;
                             rank3 = 3;
+                            editor.putInt("rank1", rank1);
+                            editor.putInt("rank2", rank2);
+                            editor.putInt("rank3", rank3);
+                            editor.putInt("rank4", rank4);
+                            editor.apply();
                         }
                     }else if(number3 == j) {
                         rank3 = 4;
                         if(n2>0) {
                             rank2 = 2;
                             rank1 = 3;
+                            editor.putInt("rank1", rank1);
+                            editor.putInt("rank2", rank2);
+                            editor.putInt("rank3", rank3);
+                            editor.putInt("rank4", rank4);
+                            editor.apply();
                         }else if(n1>0) {
                             rank1 = 2;
                             rank2 = 3;
+                            editor.putInt("rank1", rank1);
+                            editor.putInt("rank2", rank2);
+                            editor.putInt("rank3", rank3);
+                            editor.putInt("rank4", rank4);
+                            editor.apply();
                         }
                     }else if(number1 == j) {
                         rank1 = 4;
                         if(n2>0) {
                             rank2 = 2;
                             rank3 = 3;
+                            editor.putInt("rank1", rank1);
+                            editor.putInt("rank2", rank2);
+                            editor.putInt("rank3", rank3);
+                            editor.putInt("rank4", rank4);
+                            editor.apply();
                         }else if(n3>0) {
                             rank3 = 2;
                             rank2 = 3;
+                            editor.putInt("rank1", rank1);
+                            editor.putInt("rank2", rank2);
+                            editor.putInt("rank3", rank3);
+                            editor.putInt("rank4", rank4);
+                            editor.apply();
                         }
                     }
                 }
@@ -238,7 +379,9 @@ public class MainActivity12 extends AppCompatActivity {
                         public void onAnimationEnd(Animation animation) {
                             img.setImageResource(R.drawable.flag);
                             if(number1 == j) {
-                                Intent intent = new Intent(MainActivity12.this, MainActivity10.class);
+
+
+                                Intent intent = new Intent(MainActivity12.this, MainActivity19.class);
                                 startActivity(intent);
                             }
                         }
@@ -255,7 +398,7 @@ public class MainActivity12 extends AppCompatActivity {
                     public void onAnimationEnd(Animation animation) {
                         img2.setImageResource(R.drawable.flag);
                         if(number2 == j) {
-                            Intent intent = new Intent(MainActivity12.this, MainActivity10.class);
+                            Intent intent = new Intent(MainActivity12.this, MainActivity19.class);
                             startActivity(intent);
                         }
                     }
@@ -272,7 +415,7 @@ public class MainActivity12 extends AppCompatActivity {
                     public void onAnimationEnd(Animation animation) {
                         img3.setImageResource(R.drawable.flag);
                         if(number3 == j) {
-                            Intent intent = new Intent(MainActivity12.this, MainActivity10.class);
+                            Intent intent = new Intent(MainActivity12.this, MainActivity19.class);
                             startActivity(intent);
                         }
                     }
@@ -289,7 +432,7 @@ public class MainActivity12 extends AppCompatActivity {
                     public void onAnimationEnd(Animation animation) {
                         img4.setImageResource(R.drawable.flag);
                         if(number4 == j) {
-                            Intent intent = new Intent(MainActivity12.this, MainActivity10.class);
+                            Intent intent = new Intent(MainActivity12.this, MainActivity19.class);
                             startActivity(intent);
                         }
                     }
