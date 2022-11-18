@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -57,7 +58,8 @@ public class MainActivity16 extends AppCompatActivity {
         gotomain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            //메인으로가는 intent코드작성
+                Intent intent = new Intent(MainActivity16.this, MainActivity2.class);
+                startActivity(intent);
             }
         });
 
