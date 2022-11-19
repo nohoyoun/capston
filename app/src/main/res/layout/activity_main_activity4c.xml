@@ -42,7 +42,7 @@
             android:id="@+id/btn2"
             android:layout_width="50dp"
             android:layout_height="60dp"
-            android:layout_marginStart="150dp"
+            android:layout_marginStart="100dp"
             android:layout_marginTop="-200dp"
             android:layout_toEndOf="@+id/btn1"
             android:background="@drawable/cathand"
@@ -70,7 +70,7 @@
             android:layout_width="50dp"
             android:layout_height="60dp"
             android:layout_marginStart="300dp"
-            android:layout_marginTop="-380dp"
+            android:layout_marginTop="-350dp"
             android:background="@drawable/cathand"
             android:backgroundTint="@color/black"/>
 
