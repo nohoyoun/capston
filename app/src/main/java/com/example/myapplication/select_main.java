@@ -24,24 +24,23 @@ public class select_main extends AppCompatActivity {
             }
         });
 
-        ImageButton button2 = findViewById(R.id.selectfood);
+        ImageButton button2 = findViewById(R.id.selectcafe);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(select_main.this, MainActivity15.class);
+                Intent intent = new Intent(select_main.this, MapsActivity.class);
                 startActivity(intent);
             }
         });
 
-        ImageButton button3 = findViewById(R.id.selectcafe);
+        ImageButton button3 = findViewById(R.id.selectfood);
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(select_main.this, RandomMain18Activity.class);
+                Intent intent = new Intent(select_main.this, MainActivity7.class);
                 startActivity(intent);
             }
         });
-
-
     }
+
 }
