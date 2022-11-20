@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ComponentActivity;
 import androidx.core.content.FileProvider;
 
 import android.annotation.SuppressLint;
@@ -27,6 +28,8 @@ public class MainActivity9 extends AppCompatActivity {
     Button btn1;
     TextView txt1;
     View container;
+
+
 
     public File ScreenShot(View view){
         view.setDrawingCacheEnabled(true);  //화면에 뿌릴때 캐시를 사용하게 한다
@@ -60,8 +63,6 @@ public class MainActivity9 extends AppCompatActivity {
             Intent intent = getIntent();
             String push = intent.getStringExtra("push");
             txt1.setText(push);
-
-
             btn1.setOnClickListener(new View.OnClickListener() {
 
                 @Override
@@ -80,7 +81,7 @@ public class MainActivity9 extends AppCompatActivity {
                     Intent shareintent = new Intent(Intent.ACTION_SEND);
                     shareintent.putExtra(Intent.EXTRA_STREAM, uri);
                     shareintent.setType("image/JPEG");
-                    startActivity(Intent.createChooser(shareintent, "공유"));
+                    startActivity(Intent.createChooser(shareintent, "공유" ));
 
                 }
             });

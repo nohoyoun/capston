@@ -37,7 +37,7 @@ public class select_main extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(select_main.this, RandomMain18Activity.class);
+                Intent intent = new Intent(select_main.this, MapsActivity.class);
                 startActivity(intent);
             }
         });
