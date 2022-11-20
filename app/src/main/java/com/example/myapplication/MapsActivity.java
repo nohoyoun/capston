@@ -118,7 +118,9 @@ public class MapsActivity extends AppCompatActivity
     // onRequestPermissionsResult에서 수신된 결과에서 ActivityCompat.requestPermissions를 사용한 퍼미션 요청을 구별하기 위해 사용됩니다.
     private static final int PERMISSIONS_REQUEST_CODE = 100;
     boolean needRequest = false;
-
+    
+    //장소이름 저장할 변수
+    String resturant;
 
     // 앱을 실행하기 위해 필요한 퍼미션을 정의합니다.
     String[] REQUIRED_PERMISSIONS  = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};  // 외부 저장소
@@ -194,12 +196,15 @@ public class MapsActivity extends AppCompatActivity
 
 
         previous_marker = new ArrayList<Marker>();
-
+            //갱신버튼
         Button button = (Button)findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 showPlaceInformation(currentPosition);
+
+
+                
             }
         });
 
@@ -324,6 +329,8 @@ public class MapsActivity extends AppCompatActivity
 
             Log.d(TAG, "startLocationUpdates : call showDialogForLocationServiceSetting");
             showDialogForLocationServiceSetting();
+
+
         }else {
 
             int hasFineLocationPermission = ContextCompat.checkSelfPermission(this,
@@ -452,6 +459,12 @@ public class MapsActivity extends AppCompatActivity
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLng(currentLatLng);
         mMap.moveCamera(cameraUpdate);
 
+//음식점의 정보 출력하는 코드
+        /*resturant = String.valueOf(currentPosition);
+        Intent intent = new Intent(MapsActivity.this, MainActivity21.class);
+        intent.putExtra("rest", resturant);
+        startActivity(intent);
+*/
     }
 
 

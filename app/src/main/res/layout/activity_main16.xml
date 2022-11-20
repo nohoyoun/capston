@@ -29,13 +29,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            >
             <ImageView
                 android:layout_width="135dp"
                 android:layout_height="100dp"
                 android:src="@drawable/horse"
                 android:clickable="true"
                 android:onClick="vote1"
+                android:background="@drawable/square_background"
                 >
             </ImageView>
             <ImageView
@@ -43,33 +45,41 @@
                 android:layout_height="100dp"
                 android:src="@drawable/horse2"
                 android:clickable="true"
-                android:onClick="vote2">
+                android:onClick="vote2"
+                android:background="@drawable/square_background"
+                >
             </ImageView>
             <ImageView
                 android:layout_width="135dp"
                 android:layout_height="100dp"
                 android:src="@drawable/horse3"
                 android:clickable="true"
-                android:onClick="vote3">
+                android:onClick="vote3"
+                android:background="@drawable/square_background"
+                >
             </ImageView>
             <ImageView
                 android:layout_width="135dp"
                 android:layout_height="100dp"
                 android:src="@drawable/horse4"
                 android:clickable="true"
-                android:onClick="vote4">
+                android:onClick="vote4"
+                android:background="@drawable/square_background"
+                >
             </ImageView>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="200dp"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@drawable/square_background"
+            >
+
             <TextView
+                android:id="@+id/horse1race"
                 android:layout_width="135dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/horse1race">
-            </TextView>
+                android:layout_height="wrap_content"></TextView>
             <TextView
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
@@ -91,7 +101,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1.3"
             android:orientation="horizontal"
-            android:gravity="center">
+            android:gravity="center"
+            android:background="@drawable/square_background"
+            >
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -107,7 +119,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="3"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@drawable/square_background"
+        >
         <Button
             android:id="@+id/gotomain"
             android:layout_width="30dp"

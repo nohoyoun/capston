@@ -34,23 +34,31 @@
                 android:layout_width="135dp"
                 android:layout_height="100dp"
                 android:src="@drawable/horse"
+                android:background="@drawable/square_background"
+
                 >
             </ImageView>
             <ImageView
                 android:layout_width="135dp"
                 android:layout_height="100dp"
                 android:src="@drawable/horse2"
+                android:background="@drawable/square_background"
+
                 >
             </ImageView>
             <ImageView
                 android:layout_width="135dp"
                 android:layout_height="100dp"
-                android:src="@drawable/horse3">
+                android:src="@drawable/horse3"
+                android:background="@drawable/square_background"
+                >
             </ImageView>
             <ImageView
                 android:layout_width="135dp"
                 android:layout_height="100dp"
-                android:src="@drawable/horse4">
+                android:src="@drawable/horse4"
+                android:background="@drawable/square_background"
+                >
             </ImageView>
         </LinearLayout>
         <LinearLayout
@@ -59,41 +67,50 @@
             android:layout_weight="1"
             android:orientation="horizontal"
             >
+
             <TextView
+                android:id="@+id/horse1rank"
                 android:layout_width="135dp"
                 android:layout_height="match_parent"
-                android:id="@+id/horse1rank"
                 android:gravity="center"
                 android:textSize="30dp"
-                >
-            </TextView>
+                android:background="@drawable/square_background"
+                ></TextView>
             <TextView
                 android:layout_width="135dp"
                 android:layout_height="match_parent"
                 android:id="@+id/horse2rank"
                 android:gravity="center"
-                android:textSize="30dp">
+                android:textSize="30dp"
+                android:background="@drawable/square_background"
+                >
             </TextView>
             <TextView
                 android:layout_width="135dp"
                 android:layout_height="match_parent"
                 android:id="@+id/horse3rank"
                 android:gravity="center"
-                android:textSize="30dp">
+                android:textSize="30dp"
+                android:background="@drawable/square_background"
+                >
             </TextView>
             <TextView
                 android:layout_width="135dp"
                 android:layout_height="match_parent"
                 android:id="@+id/horse4rank"
                 android:gravity="center"
-                android:textSize="30dp">
+                android:textSize="30dp"
+                android:background="@drawable/square_background"
+                >
             </TextView>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="@drawable/square_background"
+            >
             <TextView
                 android:gravity="center"
                 android:layout_width="match_parent"
@@ -109,7 +126,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="horizontal"
-            android:gravity="center">
+            android:gravity="center"
+            android:background="@drawable/square_background"
+            >
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -124,7 +143,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="3"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@drawable/square_background"
+        >
         <Button
             android:id="@+id/gotomain"
             android:layout_width="30dp"
