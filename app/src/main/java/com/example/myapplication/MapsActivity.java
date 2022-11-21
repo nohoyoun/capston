@@ -55,7 +55,12 @@ import noman.googleplaces.PlacesListener;
 
 //import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
 
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& github에 커밋하는 방법..
+        git add --all
+        git commit -m "커밋할 내용"
+        git push origin main
 
+ */
 public class MapsActivity extends AppCompatActivity
         implements OnMapReadyCallback,
         ActivityCompat.OnRequestPermissionsResultCallback,
@@ -243,7 +248,7 @@ public class MapsActivity extends AppCompatActivity
                 startActivity(intent);
                 */
                 AlertDialog.Builder dlg = new AlertDialog.Builder(MapsActivity.this);
-                dlg.setTitle("게임 진행하시겠습니까?"); // 제목
+                dlg.setTitle("게임 진행알림"); // 제목
                 dlg.setMessage("게임 장소가 " + location_name.getText() +" 맞습니까?");
                 // 아이콘 설정 !!dlg.setIcon(R.drawable.icon주소);
 

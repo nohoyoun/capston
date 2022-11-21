@@ -30,7 +30,6 @@ public class MainActivity9 extends AppCompatActivity {
     View container;
 
 
-
     public File ScreenShot(View view){
         view.setDrawingCacheEnabled(true);  //화면에 뿌릴때 캐시를 사용하게 한다
 
