@@ -9,6 +9,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -31,6 +32,7 @@ public class MainActivity15 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main15);
 
@@ -85,7 +87,7 @@ public class MainActivity15 extends AppCompatActivity {
         wheelItems.add(new WheelItem(Color.parseColor("#9C27B0"), bitmap, "패스트푸드"));
         wheelItems.add(new WheelItem(Color.parseColor("#3F51B5"), bitmap, "양식"));
         wheelItems.add(new WheelItem(Color.parseColor("#1E88E5"), bitmap, "힌식"));
-        wheelItems.add(new WheelItem(Color.parseColor("#009688"), bitmap, "족발"));
+        wheelItems.add(new WheelItem(Color.parseColor("#009688"), bitmap, "일식"));
         wheelItems.add(new WheelItem(Color.parseColor("#1E4432"), bitmap, "고기"));
         wheelItems.add(new WheelItem(Color.parseColor("#A52356"), bitmap, "분식"));
 

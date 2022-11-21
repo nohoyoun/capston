@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 
 public class MainActivity2 extends AppCompatActivity {
@@ -12,8 +13,21 @@ public class MainActivity2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main2);
+        super.onCreate(savedInstanceState);
+
+        String dir = "./src";
+        String file_path = "main.java";
+
+        Button button0 = findViewById(R.id.random);
+        button0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity2.this, MainActivity20.class);
+                startActivity(intent);
+            }
+        });
 
         Button button1 = findViewById(R.id.spearbtn);
         button1.setOnClickListener(new View.OnClickListener() {
@@ -74,14 +88,6 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity2.this, select_main.class);
-                startActivity(intent);
-            }
-        });
-        Button button8 = findViewById(R.id.ddd);
-        button8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity2.this, MainActivity20.class);
                 startActivity(intent);
             }
         });
