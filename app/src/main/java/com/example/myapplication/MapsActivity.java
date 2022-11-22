@@ -70,7 +70,7 @@ public class MapsActivity extends AppCompatActivity
             //**********************************************221120**//
          static public EditText location_name;  //게임 장소 입력받는 변수
            static public String name;
-            MarkerOptions markerOptions1 = new MarkerOptions();
+
 
 
             //221118 private ActionBar marker;
@@ -353,9 +353,12 @@ public class MapsActivity extends AppCompatActivity
 
             @Override
             public boolean onMarkerClick(@NonNull Marker marker) {
+                MarkerOptions markerOptions1 = new MarkerOptions();
 
-                markerOptions1.title(String.valueOf(marker));
-
+                markerOptions1.position(new LatLng(37.52487, 126.92723))
+                .title(marker.getTitle())
+                .snippet(marker.getSnippet());
+                marker.showInfoWindow();
 
                 name = String.valueOf(marker.getTitle());
                 // MapsActivity.location_name.getText();  ==> 다른 클래스에서 변수사용할 떄 이용
