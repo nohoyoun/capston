@@ -3,49 +3,46 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageButton;
 
-public class MainActivity18 extends AppCompatActivity {
-
-    ImageButton room1, room2, room3;
+public class Select_Menu_Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main18);
+        setContentView(R.layout.activity_select_menu);
 
-        room1 = findViewById(R.id.room1);
-        room2 = findViewById(R.id.room2);
-        room3 = findViewById(R.id.room3);
-
-        room1.setOnClickListener(new View.OnClickListener() {
+        ImageButton button1 = findViewById(R.id.selectperson);
+        button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity18.this, MainActivity4.class);
-                startActivity(intent);
-            }
-
-        });
-
-        room2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity18.this, MainActivity4b.class);
+                Intent intent = new Intent(Select_Menu_Activity.this, MainActivity2.class);
                 startActivity(intent);
             }
         });
 
-        room3.setOnClickListener(new View.OnClickListener() {
+        ImageButton button2 = findViewById(R.id.selectfood);
+        button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity18.this, MainActivity4c.class);
+                Intent intent = new Intent(Select_Menu_Activity.this, RandomMain18Activity.class);
                 startActivity(intent);
             }
         });
+
+        ImageButton button3 = findViewById(R.id.selectcafe);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Select_Menu_Activity.this, MapsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 }

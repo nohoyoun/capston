@@ -23,11 +23,11 @@ public class RandomMain18Activity extends AppCompatActivity {
         num = 1;
         switch (num){
             case 1 :
-                Intent intent = new Intent(RandomMain18Activity.this, MainActivity22.class);
+                Intent intent = new Intent(RandomMain18Activity.this, Random_Food_Choice_Slot_Activity.class);
                 startActivity(intent);
                 break;
             case 2 :
-                Intent intent2 = new Intent(RandomMain18Activity.this, MainActivity15.class);
+                Intent intent2 = new Intent(RandomMain18Activity.this, Food_Choice_Roullet_Activity.class);
                 startActivity(intent2);
                 break;
         }

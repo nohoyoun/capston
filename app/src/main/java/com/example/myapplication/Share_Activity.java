@@ -3,26 +3,20 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
-public class MainActivity9 extends AppCompatActivity {
+public class Share_Activity extends AppCompatActivity {
 
     Button btn1;
     TextView txt1;
@@ -51,7 +45,7 @@ public class MainActivity9 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main9);
+        setContentView(R.layout.activity_share);
 
         btn1 = findViewById(R.id.sharebtn);
         txt1 = (TextView)findViewById(R.id.name1);

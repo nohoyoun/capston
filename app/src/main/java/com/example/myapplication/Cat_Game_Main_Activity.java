@@ -6,44 +6,45 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.ImageButton;
 
-public class select_main extends AppCompatActivity {
+public class Cat_Game_Main_Activity extends AppCompatActivity {
+
+    ImageButton room1, room2, room3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_select_main);
+        setContentView(R.layout.activity_cat_game_main);
 
-        ImageButton button1 = findViewById(R.id.selectperson);
-        button1.setOnClickListener(new View.OnClickListener() {
+        room1 = findViewById(R.id.room1);
+        room2 = findViewById(R.id.room2);
+        room3 = findViewById(R.id.room3);
+
+        room1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(select_main.this, MainActivity2.class);
+                Intent intent = new Intent(Cat_Game_Main_Activity.this, Cat_Game_1_Activity.class);
+                startActivity(intent);
+            }
+
+        });
+
+        room2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Cat_Game_Main_Activity.this, Cat_Game_2_Activity.class);
                 startActivity(intent);
             }
         });
 
-        ImageButton button2 = findViewById(R.id.selectfood);
-        button2.setOnClickListener(new View.OnClickListener() {
+        room3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(select_main.this, RandomMain18Activity.class);
+                Intent intent = new Intent(Cat_Game_Main_Activity.this, Cat_Game_3_Activity.class);
                 startActivity(intent);
             }
         });
-
-        ImageButton button3 = findViewById(R.id.selectcafe);
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(select_main.this, MapsActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
     }
 }

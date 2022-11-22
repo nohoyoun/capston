@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class MainActivity15 extends AppCompatActivity {
+public class Food_Choice_Roullet_Activity extends AppCompatActivity {
 
     //선언
     private LuckyWheel luckyWheel;
@@ -35,7 +35,7 @@ public class MainActivity15 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main15);
+        setContentView(R.layout.activity_food_choice_roullet);
 
         //변수에 담기
         luckyWheel = findViewById(R.id.luck_wheel);
@@ -55,7 +55,7 @@ public class MainActivity15 extends AppCompatActivity {
                 String money = wheelItem.text;
 
                 //메시지
-                Toast.makeText(MainActivity15.this, money, Toast.LENGTH_SHORT).show();
+                Toast.makeText(Food_Choice_Roullet_Activity.this, money, Toast.LENGTH_SHORT).show();
                 //메세지 텍스트를 바탕으로 지도에서 음식점 찾기기능 추가
                 //intent 이용해서 넘겨주기
             }

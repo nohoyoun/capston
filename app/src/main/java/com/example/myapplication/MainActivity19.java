@@ -74,7 +74,7 @@ public class MainActivity19 extends AppCompatActivity {
 
                 String temp = teamname.getText().toString();
 
-                Intent intent = new Intent(MainActivity19.this, MainActivity9.class);
+                Intent intent = new Intent(MainActivity19.this, Share_Activity.class);
                 intent.putExtra("push", temp);
                 startActivity(intent);
             }

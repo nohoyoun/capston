@@ -2,21 +2,19 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Random;
 
 
 
-public class MainActivity22 extends AppCompatActivity {
+public class Random_Food_Choice_Slot_Activity extends AppCompatActivity {
 
     private Animation flowAnim;
     private Button mSlotMechine;
@@ -28,7 +26,7 @@ public class MainActivity22 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main22);
+        setContentView(R.layout.activity_food_choice_slot);
         mSlotText = (TextView) findViewById(R.id.slottext);
 
         i = random.nextInt(9) + 1;
