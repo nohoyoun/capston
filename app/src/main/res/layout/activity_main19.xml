@@ -135,7 +135,7 @@
                 android:textSize="30dp"
                 android:text="당첨입니다!">
             </TextView>
-    </LinearLayout>
+        </LinearLayout>
 
 
     </LinearLayout>

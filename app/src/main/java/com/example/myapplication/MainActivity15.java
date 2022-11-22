@@ -30,6 +30,7 @@ public class MainActivity15 extends AppCompatActivity {
 
     String point;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);

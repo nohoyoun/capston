@@ -17,10 +17,33 @@
 
     <Button
         android:text= "장소검색"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.2"
-        android:id="@+id/button"/>
+        android:layout_width= "400dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1"
+        android:orientation="horizontal"
+        android:id="@+id/button_search"/>
+
+
+    <EditText
+        android:id="@+id/edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart = "100dp"
+        android:layout_marginLeft="100dp"
+        android:hint="장소이름을 입력하시오."
+        android:selectAllOnFocus="true"
+        android:maxLength="20"
+        android:text="" />
+
+    <Button
+        android:text= "장소입력"
+        android:layout_width= "wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1"
+        android:layout_marginStart = "40dp"
+        android:layout_marginLeft="40dp"
+        android:orientation="horizontal"
+        android:id="@+id/button_insert"/>
 
 
 </LinearLayout>
