@@ -5,21 +5,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.view.Window;
 import android.widget.ImageButton;
 
-public class select_main extends AppCompatActivity {
+public class Select_Menu_Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_select_main);
+        setContentView(R.layout.activity_select_menu);
 
         ImageButton button1 = findViewById(R.id.selectperson);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(select_main.this, MainActivity2.class);
+                Intent intent = new Intent(Select_Menu_Activity.this, MainActivity2.class);
                 startActivity(intent);
             }
         });
@@ -28,7 +29,7 @@ public class select_main extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(select_main.this, MainActivity15.class);
+                Intent intent = new Intent(Select_Menu_Activity.this, RandomMain18Activity.class);
                 startActivity(intent);
             }
         });
@@ -37,7 +38,7 @@ public class select_main extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(select_main.this, MapsActivity.class);
+                Intent intent = new Intent(Select_Menu_Activity.this, MapsActivity.class);
                 startActivity(intent);
             }
         });

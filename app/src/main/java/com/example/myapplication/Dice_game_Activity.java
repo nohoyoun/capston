@@ -3,15 +3,12 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -19,11 +16,10 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Random;
 
-public class MainActivity5 extends AppCompatActivity {
+public class Dice_game_Activity extends AppCompatActivity {
 
     private RadioGroup choiceDice;
     RadioButton dice_one;
@@ -60,7 +56,7 @@ public class MainActivity5 extends AppCompatActivity {
         switch(item.getItemId())
         {
             case R.id.personscore: {
-                Intent intent = new Intent(MainActivity5.this, MainActivity14.class);
+                Intent intent = new Intent(Dice_game_Activity.this, MainActivity14.class);
                 startActivity(intent);
             }
 
@@ -70,8 +66,9 @@ public class MainActivity5 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main5);
+        setContentView(R.layout.activity_dice_game);
 
         final Animation shake = AnimationUtils.loadAnimation(
                 this,R.anim.shake);
@@ -80,7 +77,7 @@ public class MainActivity5 extends AppCompatActivity {
         editor = pref.edit();
         editor.clear().apply();
 
-        Intent intent = new Intent(MainActivity5.this, MainActivity13.class);
+        Intent intent = new Intent(Dice_game_Activity.this, MainActivity13.class);
         startActivity(intent);
 
 
@@ -232,34 +229,34 @@ public class MainActivity5 extends AppCompatActivity {
                 } else if (count == 3) {
                     nametag.setText(count-1 + "번째"+ name2 +"의 숫자는" + a + "입니다.");
                     if(name3.length() == 0) {
-                        Intent intent = new Intent(MainActivity5.this, MainActivity14.class);
+                        Intent intent = new Intent(Dice_game_Activity.this, MainActivity14.class);
                         startActivity(intent);
                     }
                 }else if (count == 4) {
                     nametag.setText(count-1 + "번째"+ name3 +"의 숫자는" + a + "입니다.");
                     if(name4.length() == 0) {
-                        Intent intent = new Intent(MainActivity5.this, MainActivity14.class);
+                        Intent intent = new Intent(Dice_game_Activity.this, MainActivity14.class);
                         startActivity(intent);
                     }
                 }else if (count == 5) {
                     //name1에 대한 숫자가 있을경우의 조건 작성
                     nametag.setText(count-1 + "번째"+ name4 +"의 숫자는" + a + "입니다.");
                     if(name5.length() == 0) {
-                        Intent intent = new Intent(MainActivity5.this, MainActivity14.class);
+                        Intent intent = new Intent(Dice_game_Activity.this, MainActivity14.class);
                         startActivity(intent);
                     }
                 }else if (count == 6) {
                     //name1에 대한 숫자가 있을경우의 조건 작성
                     nametag.setText(count-1 + "번째"+ name5 +"의 숫자는" + a + "입니다.");
                     if(name6.length() == 0) {
-                        Intent intent = new Intent(MainActivity5.this, MainActivity14.class);
+                        Intent intent = new Intent(Dice_game_Activity.this, MainActivity14.class);
                         startActivity(intent);
                     }
                 }else if (count == 7) {
                     //name1에 대한 숫자가 있을경우의 조건 작성
                     nametag.setText(count-1 + "번째"+ name6 +"의 숫자는" + a + "입니다.");
 
-                        Intent intent = new Intent(MainActivity5.this, MainActivity14.class);
+                        Intent intent = new Intent(Dice_game_Activity.this, MainActivity14.class);
                         startActivity(intent);
 
                 }

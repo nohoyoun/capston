@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:background="@drawable/coffetable"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/random"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:backgroundTint="#FFEB3B"
+            android:drawableLeft="@android:drawable/ic_menu_help"
+            android:text="랜덤게임선택"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/Dicebtn"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFEB3B"
+            android:drawableLeft="@drawable/dicemenu"
+            android:text="주사위 굴리기"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/spearbtn"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFEB3B"
+            android:drawableLeft="@drawable/spearmenu"
+            android:text="화살표 돌리기"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/horseracing"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFEB3B"
+            android:drawableLeft="@drawable/horsemenu"
+            android:text="경마게임"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/catbtn"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFEB3B"
+            android:drawableLeft="@drawable/catmenu"
+            android:text="고양이찾기"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/ham"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFEB3B"
+            android:drawableLeft="@drawable/hammenu"
+            android:text="랜덤 햄버거 쌓기"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/share"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFEB3B"
+            android:drawableLeft="@drawable/rullmenu"
+            android:text="룰렛 돌리기"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/end"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:backgroundTint="#FFEB3B"
+            android:drawableLeft="@android:drawable/ic_menu_revert"
+            android:text="뒤로가기"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

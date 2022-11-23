@@ -9,6 +9,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -20,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class MainActivity15 extends AppCompatActivity {
+public class Food_Choice_Roullet_Activity extends AppCompatActivity {
 
     //선언
     private LuckyWheel luckyWheel;
@@ -32,8 +33,9 @@ public class MainActivity15 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main15);
+        setContentView(R.layout.activity_food_choice_roullet);
 
         //변수에 담기
         luckyWheel = findViewById(R.id.luck_wheel);
@@ -53,7 +55,7 @@ public class MainActivity15 extends AppCompatActivity {
                 String money = wheelItem.text;
 
                 //메시지
-                Toast.makeText(MainActivity15.this, money, Toast.LENGTH_SHORT).show();
+                Toast.makeText(Food_Choice_Roullet_Activity.this, money, Toast.LENGTH_SHORT).show();
                 //메세지 텍스트를 바탕으로 지도에서 음식점 찾기기능 추가
                 //intent 이용해서 넘겨주기
             }
@@ -86,7 +88,7 @@ public class MainActivity15 extends AppCompatActivity {
         wheelItems.add(new WheelItem(Color.parseColor("#9C27B0"), bitmap, "패스트푸드"));
         wheelItems.add(new WheelItem(Color.parseColor("#3F51B5"), bitmap, "양식"));
         wheelItems.add(new WheelItem(Color.parseColor("#1E88E5"), bitmap, "힌식"));
-        wheelItems.add(new WheelItem(Color.parseColor("#009688"), bitmap, "족발"));
+        wheelItems.add(new WheelItem(Color.parseColor("#009688"), bitmap, "일식"));
         wheelItems.add(new WheelItem(Color.parseColor("#1E4432"), bitmap, "고기"));
         wheelItems.add(new WheelItem(Color.parseColor("#A52356"), bitmap, "분식"));
 

@@ -123,7 +123,7 @@ public class MainActivity14 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(MainActivity14.this, MainActivity9.class);
+                Intent intent = new Intent(MainActivity14.this, Share_Activity.class);
                 intent.putExtra("push", temp);
 
                 startActivity(intent);

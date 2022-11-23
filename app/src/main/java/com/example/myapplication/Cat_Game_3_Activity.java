@@ -2,17 +2,19 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Bundle;
+
 import android.content.Intent;
 import android.media.AudioManager;
 import android.media.SoundPool;
-import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 
 import java.util.Random;
 
-public class MainActivity4 extends AppCompatActivity {
+public class Cat_Game_3_Activity extends AppCompatActivity {
 
     Button btn1;
     Button btn2;
@@ -27,8 +29,9 @@ public class MainActivity4 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main4);
+        setContentView(R.layout.activity_main_activity4c);
 
         btn1 = findViewById(R.id.btn1);
         btn2 = findViewById(R.id.btn2);
@@ -37,7 +40,7 @@ public class MainActivity4 extends AppCompatActivity {
         btn5 = findViewById(R.id.btn5);
 
         number = random.nextInt(5) + 1;
-        cat_image = (ImageView)findViewById(R.id.cat1);
+        cat_image = (ImageView)findViewById(R.id.cat3);
         cat_image.setVisibility(View.INVISIBLE);
         sound = new SoundPool(5, AudioManager.STREAM_MUSIC,0);
         soundId = sound.load(this, R.raw.catfear,1);
@@ -56,7 +59,7 @@ public class MainActivity4 extends AppCompatActivity {
                     cat_image.setVisibility(View.VISIBLE);
                     sound.play(soundId, 1f, 1f, 0, 0, 1f);
 
-                    Intent intent = new Intent(MainActivity4.this, MainActivity10.class);
+                    Intent intent = new Intent(Cat_Game_3_Activity.this, MainActivity10.class);
                     startActivity(intent);
                 }else {
                     btn1.setVisibility(View.INVISIBLE);
@@ -80,7 +83,7 @@ public class MainActivity4 extends AppCompatActivity {
                     cat_image.setVisibility(View.VISIBLE);
                     sound.play(soundId, 1f, 1f, 0, 0, 1f);
 
-                    Intent intent = new Intent(MainActivity4.this, MainActivity10.class);
+                    Intent intent = new Intent(Cat_Game_3_Activity.this, MainActivity10.class);
                     startActivity(intent);
                 }else {
                     btn2.setVisibility(View.INVISIBLE);
@@ -103,7 +106,7 @@ public class MainActivity4 extends AppCompatActivity {
                     cat_image.setVisibility(View.VISIBLE);
                     sound.play(soundId, 1f, 1f, 0, 0, 1f);
 
-                    Intent intent = new Intent(MainActivity4.this, MainActivity10.class);
+                    Intent intent = new Intent(Cat_Game_3_Activity.this, MainActivity10.class);
                     startActivity(intent);
                 }
                 else {
@@ -127,7 +130,7 @@ public class MainActivity4 extends AppCompatActivity {
                     cat_image.setVisibility(View.VISIBLE);
                     sound.play(soundId, 1f, 1f, 0, 0, 1f);
 
-                    Intent intent = new Intent(MainActivity4.this, MainActivity10.class);
+                    Intent intent = new Intent(Cat_Game_3_Activity.this, MainActivity10.class);
                     startActivity(intent);
                 }
                 else {
@@ -151,7 +154,7 @@ public class MainActivity4 extends AppCompatActivity {
                     cat_image.setVisibility(View.VISIBLE);
                     sound.play(soundId, 1f, 1f, 0, 0, 1f);
 
-                    Intent intent = new Intent(MainActivity4.this, MainActivity10.class);
+                    Intent intent = new Intent(Cat_Game_3_Activity.this, MainActivity10.class);
                     startActivity(intent);
                 }
                 else {

@@ -1,11 +1,8 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Canvas;
@@ -17,6 +14,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
@@ -26,7 +24,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class MainActivity17 extends AppCompatActivity {
+public class Roullet_Game_Activity extends AppCompatActivity {
     private CircleManager circleManager;
     RelativeLayout layoutRoulette;
     
@@ -43,9 +41,9 @@ public class MainActivity17 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main17);
+        setContentView(R.layout.activity_roullet_game);
 
         tvResult = findViewById(R.id.tvResult);
         btnRotate = findViewById(R.id.btnRotate);
@@ -55,7 +53,7 @@ public class MainActivity17 extends AppCompatActivity {
         layoutRoulette.setVisibility(View.INVISIBLE);
         btnRotate.setVisibility(View.INVISIBLE);
 
-        Intent intent = new Intent(MainActivity17.this, MainActivity13.class);
+        Intent intent = new Intent(Roullet_Game_Activity.this, MainActivity13.class);
         startActivity(intent);
 
         sharedPreferences = getSharedPreferences("pref1", MODE_PRIVATE);
@@ -71,7 +69,7 @@ public class MainActivity17 extends AppCompatActivity {
 
                 num_roulette = roulnum;//activity13으로부터 숫자 넘겨받기 '완'
                 STRINGS = setRandom(1000, num_roulette);
-                circleManager = new CircleManager(MainActivity17.this, num_roulette);
+                circleManager = new CircleManager(Roullet_Game_Activity.this, num_roulette);
                 layoutRoulette.addView(circleManager);
             }
         });
@@ -233,7 +231,7 @@ public class MainActivity17 extends AppCompatActivity {
     // if you want use AlertDialog then use this
     private void buildAlert(String text) {
 
-        Intent intent = new Intent(MainActivity17.this, MainActivity11.class);
+        Intent intent = new Intent(Roullet_Game_Activity.this, MainActivity11.class);
         intent.putExtra("team", text);
         startActivity(intent);
 

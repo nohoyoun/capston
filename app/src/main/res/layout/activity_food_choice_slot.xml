@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity20"
+    tools:context=".Random_Food_Choice_Slot_Activity"
     android:orientation="vertical">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="-20dp"
             android:gravity="center"
-            android:text="주사위굴리기\n화살표돌리기\n경마게임\n고양이찾기\n랜덤햄버거쌓기\n룰렛돌리기"
+            android:text="치킨\n피자\n햄버거\n중식\n양식\n한식\n족발\n고기\n분식"
             android:textColor="@color/white"
             android:textSize="35dp"></TextView>
         <ImageView
@@ -39,7 +39,7 @@
             android:id="@+id/fr"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="tf">
+            android:text="돌리기">
 
         </Button>
 

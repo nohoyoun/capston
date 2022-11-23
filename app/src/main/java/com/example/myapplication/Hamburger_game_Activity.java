@@ -3,10 +3,9 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.media.AudioManager;
-import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -14,7 +13,7 @@ import android.widget.ImageView;
 
 import java.util.Random;
 
-public class MainActivity8 extends AppCompatActivity {
+public class Hamburger_game_Activity extends AppCompatActivity {
 
     Button btn1;
     Button go;
@@ -26,8 +25,9 @@ public class MainActivity8 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main8);
+        setContentView(R.layout.activity_hamburger_game);
 
         btn1 = findViewById(R.id.hamburger);
 
@@ -99,7 +99,7 @@ public class MainActivity8 extends AppCompatActivity {
                         two.setImageResource(R.drawable.bunup);
                         two.setVisibility(View.VISIBLE);
                         //코드입력
-                        Intent intent = new Intent(MainActivity8.this, MainActivity10.class);
+                        Intent intent = new Intent(Hamburger_game_Activity.this, MainActivity10.class);
                         startActivity(intent);
                         btn1.setVisibility(View.INVISIBLE);
 
@@ -130,7 +130,7 @@ public class MainActivity8 extends AppCompatActivity {
                         three.setImageResource(R.drawable.bunup);
                         three.setVisibility(View.VISIBLE);
                         //코드입력
-                        Intent intent = new Intent(MainActivity8.this, MainActivity10.class);
+                        Intent intent = new Intent(Hamburger_game_Activity.this, MainActivity10.class);
                         startActivity(intent);
                         btn1.setVisibility(View.INVISIBLE);
                     }
@@ -161,7 +161,7 @@ public class MainActivity8 extends AppCompatActivity {
                         four.setImageResource(R.drawable.bunup);
                         four.setVisibility(View.VISIBLE);
                         //코드입력
-                        Intent intent = new Intent(MainActivity8.this, MainActivity10.class);
+                        Intent intent = new Intent(Hamburger_game_Activity.this, MainActivity10.class);
                         startActivity(intent);
                         btn1.setVisibility(View.INVISIBLE);
                     }
@@ -192,7 +192,7 @@ public class MainActivity8 extends AppCompatActivity {
                         five.setImageResource(R.drawable.bunup);
                         five.setVisibility(View.VISIBLE);
                         //코드입력
-                        Intent intent = new Intent(MainActivity8.this, MainActivity10.class);
+                        Intent intent = new Intent(Hamburger_game_Activity.this, MainActivity10.class);
                         startActivity(intent);
                         btn1.setVisibility(View.INVISIBLE);
                     }
@@ -223,7 +223,7 @@ public class MainActivity8 extends AppCompatActivity {
                         six.setImageResource(R.drawable.bunup);
                         six.setVisibility(View.VISIBLE);
                         //코드입력
-                        Intent intent = new Intent(MainActivity8.this, MainActivity10.class);
+                        Intent intent = new Intent(Hamburger_game_Activity.this, MainActivity10.class);
                         startActivity(intent);
                         btn1.setVisibility(View.INVISIBLE);
                     }
@@ -254,7 +254,7 @@ public class MainActivity8 extends AppCompatActivity {
                         seven.setImageResource(R.drawable.bunup);
                         seven.setVisibility(View.VISIBLE);
                         //코드입력
-                        Intent intent = new Intent(MainActivity8.this, MainActivity10.class);
+                        Intent intent = new Intent(Hamburger_game_Activity.this, MainActivity10.class);
                         startActivity(intent);
                         btn1.setVisibility(View.INVISIBLE);
                     }
@@ -285,7 +285,7 @@ public class MainActivity8 extends AppCompatActivity {
                         eight.setImageResource(R.drawable.bunup);
                         eight.setVisibility(View.VISIBLE);
                         //코드입력
-                        Intent intent = new Intent(MainActivity8.this, MainActivity10.class);
+                        Intent intent = new Intent(Hamburger_game_Activity.this, MainActivity10.class);
                         startActivity(intent);
                         btn1.setVisibility(View.INVISIBLE);
                     }
@@ -316,7 +316,7 @@ public class MainActivity8 extends AppCompatActivity {
                         nine.setImageResource(R.drawable.bunup);
                         nine.setVisibility(View.VISIBLE);
                         //코드입력
-                        Intent intent = new Intent(MainActivity8.this, MainActivity10.class);
+                        Intent intent = new Intent(Hamburger_game_Activity.this, MainActivity10.class);
                         startActivity(intent);
                         btn1.setVisibility(View.INVISIBLE);
                     }
@@ -347,7 +347,7 @@ public class MainActivity8 extends AppCompatActivity {
                     ten.setImageResource(R.drawable.bunup);
                     ten.setVisibility(View.VISIBLE);
                     //코드입력
-                        Intent intent = new Intent(MainActivity8.this, MainActivity10.class);
+                        Intent intent = new Intent(Hamburger_game_Activity.this, MainActivity10.class);
                         startActivity(intent);
                         btn1.setVisibility(View.INVISIBLE);
                     }
@@ -356,7 +356,7 @@ public class MainActivity8 extends AppCompatActivity {
                 eleven.setImageResource(R.drawable.bunup);
                 eleven.setVisibility(View.VISIBLE);
                 btn1.setVisibility(View.INVISIBLE);
-                Intent intent = new Intent(MainActivity8.this, MainActivity10.class);
+                Intent intent = new Intent(Hamburger_game_Activity.this, MainActivity10.class);
                 startActivity(intent);
             }
 

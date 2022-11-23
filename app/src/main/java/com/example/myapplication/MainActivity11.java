@@ -43,7 +43,7 @@ public class MainActivity11 extends AppCompatActivity {
             public void onClick(View view) {
                 String temp = pushtxt.getText().toString();
 
-                Intent intent = new Intent(MainActivity11.this, MainActivity9.class);
+                Intent intent = new Intent(MainActivity11.this, Share_Activity.class);
                 intent.putExtra("push", temp);
 
                 startActivity(intent);

@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 public class MainActivity10 extends AppCompatActivity {
 
-
     TextView pushtxt;
 
     @Override
@@ -40,7 +39,7 @@ public class MainActivity10 extends AppCompatActivity {
             public void onClick(View view) {
                 String temp = pushtxt.getText().toString();
 
-                Intent intent = new Intent(MainActivity10.this, MainActivity9.class);
+                Intent intent = new Intent(MainActivity10.this, Share_Activity.class);
                 intent.putExtra("push", temp);
 
                 startActivity(intent);

@@ -5,17 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Random;
 
 
 
-public class MainActivity20 extends AppCompatActivity {
+public class Random_Game_Choice_Slot_Activity extends AppCompatActivity {
 
     class Car extends Thread{
         public void run() {
@@ -38,8 +38,9 @@ public class MainActivity20 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main20);
+        setContentView(R.layout.activity_game_choice_slot);
         mSlotText = (TextView) findViewById(R.id.slottext);
 
         i = random.nextInt(6) + 1;
@@ -94,37 +95,37 @@ public class MainActivity20 extends AppCompatActivity {
                         switch (j) {
                             case 1 : {
                                 c.start();
-                                Intent intent = new Intent(MainActivity20.this, MainActivity5.class);
+                                Intent intent = new Intent(Random_Game_Choice_Slot_Activity.this, Dice_game_Activity.class);
                                 startActivity(intent);
                                 break;
                             }
                             case 2 : {
                                 c.start();
-                                Intent intent = new Intent(MainActivity20.this, MainActivity3.class);
+                                Intent intent = new Intent(Random_Game_Choice_Slot_Activity.this, Niddle_game_Activity.class);
                                 startActivity(intent);
                                 break;
                             }
                             case 3 : {
                                 c.start();
-                                Intent intent = new Intent(MainActivity20.this, MainActivity12.class);
+                                Intent intent = new Intent(Random_Game_Choice_Slot_Activity.this, Horse_game_Activity.class);
                                 startActivity(intent);
                                 break;
                             }
                             case 4 : {
                                 c.start();
-                                Intent intent = new Intent(MainActivity20.this, MainActivity18.class);
+                                Intent intent = new Intent(Random_Game_Choice_Slot_Activity.this, Cat_Game_Main_Activity.class);
                                 startActivity(intent);
                                 break;
                             }
                             case 5 : {
                                 c.start();
-                                Intent intent = new Intent(MainActivity20.this, MainActivity8.class);
+                                Intent intent = new Intent(Random_Game_Choice_Slot_Activity.this, Hamburger_game_Activity.class);
                                 startActivity(intent);
                                 break;
                             }
                             case 6 : {
                                 c.start();
-                                Intent intent = new Intent(MainActivity20.this, MainActivity17.class);
+                                Intent intent = new Intent(Random_Game_Choice_Slot_Activity.this, Roullet_Game_Activity.class);
                                 startActivity(intent);
                                 break;
                             }

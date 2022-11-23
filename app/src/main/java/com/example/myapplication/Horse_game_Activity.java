@@ -2,26 +2,23 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.Random;
 
-public class MainActivity12 extends AppCompatActivity {
+public class Horse_game_Activity extends AppCompatActivity {
 
     ImageView img;
     ImageView img2;
@@ -46,8 +43,9 @@ public class MainActivity12 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main12);
+        setContentView(R.layout.activity_horse_game);
 
         img = (ImageView)findViewById(R.id.horse1);
         img2 = (ImageView)findViewById(R.id.horse2);
@@ -60,7 +58,7 @@ public class MainActivity12 extends AppCompatActivity {
         number3 = random3.nextInt(200)*3+15000;
         number4 = random4.nextInt(200)*3+15000;
 
-        Intent intent = new Intent(MainActivity12.this, MainActivity16.class);
+        Intent intent = new Intent(Horse_game_Activity.this, MainActivity16.class);
         startActivity(intent);
 
 
@@ -381,7 +379,7 @@ public class MainActivity12 extends AppCompatActivity {
                             if(number1 == j) {
 
 
-                                Intent intent = new Intent(MainActivity12.this, MainActivity19.class);
+                                Intent intent = new Intent(Horse_game_Activity.this, MainActivity19.class);
                                 startActivity(intent);
                             }
                         }
@@ -398,7 +396,7 @@ public class MainActivity12 extends AppCompatActivity {
                     public void onAnimationEnd(Animation animation) {
                         img2.setImageResource(R.drawable.flag);
                         if(number2 == j) {
-                            Intent intent = new Intent(MainActivity12.this, MainActivity19.class);
+                            Intent intent = new Intent(Horse_game_Activity.this, MainActivity19.class);
                             startActivity(intent);
                         }
                     }
@@ -415,7 +413,7 @@ public class MainActivity12 extends AppCompatActivity {
                     public void onAnimationEnd(Animation animation) {
                         img3.setImageResource(R.drawable.flag);
                         if(number3 == j) {
-                            Intent intent = new Intent(MainActivity12.this, MainActivity19.class);
+                            Intent intent = new Intent(Horse_game_Activity.this, MainActivity19.class);
                             startActivity(intent);
                         }
                     }
@@ -432,7 +430,7 @@ public class MainActivity12 extends AppCompatActivity {
                     public void onAnimationEnd(Animation animation) {
                         img4.setImageResource(R.drawable.flag);
                         if(number4 == j) {
-                            Intent intent = new Intent(MainActivity12.this, MainActivity19.class);
+                            Intent intent = new Intent(Horse_game_Activity.this, MainActivity19.class);
                             startActivity(intent);
                         }
                     }

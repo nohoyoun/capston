@@ -282,6 +282,6 @@
                 android:text="쏘러가기!"
                 android:textSize="13dp"></Button>
         </LinearLayout>
-    </LinearLayout>
+        </LinearLayout>
 
-</LinearLayout>
+    </LinearLayout>

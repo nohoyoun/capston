@@ -7,16 +7,15 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
+import android.view.Window;
 import android.view.animation.AccelerateDecelerateInterpolator;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
 
 import java.util.Random;
 
-public class MainActivity3 extends AppCompatActivity {
+public class Niddle_game_Activity extends AppCompatActivity {
 
     ImageView iv_needle;
     ImageView table;
@@ -28,8 +27,9 @@ public class MainActivity3 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.activity_niddle_game);
 
         // 애니메이션 이미지 인식
         sel = findViewById(R.id.sel);
@@ -83,7 +83,7 @@ public class MainActivity3 extends AppCompatActivity {
                 @Override
                 public void onAnimationEnd(Animator animation) {
                     super.onAnimationEnd(animation);
-                    Intent intent = new Intent(MainActivity3.this, MainActivity10.class);
+                    Intent intent = new Intent(Niddle_game_Activity.this, MainActivity10.class);
                     startActivity(intent);
 
                 }
