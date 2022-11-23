@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -19,7 +20,7 @@ import java.io.IOException;
 public class Share_Activity extends AppCompatActivity {
 
     Button btn1;
-    TextView txt1;
+    TextView txt1, txt2;
 
     public File ScreenShot(View view){
         view.setDrawingCacheEnabled(true);  //화면에 뿌릴때 캐시를 사용하게 한다
@@ -49,11 +50,15 @@ public class Share_Activity extends AppCompatActivity {
 
         btn1 = findViewById(R.id.sharebtn);
         txt1 = (TextView)findViewById(R.id.name1);
+        txt2 = (TextView)findViewById(R.id.restaurant);
 
         Intent intent = getIntent();
         String push = intent.getStringExtra("push");
         txt1.setText(push);
 
+        SharedPreferences sharedPreferences = getSharedPreferences("pref3", MODE_PRIVATE);
+        String restname = sharedPreferences.getString("restname", "알빠노");
+        txt2.setText(restname);
 
         btn1.setOnClickListener(new View.OnClickListener() {
 

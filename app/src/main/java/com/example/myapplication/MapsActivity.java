@@ -1,8 +1,10 @@
 package com.example.myapplication;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -68,9 +70,10 @@ public class MapsActivity extends AppCompatActivity
         {
 
             //**********************************************221120**//
-         static public EditText location_name;  //게임 장소 입력받는 변수
-           static public String name;
-
+            static public EditText location_name;  //게임 장소 입력받는 변수
+            static public String name;
+            SharedPreferences pref;          // 프리퍼런스-11/23 추가부분
+            SharedPreferences.Editor editor; // 에디터-11/23 추가부분
 
 
             //221118 private ActionBar marker;
@@ -189,7 +192,7 @@ public class MapsActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-
+        pref = getSharedPreferences("pref3", Activity.MODE_PRIVATE);//11/23 추가부분
 
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON,
@@ -225,6 +228,9 @@ public class MapsActivity extends AppCompatActivity
        // location_name = (EditText) findViewById(R.id.text);
 
         previous_marker = new ArrayList<Marker>();
+
+        editor = pref.edit();//11/23 추가부분
+        editor.clear().apply();//11/23 추가부분
 
         Button button = (Button)findViewById(R.id.button_search);
         button.setOnClickListener(new View.OnClickListener(){
@@ -263,10 +269,14 @@ public class MapsActivity extends AppCompatActivity
                 // 아이콘 설정 !!dlg.setIcon(R.drawable.icon주소);
 
                 //버튼 클릭시! (확인)
+                //여기다 sharedpreference
                 dlg.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int which) {
                         // 토스트 메시지
+                        String restname = location_name.getText().toString();//11/23 추가분
+                        editor.putString("restname", restname);//11/23 추가분
+                        editor.apply();//11/23 추가분
                         Toast.makeText(MapsActivity.this, location_name.getText() +"에서 복불복 게임을 진행합니다.", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getBaseContext(), Random_Game_Choice_Slot_Activity.class);
                         startActivity(intent);
