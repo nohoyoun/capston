@@ -42,12 +42,15 @@ public class Cat_Game_3_Activity extends AppCompatActivity {
         number = random.nextInt(5) + 1;
         cat_image = (ImageView)findViewById(R.id.cat3);
         cat_image.setVisibility(View.INVISIBLE);
+
         sound = new SoundPool(5, AudioManager.STREAM_MUSIC,0);
         soundId = sound.load(this, R.raw.catfear,1);
+
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 int number1 = 1;
 
                 if(number == number1){
