@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -48,6 +49,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 
+import io.github.muddz.styleabletoast.StyleableToast;
 import noman.googleplaces.NRPlaces;
 import noman.googleplaces.Place;
 import noman.googleplaces.PlaceType;
@@ -136,8 +138,8 @@ public class MapsActivity extends AppCompatActivity
 
     private static final String TAG = "googlemap_example";
     private static final int GPS_ENABLE_REQUEST_CODE = 2001;
-    private static final int UPDATE_INTERVAL_MS = 1000;  // 1초
-    private static final int FASTEST_UPDATE_INTERVAL_MS = 500; // 0.5초
+    private static final int UPDATE_INTERVAL_MS = 2500;  // 1초
+    private static final int FASTEST_UPDATE_INTERVAL_MS = 2000; // 0.5초
 
 
     // onRequestPermissionsResult에서 수신된 결과에서 ActivityCompat.requestPermissions를 사용한 퍼미션 요청을 구별하기 위해 사용됩니다.
@@ -171,7 +173,7 @@ public class MapsActivity extends AppCompatActivity
                 .listener(MapsActivity.this)
                 .key("AIzaSyC1RfRmQR7bhxDe_RbZ0y1mri_e9UXjlJk")
                 .latlng(location.latitude, location.longitude)//현재 위치
-                .radius(1000) //500 미터 내에서 검색
+                .radius(500) //500 미터 내에서 검색
                 .type(PlaceType.RESTAURANT) //음식점
                 //.type(PlaceType.STORE) //음식점
                 //.type(PlaceType.CHURCH) //음식점
@@ -208,8 +210,6 @@ public class MapsActivity extends AppCompatActivity
                 .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
                 .setInterval(UPDATE_INTERVAL_MS)
                 .setFastestInterval(FASTEST_UPDATE_INTERVAL_MS);
-
-
 
         LocationSettingsRequest.Builder builder =
                 new LocationSettingsRequest.Builder();
@@ -261,7 +261,13 @@ public class MapsActivity extends AppCompatActivity
             @Override
             public void onClick(View v){
 
-
+              /*  new StyleableToast   --> toast 메세지 디자인 보완
+                        .Builder(c)
+                        .text("Hello world!")
+                        .textColor(Color.WHITE)
+                        .backgroundColor(Color.BLUE)
+                        .show();
+*/
 
                 AlertDialog.Builder dlg = new AlertDialog.Builder(MapsActivity.this);
                 dlg.setTitle("게임 진행알림"); // 제목
@@ -274,6 +280,7 @@ public class MapsActivity extends AppCompatActivity
                     @Override
                     public void onClick(DialogInterface dialogInterface, int which) {
                         // 토스트 메시지
+
                         String restname = location_name.getText().toString();//11/23 추가분
                         editor.putString("restname", restname);//11/23 추가분
                         editor.apply();//11/23 추가분
