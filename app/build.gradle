@@ -58,4 +58,9 @@ dependencies {
     implementation 'noman.placesapi:placesAPI:1.1.3'
     implementation 'com.github.mmoamenn:LuckyWheel_Android:0.3.0'
 
+    // Toast message better the UI
+    dependencies {
+        implementation 'io.github.muddz:styleabletoast:2.4.0'
+    }
+
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
     <style name="mytoast">
         <item name="stTextBold">true</item>
         <item name="stTextColor">#fff</item>
@@ -15,4 +15,4 @@
         <item name="stGravity">top</item> top or center
         <item name="stRadius">5dp</item>
     </style>s
-</PreferenceScreen>
+</resources>

@@ -12,8 +12,6 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-
-
 public class Random_Food_Choice_Slot_Activity extends AppCompatActivity {
 
     private Animation flowAnim;
@@ -21,6 +19,7 @@ public class Random_Food_Choice_Slot_Activity extends AppCompatActivity {
     private TextView mSlotText;
     Random random = new Random();
     int i;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
