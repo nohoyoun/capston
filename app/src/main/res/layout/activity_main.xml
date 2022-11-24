@@ -29,7 +29,8 @@
         android:id="@+id/startbtn"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="시작하기"/>
+        android:text="시작하기"
+        android:background="@drawable/toast_shape"/>
 
     <Button
         android:id="@+id/help"

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Random_Game_Choice_Slot_Activity"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_weight="1"
+        >
+
+        <TextView
+            android:id="@+id/slottext"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="-20dp"
+            android:gravity="center"
+            android:text="주사위굴리기\n화살표돌리기\n경마게임\n고양이찾기\n랜덤햄버거쌓기\n룰렛돌리기"
+            android:textColor="@color/white"
+            android:textSize="35dp"></TextView>
+        <ImageView
+            android:layout_width="1000dp"
+            android:layout_height="1000dp"
+            android:layout_gravity="center"
+            android:src="@drawable/slot"></ImageView>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="12"
+        >
+        <Button
+            android:id="@+id/fr"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="돌리기">
+
+            </Button>
+
+    </LinearLayout>
+
+</LinearLayout>

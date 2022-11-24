@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Horse_game_Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/grass"
+                >
+                <ImageView
+                    android:id="@+id/horse1"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="50dp"
+                    android:src="@drawable/horse_b"></ImageView>
+
+                <ImageView
+                    android:id="@+id/horse2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="-100dp"
+                    android:layout_marginTop="100dp"
+                    android:src="@drawable/horse2_b"></ImageView>
+
+                <ImageView
+                    android:id="@+id/horse3"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="-100dp"
+                    android:layout_marginTop="150dp"
+                    android:src="@drawable/horse3_b"></ImageView>
+
+                <ImageView
+                    android:id="@+id/horse4"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="-100dp"
+                    android:layout_marginTop="200dp"
+                    android:src="@drawable/horse4_b"></ImageView>
+                <ImageView
+                    android:id="@+id/flag"
+                    android:layout_width="100dp"
+                    android:layout_height="400dp"
+                    android:layout_marginStart="600dp"
+                    android:layout_marginTop="-90dp"
+                    android:src="@drawable/flag"></ImageView>
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="8">
+        <Button
+            android:id="@+id/start1"
+            android:backgroundTint="@color/purple_500"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="경기 시작!"
+            >
+
+
+        </Button>
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,15 +1,12 @@
 package com.example.myapplication;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import android.Manifest;
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -20,7 +17,14 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -45,35 +49,55 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 
-import noman.googleplaces.PlacesListener;
-
+import io.github.muddz.styleabletoast.StyleableToast;
 import noman.googleplaces.NRPlaces;
 import noman.googleplaces.Place;
 import noman.googleplaces.PlaceType;
 import noman.googleplaces.PlacesException;
+import noman.googleplaces.PlacesListener;
 
+//import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
 
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& github에 커밋하는 방법..
+        git add --all
+        git commit -m "커밋할 내용"
+        git push origin main
+
+ */
 public class MapsActivity extends AppCompatActivity
         implements OnMapReadyCallback,
         ActivityCompat.OnRequestPermissionsResultCallback,
-        PlacesListener {
+        PlacesListener
+       // GoogleMap.OnInfoWindowClickListener
+        {
 
-    @Override
+            //**********************************************221120**//
+            static public EditText location_name;  //게임 장소 입력받는 변수
+            static public String name;
+            SharedPreferences pref;          // 프리퍼런스-11/23 추가부분
+            SharedPreferences.Editor editor; // 에디터-11/23 추가부분
+
+
+            //221118 private ActionBar marker;
+
+
+
+    @Override  // Places API필수 메소드
     public void onPlacesFailure(PlacesException e) {
 
     }
 
-    @Override
+    @Override  // Places API필수 메소드
     public void onPlacesStart() {
 
     }
 
-    @Override
+    @Override // Places API필수 메소드
     public void onPlacesSuccess(final List<Place> places) {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                for (noman.googleplaces.Place place : places) {
+                for (Place place : places) {
 
                     LatLng latLng
                             = new LatLng(place.getLatitude()
@@ -88,6 +112,7 @@ public class MapsActivity extends AppCompatActivity
                     Marker item = mMap.addMarker(markerOptions);
                     previous_marker.add(item);
 
+                   // name = String.valueOf(markerOptions.title(place.getName()));
                 }
 
                 //중복 마커 제거
@@ -96,23 +121,25 @@ public class MapsActivity extends AppCompatActivity
                 previous_marker.clear();
                 previous_marker.addAll(hashSet);
 
+
             }
+
         });
     }
 
-    @Override
+
+    @Override  // Places API필수 메소드
     public void onPlacesFinished() {
 
     }
-
 
     private GoogleMap mMap;
     private Marker currentMarker = null;
 
     private static final String TAG = "googlemap_example";
     private static final int GPS_ENABLE_REQUEST_CODE = 2001;
-    private static final int UPDATE_INTERVAL_MS = 1000;  // 1초
-    private static final int FASTEST_UPDATE_INTERVAL_MS = 500; // 0.5초
+    private static final int UPDATE_INTERVAL_MS = 2500;  // 1초
+    private static final int FASTEST_UPDATE_INTERVAL_MS = 2000; // 0.5초
 
 
     // onRequestPermissionsResult에서 수신된 결과에서 ActivityCompat.requestPermissions를 사용한 퍼미션 요청을 구별하기 위해 사용됩니다.
@@ -121,21 +148,17 @@ public class MapsActivity extends AppCompatActivity
 
 
     // 앱을 실행하기 위해 필요한 퍼미션을 정의합니다.
-    String[] REQUIRED_PERMISSIONS  = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};  // 외부 저장소
-
+    String[] REQUIRED_PERMISSIONS  = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};     // 외부 저장소이다.
 
     Location mCurrentLocatiion;
     LatLng currentPosition;
-
 
     private FusedLocationProviderClient mFusedLocationClient;
     private LocationRequest locationRequest;
     private Location location;
 
-
     private View mLayout;  // Snackbar 사용하기 위해서는 View가 필요합니다.
     // (참고로 Toast에서는 Context가 필요했습니다.)
-
 
 
 // 장소 검색 누른 후 실행
@@ -145,24 +168,34 @@ public class MapsActivity extends AppCompatActivity
 
         if (previous_marker != null)
             previous_marker.clear();//지역정보 마커 클리어
-
+// places api 사용할 때 이용한 것
         new NRPlaces.Builder()
                 .listener(MapsActivity.this)
                 .key("AIzaSyC1RfRmQR7bhxDe_RbZ0y1mri_e9UXjlJk")
                 .latlng(location.latitude, location.longitude)//현재 위치
                 .radius(500) //500 미터 내에서 검색
                 .type(PlaceType.RESTAURANT) //음식점
+                //.type(PlaceType.STORE) //음식점
+                //.type(PlaceType.CHURCH) //음식점
                 .build()
                 .execute();
     }
 
 
+    //221118
 
     List<Marker> previous_marker = null;
+
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        pref = getSharedPreferences("pref3", Activity.MODE_PRIVATE);//11/23 추가부분
+
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON,
                 WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -170,18 +203,18 @@ public class MapsActivity extends AppCompatActivity
         setContentView(R.layout.activity_maps);
 
         mLayout = findViewById(R.id.layout_maps);
+        location_name = (EditText) findViewById(R.id.edit_text); // 장소입력 받아오기 - location_name에 저장!
+
 
         locationRequest = new LocationRequest()
                 .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
                 .setInterval(UPDATE_INTERVAL_MS)
                 .setFastestInterval(FASTEST_UPDATE_INTERVAL_MS);
 
-
         LocationSettingsRequest.Builder builder =
                 new LocationSettingsRequest.Builder();
 
         builder.addLocationRequest(locationRequest);
-
 
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
@@ -192,20 +225,79 @@ public class MapsActivity extends AppCompatActivity
 
         //setContentView(R.layout.activity_maps);
 
+       // location_name = (EditText) findViewById(R.id.text);
 
         previous_marker = new ArrayList<Marker>();
 
-        Button button = (Button)findViewById(R.id.button);
+        editor = pref.edit();//11/23 추가부분
+        editor.clear().apply();//11/23 추가부분
+
+        Button button = (Button)findViewById(R.id.button_search);
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 showPlaceInformation(currentPosition);
             }
+
         });
 
 
 
+       /* com.google.android.gms.maps.GoogleMap googelMap;
+
+        mMap = googleMap;
+
+        mMap.OnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener(){
+            @Override
+            public void onInfoWindowClick(Marker marker){
+                Intent intent = new Intent(getBaseContext(), Select_Menu_Activity.class);
+                startActivity(intent);
+            }
+        });*/   //221120 테스트..
+
+        //**********************************************221120**//
+        Button button_insert = (Button)findViewById(R.id.button_insert);
+        button_insert.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+
+              /*  new StyleableToast   --> toast 메세지 디자인 보완
+                        .Builder(c)
+                        .text("Hello world!")
+                        .textColor(Color.WHITE)
+                        .backgroundColor(Color.BLUE)
+                        .show();
+*/
+
+                AlertDialog.Builder dlg = new AlertDialog.Builder(MapsActivity.this);
+                dlg.setTitle("게임 진행알림"); // 제목
+                dlg.setMessage("게임 장소가 " + location_name.getText() +" 맞습니까?");
+                // 아이콘 설정 !!dlg.setIcon(R.drawable.icon주소);
+
+                //버튼 클릭시! (확인)
+                //여기다 sharedpreference
+                dlg.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        // 토스트 메시지
+
+                        String restname = location_name.getText().toString();//11/23 추가분
+                        editor.putString("restname", restname);//11/23 추가분
+                        editor.apply();//11/23 추가분
+                        Toast.makeText(MapsActivity.this, location_name.getText() +"에서 복불복 게임을 진행합니다.", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getBaseContext(), Random_Game_Choice_Slot_Activity.class);
+                        startActivity(intent);
+                    }
+                });
+                dlg.show();
+            }
+
+        });
+
+        //**********************************************221120**//
+
     }
+
 
 
 
@@ -219,7 +311,7 @@ public class MapsActivity extends AppCompatActivity
         //지도의 초기위치를 서울로 이동
         setDefaultLocation();
 
-
+        //찾기편하게
 
         //런타임 퍼미션 처리
         // 1. 위치 퍼미션을 가지고 있는지 체크합니다.
@@ -267,21 +359,48 @@ public class MapsActivity extends AppCompatActivity
             }
 
         }
-
-
-
-        mMap.getUiSettings().setMyLocationButtonEnabled(true);
+        
+        //mMap.setOnMarkerClickListener(this); //221118 수정본
+        
+        mMap.getUiSettings().setMyLocationButtonEnabled(true);  // 현재위치 추적가능!!
         // 현재 오동작을 해서 주석처리
         //mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
-        mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
 
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+
+            @Override
+            public boolean onMarkerClick(@NonNull Marker marker) {
+                MarkerOptions markerOptions1 = new MarkerOptions();
+
+                markerOptions1.position(new LatLng(37.52487, 126.92723))
+                .title(marker.getTitle())
+                .snippet(marker.getSnippet());
+                marker.showInfoWindow();
+
+                name = String.valueOf(marker.getTitle());
+                // MapsActivity.location_name.getText();  ==> 다른 클래스에서 변수사용할 떄 이용
+              /*  Intent intent = new Intent(getBaseContext(), RandomMain18Activity.class);
+                startActivity(intent);
+                */
+                location_name.setText(name);
+
+                return true;
+            }
+        });
+
+        mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+      
             @Override
             public void onMapClick(LatLng latLng) {
 
                 Log.d( TAG, "onMapClick :");
             }
         });
+
+
+
     }
+
 
     LocationCallback locationCallback = new LocationCallback() {
         @Override
@@ -313,6 +432,7 @@ public class MapsActivity extends AppCompatActivity
 
 
         }
+
 
     };
 
@@ -474,7 +594,7 @@ public class MapsActivity extends AppCompatActivity
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
         currentMarker = mMap.addMarker(markerOptions);
 
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(DEFAULT_LOCATION, 15);
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(DEFAULT_LOCATION, 17);
         mMap.moveCamera(cameraUpdate);
 
     }
@@ -569,6 +689,7 @@ public class MapsActivity extends AppCompatActivity
     }
 
 
+
     //여기부터는 GPS 활성화를 위한 메소드들
     private void showDialogForLocationServiceSetting() {
 
@@ -622,4 +743,24 @@ public class MapsActivity extends AppCompatActivity
 
 
 
-}
+
+
+
+
+            //정보창 클릭 리스너
+
+
+
+            /*221118@Override
+            public boolean onMarkerClick(Marker marker) {
+
+                return true;
+            }*/
+//221118
+            /*@Override
+            public void onInfoWindowClick(@NonNull Marker marker) {
+                Intent intent = new Intent(getBaseContext(), Select_Menu_Activity.class);
+                startActivity(intent);
+            }*/
+        }
+

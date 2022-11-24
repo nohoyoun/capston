@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 
 public class MainActivity2 extends AppCompatActivity {
@@ -12,14 +13,27 @@ public class MainActivity2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.activity_select_game);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+
+        String dir = "./src";
+        String file_path = "main.java";
+
+        Button button0 = findViewById(R.id.random);
+        button0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity2.this, Random_Game_Choice_Slot_Activity.class);
+                startActivity(intent);
+            }
+        });
 
         Button button1 = findViewById(R.id.spearbtn);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
+                Intent intent = new Intent(MainActivity2.this, Niddle_game_Activity.class);
                 startActivity(intent);
             }
         });
@@ -28,7 +42,16 @@ public class MainActivity2 extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity2.this, MainActivity5.class);
+                Intent intent = new Intent(MainActivity2.this, Dice_game_Activity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button button3 = findViewById(R.id.horseracing);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity2.this, Horse_game_Activity.class);
                 startActivity(intent);
             }
         });
@@ -38,7 +61,7 @@ public class MainActivity2 extends AppCompatActivity {
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity2.this, MainActivity4.class);
+                Intent intent = new Intent(MainActivity2.this, Cat_Game_Main_Activity.class);
                 startActivity(intent);
             }
         });
@@ -47,7 +70,7 @@ public class MainActivity2 extends AppCompatActivity {
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity2.this, MainActivity8.class);
+                Intent intent = new Intent(MainActivity2.this, Hamburger_game_Activity.class);
                 startActivity(intent);
             }
         });
@@ -56,7 +79,15 @@ public class MainActivity2 extends AppCompatActivity {
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity2.this, MainActivity9.class);
+                Intent intent = new Intent(MainActivity2.this, Roullet_Game_Activity.class);
+                startActivity(intent);
+            }
+        });
+        Button button7 = findViewById(R.id.end);
+        button7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity2.this, Select_Menu_Activity.class);
                 startActivity(intent);
             }
         });
