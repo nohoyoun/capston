@@ -61,7 +61,7 @@
             android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCimPoY5IPaXYOMGjAvyS3f1MDT2raSfqg" /> <!-- android:value="AIzaSyCimPoY5IPaXYOMGjAvyS3f1MDT2raSfqg" -->
+            android:value="@string/google_maps_key" /> <!-- android:value="AIzaSyCimPoY5IPaXYOMGjAvyS3f1MDT2raSfqg" -->
         <activity
             android:name=".Random_Game_Choice_Slot_Activity"
             android:exported="false">

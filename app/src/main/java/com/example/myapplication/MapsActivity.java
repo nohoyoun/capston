@@ -49,7 +49,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 
-import io.github.muddz.styleabletoast.StyleableToast;
 import noman.googleplaces.NRPlaces;
 import noman.googleplaces.Place;
 import noman.googleplaces.PlaceType;
@@ -138,8 +137,8 @@ public class MapsActivity extends AppCompatActivity
 
     private static final String TAG = "googlemap_example";
     private static final int GPS_ENABLE_REQUEST_CODE = 2001;
-    private static final int UPDATE_INTERVAL_MS = 2500;  // 1초
-    private static final int FASTEST_UPDATE_INTERVAL_MS = 2000; // 0.5초
+    private static final int UPDATE_INTERVAL_MS = 2000;  // 1초
+    private static final int FASTEST_UPDATE_INTERVAL_MS = 1000; // 0.5초
 
 
     // onRequestPermissionsResult에서 수신된 결과에서 ActivityCompat.requestPermissions를 사용한 퍼미션 요청을 구별하기 위해 사용됩니다.
@@ -211,6 +210,8 @@ public class MapsActivity extends AppCompatActivity
                 .setInterval(UPDATE_INTERVAL_MS)
                 .setFastestInterval(FASTEST_UPDATE_INTERVAL_MS);
 
+
+
         LocationSettingsRequest.Builder builder =
                 new LocationSettingsRequest.Builder();
 
@@ -280,7 +281,6 @@ public class MapsActivity extends AppCompatActivity
                     @Override
                     public void onClick(DialogInterface dialogInterface, int which) {
                         // 토스트 메시지
-
                         String restname = location_name.getText().toString();//11/23 추가분
                         editor.putString("restname", restname);//11/23 추가분
                         editor.apply();//11/23 추가분

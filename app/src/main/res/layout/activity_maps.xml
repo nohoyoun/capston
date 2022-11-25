@@ -21,8 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.1"
         android:orientation="horizontal"
-        android:id="@+id/button_search"
-        />
+        android:id="@+id/button_search"/>
 
 
     <EditText
