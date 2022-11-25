@@ -38,7 +38,8 @@
         <Button
             android:id="@+id/fr"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="80dp"
+            android:textSize="20sp"
             android:text="돌리기">
 
         </Button>

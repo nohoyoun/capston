@@ -24,6 +24,7 @@
             android:text="주사위굴리기\n화살표돌리기\n경마게임\n고양이찾기\n랜덤햄버거쌓기\n룰렛돌리기"
             android:textColor="@color/white"
             android:textSize="35dp"></TextView>
+
         <ImageView
             android:layout_width="1000dp"
             android:layout_height="1000dp"
@@ -35,13 +36,16 @@
         android:layout_height="match_parent"
         android:layout_weight="12"
         >
+
         <Button
             android:id="@+id/fr"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="80dp"
+            android:textSize="20sp"
             android:text="돌리기">
 
-            </Button>
+        </Button>
+
 
     </LinearLayout>
 
