@@ -3,25 +3,28 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import java.util.Random;
 
 public class Hamburger_game_Activity extends AppCompatActivity {
 
     Button btn1;
-    Button go;
-    Button restart;
     ImageView one, two, three, four, five, six, seven, eight, nine, ten, eleven;
+    ImageView background;
     int number;
     Random random = new Random();
     int a;
+    AnimationDrawable ania;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +33,7 @@ public class Hamburger_game_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_hamburger_game);
 
         btn1 = findViewById(R.id.hamburger);
-
+        MySoundPlayer_Congratulation.initSounds(getApplicationContext());
         final Animation shake = AnimationUtils.loadAnimation(
                 this,R.anim.shake);
 
@@ -45,6 +48,7 @@ public class Hamburger_game_Activity extends AppCompatActivity {
         nine = (ImageView)findViewById(R.id.nine);
         ten = (ImageView)findViewById(R.id.ten);
         eleven = (ImageView)findViewById(R.id.eleven);
+        background = findViewById(R.id.background);
 
         one.setVisibility(View.INVISIBLE);
         two.setVisibility(View.INVISIBLE);
@@ -57,6 +61,8 @@ public class Hamburger_game_Activity extends AppCompatActivity {
         nine.setVisibility(View.INVISIBLE);
         ten.setVisibility(View.INVISIBLE);
         eleven.setVisibility(View.INVISIBLE);
+
+        Handler handler = new Handler();
 
         number = random.nextInt(7) + 1;
         a=0;
@@ -98,11 +104,20 @@ public class Hamburger_game_Activity extends AppCompatActivity {
                     } else {
                         two.setImageResource(R.drawable.bunup);
                         two.setVisibility(View.VISIBLE);
-                        //코드입력
-                        Intent intent = new Intent(Hamburger_game_Activity.this, MainActivity10.class);
-                        startActivity(intent);
-                        btn1.setVisibility(View.INVISIBLE);
 
+                        MySoundPlayer_Congratulation.play(MySoundPlayer_Congratulation.DING_DONG1);
+                        //코드입력
+                        btn1.setVisibility(View.INVISIBLE);
+                        background.setImageResource(R.drawable.cg);
+                        ania= (AnimationDrawable) background.getDrawable();
+                        ania.start();
+                        handler.postDelayed(new Runnable()  {
+                            public void run() {
+                                // 시간 지난 후 실행할 코딩
+                                Intent intent = new Intent(Hamburger_game_Activity.this, MainActivity10.class);
+                                startActivity(intent);
+                            }
+                        }, 2000); // 2초후
                     }
                 } else if (a == 2) {
                     three.startAnimation(shake);
@@ -130,9 +145,19 @@ public class Hamburger_game_Activity extends AppCompatActivity {
                         three.setImageResource(R.drawable.bunup);
                         three.setVisibility(View.VISIBLE);
                         //코드입력
-                        Intent intent = new Intent(Hamburger_game_Activity.this, MainActivity10.class);
-                        startActivity(intent);
+                        MySoundPlayer_Congratulation.play(MySoundPlayer_Congratulation.DING_DONG1);
+                        //코드입력
                         btn1.setVisibility(View.INVISIBLE);
+                        background.setImageResource(R.drawable.cg);
+                        ania= (AnimationDrawable) background.getDrawable();
+                        ania.start();
+                        handler.postDelayed(new Runnable()  {
+                            public void run() {
+                                // 시간 지난 후 실행할 코딩
+                                Intent intent = new Intent(Hamburger_game_Activity.this, MainActivity10.class);
+                                startActivity(intent);
+                            }
+                        }, 2000); // 2초후
                     }
                 } else if (a == 3) {
                     four.startAnimation(shake);
@@ -161,9 +186,19 @@ public class Hamburger_game_Activity extends AppCompatActivity {
                         four.setImageResource(R.drawable.bunup);
                         four.setVisibility(View.VISIBLE);
                         //코드입력
-                        Intent intent = new Intent(Hamburger_game_Activity.this, MainActivity10.class);
-                        startActivity(intent);
+                        MySoundPlayer_Congratulation.play(MySoundPlayer_Congratulation.DING_DONG1);
+                        //코드입력
                         btn1.setVisibility(View.INVISIBLE);
+                        background.setImageResource(R.drawable.cg);
+                        ania= (AnimationDrawable) background.getDrawable();
+                        ania.start();
+                        handler.postDelayed(new Runnable()  {
+                            public void run() {
+                                // 시간 지난 후 실행할 코딩
+                                Intent intent = new Intent(Hamburger_game_Activity.this, MainActivity10.class);
+                                startActivity(intent);
+                            }
+                        }, 2000); // 2초후
                     }
                 } else if (a == 4) {
                     five.startAnimation(shake);
@@ -192,9 +227,19 @@ public class Hamburger_game_Activity extends AppCompatActivity {
                         five.setImageResource(R.drawable.bunup);
                         five.setVisibility(View.VISIBLE);
                         //코드입력
-                        Intent intent = new Intent(Hamburger_game_Activity.this, MainActivity10.class);
-                        startActivity(intent);
+                        MySoundPlayer_Congratulation.play(MySoundPlayer_Congratulation.DING_DONG1);
+                        //코드입력
                         btn1.setVisibility(View.INVISIBLE);
+                        background.setImageResource(R.drawable.cg);
+                        ania= (AnimationDrawable) background.getDrawable();
+                        ania.start();
+                        handler.postDelayed(new Runnable()  {
+                            public void run() {
+                                // 시간 지난 후 실행할 코딩
+                                Intent intent = new Intent(Hamburger_game_Activity.this, MainActivity10.class);
+                                startActivity(intent);
+                            }
+                        }, 2000); // 2초후
                     }
                 } else if (a == 5) {
                     six.startAnimation(shake);
@@ -223,9 +268,19 @@ public class Hamburger_game_Activity extends AppCompatActivity {
                         six.setImageResource(R.drawable.bunup);
                         six.setVisibility(View.VISIBLE);
                         //코드입력
-                        Intent intent = new Intent(Hamburger_game_Activity.this, MainActivity10.class);
-                        startActivity(intent);
+                        MySoundPlayer_Congratulation.play(MySoundPlayer_Congratulation.DING_DONG1);
+                        //코드입력
                         btn1.setVisibility(View.INVISIBLE);
+                        background.setImageResource(R.drawable.cg);
+                        ania= (AnimationDrawable) background.getDrawable();
+                        ania.start();
+                        handler.postDelayed(new Runnable()  {
+                            public void run() {
+                                // 시간 지난 후 실행할 코딩
+                                Intent intent = new Intent(Hamburger_game_Activity.this, MainActivity10.class);
+                                startActivity(intent);
+                            }
+                        }, 2000); // 2초후
                     }
                 } else if (a == 6) {
                     seven.startAnimation(shake);
@@ -254,9 +309,19 @@ public class Hamburger_game_Activity extends AppCompatActivity {
                         seven.setImageResource(R.drawable.bunup);
                         seven.setVisibility(View.VISIBLE);
                         //코드입력
-                        Intent intent = new Intent(Hamburger_game_Activity.this, MainActivity10.class);
-                        startActivity(intent);
+                        MySoundPlayer_Congratulation.play(MySoundPlayer_Congratulation.DING_DONG1);
+                        //코드입력
                         btn1.setVisibility(View.INVISIBLE);
+                        background.setImageResource(R.drawable.cg);
+                        ania= (AnimationDrawable) background.getDrawable();
+                        ania.start();
+                        handler.postDelayed(new Runnable()  {
+                            public void run() {
+                                // 시간 지난 후 실행할 코딩
+                                Intent intent = new Intent(Hamburger_game_Activity.this, MainActivity10.class);
+                                startActivity(intent);
+                            }
+                        }, 2000); // 2초후
                     }
                 } else if (a == 7) {
                     eight.startAnimation(shake);
@@ -285,9 +350,19 @@ public class Hamburger_game_Activity extends AppCompatActivity {
                         eight.setImageResource(R.drawable.bunup);
                         eight.setVisibility(View.VISIBLE);
                         //코드입력
-                        Intent intent = new Intent(Hamburger_game_Activity.this, MainActivity10.class);
-                        startActivity(intent);
+                        MySoundPlayer_Congratulation.play(MySoundPlayer_Congratulation.DING_DONG1);
+                        //코드입력
                         btn1.setVisibility(View.INVISIBLE);
+                        background.setImageResource(R.drawable.cg);
+                        ania= (AnimationDrawable) background.getDrawable();
+                        ania.start();
+                        handler.postDelayed(new Runnable()  {
+                            public void run() {
+                                // 시간 지난 후 실행할 코딩
+                                Intent intent = new Intent(Hamburger_game_Activity.this, MainActivity10.class);
+                                startActivity(intent);
+                            }
+                        }, 2000); // 2초후
                     }
                 } else if (a == 8) {
                     nine.startAnimation(shake);
@@ -316,9 +391,20 @@ public class Hamburger_game_Activity extends AppCompatActivity {
                         nine.setImageResource(R.drawable.bunup);
                         nine.setVisibility(View.VISIBLE);
                         //코드입력
-                        Intent intent = new Intent(Hamburger_game_Activity.this, MainActivity10.class);
-                        startActivity(intent);
+
+                        MySoundPlayer_Congratulation.play(MySoundPlayer_Congratulation.DING_DONG1);
+                        //코드입력
                         btn1.setVisibility(View.INVISIBLE);
+                        background.setImageResource(R.drawable.cg);
+                        ania= (AnimationDrawable) background.getDrawable();
+                        ania.start();
+                        handler.postDelayed(new Runnable()  {
+                            public void run() {
+                                // 시간 지난 후 실행할 코딩
+                                Intent intent = new Intent(Hamburger_game_Activity.this, MainActivity10.class);
+                                startActivity(intent);
+                            }
+                        }, 2000); // 2초후
                     }
                 } else if (a == 9) {
                     ten.startAnimation(shake);
@@ -347,17 +433,37 @@ public class Hamburger_game_Activity extends AppCompatActivity {
                     ten.setImageResource(R.drawable.bunup);
                     ten.setVisibility(View.VISIBLE);
                     //코드입력
-                        Intent intent = new Intent(Hamburger_game_Activity.this, MainActivity10.class);
-                        startActivity(intent);
+                        MySoundPlayer_Congratulation.play(MySoundPlayer_Congratulation.DING_DONG1);
+                        //코드입력
                         btn1.setVisibility(View.INVISIBLE);
+                        background.setImageResource(R.drawable.cg);
+                        ania= (AnimationDrawable) background.getDrawable();
+                        ania.start();
+                        handler.postDelayed(new Runnable()  {
+                            public void run() {
+                                // 시간 지난 후 실행할 코딩
+                                Intent intent = new Intent(Hamburger_game_Activity.this, MainActivity10.class);
+                                startActivity(intent);
+                            }
+                        }, 2000); // 2초후
                     }
             }else if(a==10)
             {eleven.startAnimation(shake);
                 eleven.setImageResource(R.drawable.bunup);
                 eleven.setVisibility(View.VISIBLE);
+                MySoundPlayer_Congratulation.play(MySoundPlayer_Congratulation.DING_DONG1);
+                //코드입력
                 btn1.setVisibility(View.INVISIBLE);
-                Intent intent = new Intent(Hamburger_game_Activity.this, MainActivity10.class);
-                startActivity(intent);
+                background.setImageResource(R.drawable.cg);
+                ania= (AnimationDrawable) background.getDrawable();
+                ania.start();
+                handler.postDelayed(new Runnable()  {
+                    public void run() {
+                        // 시간 지난 후 실행할 코딩
+                        Intent intent = new Intent(Hamburger_game_Activity.this, MainActivity10.class);
+                        startActivity(intent);
+                    }
+                }, 2000); // 2초후
             }
 
         }

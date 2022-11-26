@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
+import android.app.AlertDialog;
 
 public class MainActivity10 extends AppCompatActivity {
 
@@ -20,6 +21,8 @@ public class MainActivity10 extends AppCompatActivity {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main10);
 
+        //Intent intent = new Intent(MainActivity10.this, congratulation.class);
+        //startActivity(intent);
 
 
         pushtxt = findViewById(R.id.pushtxt);

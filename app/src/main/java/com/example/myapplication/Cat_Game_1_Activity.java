@@ -59,7 +59,7 @@ public class Cat_Game_1_Activity extends AppCompatActivity {
                     btn5.setVisibility(View.INVISIBLE);
                     cat_image.setVisibility(View.VISIBLE);
                     sound.play(soundId, 1f, 1f, 0, 0, 1f);
-
+                    //딜레이
                    handler.postDelayed(new Runnable()  {
                         public void run() {
                             // 시간 지난 후 실행할 코딩
@@ -174,6 +174,7 @@ public class Cat_Game_1_Activity extends AppCompatActivity {
                     btn5.setVisibility(View.INVISIBLE);
                     cat_image.setVisibility(View.VISIBLE);
                     sound.play(soundId, 1f, 1f, 0, 0, 1f);
+
 
                     handler.postDelayed(new Runnable()  {
                         public void run() {

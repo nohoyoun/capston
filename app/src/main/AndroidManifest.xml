@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
@@ -20,12 +20,20 @@
         android:theme="@style/Theme.MyApplication"
         tools:replace="android:label, android:allowBackup"
         tools:targetApi="31">
-
+        <activity
+            android:name=".congratulation"
+            android:theme="@style/Theme.AppCompat"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
 
         <meta-data
             android:name="android.app.lib_name"
             android:value="" />
-         <activity
+
+        <activity
             android:name=".MainActivity23"
             android:exported="false">
             <meta-data
@@ -56,8 +64,7 @@
             android:value="@string/google_maps_key" /> <!-- android:value="AIzaSyCimPoY5IPaXYOMGjAvyS3f1MDT2raSfqg" -->
         <activity
             android:name=".Random_Game_Choice_Slot_Activity"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".MainActivity19"
             android:exported="false"
@@ -171,8 +178,8 @@
         </activity>
         <activity
             android:name=".Select_Menu_Activity"
-            android:parentActivityName=".MainActivity"
-            android:exported="false">
+            android:exported="false"
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -241,7 +248,6 @@
             android:name=".MapsActivity"
             android:exported="false"
             android:label="@string/title_activity_maps" />
-
         <activity
             android:name=".MainActivity"
             android:exported="true">
