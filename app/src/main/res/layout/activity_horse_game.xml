@@ -71,6 +71,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="경기 시작!"
+            android:textSize="20sp"
             >
 
 

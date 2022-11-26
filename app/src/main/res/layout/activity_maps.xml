@@ -17,12 +17,12 @@
 
     <Button
         android:text= "장소검색"
+        android:textSize = "18sp"
         android:layout_width= "400dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.1"
         android:orientation="horizontal"
-        android:id="@+id/button_search"
-        />
+        android:id="@+id/button_search"/>
 
 
     <EditText
@@ -38,6 +38,7 @@
 
     <Button
         android:text= "장소입력"
+        android:textSize = "18sp"
         android:layout_width= "wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.1"

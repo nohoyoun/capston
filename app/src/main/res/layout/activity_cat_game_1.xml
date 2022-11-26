@@ -17,6 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="버튼을 클릭하여 숨어있는 고양이를 찾으세요!"
+            android:textStyle="bold"
             android:textSize="18sp"
             android:layout_gravity="center"
             ></TextView>

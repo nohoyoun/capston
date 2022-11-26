@@ -17,82 +17,90 @@
 
         <Button
             android:id="@+id/random"
-            android:layout_width="200dp"
-            android:layout_height="60dp"
+            android:layout_width="250dp"
+            android:layout_height="70dp"
             android:backgroundTint="#FFEB3B"
             android:drawableLeft="@android:drawable/ic_menu_help"
             android:text="랜덤게임선택"
+            android:textSize="18sp"
             android:textColor="@color/black"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/Dicebtn"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_width="250dp"
+            android:layout_height="70dp"
             android:backgroundTint="#FFEB3B"
             android:drawableLeft="@drawable/dicemenu"
             android:text="주사위 굴리기"
+            android:textSize="18sp"
             android:textColor="@color/black"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/spearbtn"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_width="250dp"
+            android:layout_height="70dp"
             android:backgroundTint="#FFEB3B"
             android:drawableLeft="@drawable/spearmenu"
             android:text="화살표 돌리기"
+            android:textSize="18sp"
             android:textColor="@color/black"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/horseracing"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_width="250dp"
+            android:layout_height="70dp"
             android:backgroundTint="#FFEB3B"
             android:drawableLeft="@drawable/horsemenu"
             android:text="경마게임"
+            android:textSize="18sp"
             android:textColor="@color/black"
             android:textStyle="bold" />
 
 
         <Button
             android:id="@+id/catbtn"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_width="250dp"
+            android:layout_height="70dp"
             android:backgroundTint="#FFEB3B"
             android:drawableLeft="@drawable/catmenu"
             android:text="고양이찾기"
+            android:textSize="18sp"
             android:textColor="@color/black"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/ham"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_width="250dp"
+            android:layout_height="70dp"
             android:backgroundTint="#FFEB3B"
             android:drawableLeft="@drawable/hammenu"
             android:text="랜덤 햄버거 쌓기"
+            android:textSize="18sp"
             android:textColor="@color/black"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/share"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_width="250dp"
+            android:layout_height="70dp"
             android:backgroundTint="#FFEB3B"
             android:drawableLeft="@drawable/rullmenu"
             android:text="룰렛 돌리기"
+            android:textSize="18sp"
             android:textColor="@color/black"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/end"
-            android:layout_width="200dp"
-            android:layout_height="60dp"
+            android:layout_width="250dp"
+            android:layout_height="70dp"
             android:backgroundTint="#FFEB3B"
             android:drawableLeft="@android:drawable/ic_menu_revert"
             android:text="뒤로가기"
+            android:textSize="18sp"
             android:textColor="@color/black"
             android:textStyle="bold" />
     </LinearLayout>

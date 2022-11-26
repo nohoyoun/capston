@@ -27,20 +27,25 @@
 
     <Button
         android:id="@+id/startbtn"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:text="시작하기"
-        android:background="@drawable/toast_shape"/>
+        android:layout_width="250dp"
+        android:layout_height="55dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="시작하기"/>
 
     <Button
         android:id="@+id/help"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="55dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
         android:text="도움말" />
     <Button
         android:id="@+id/endbtn"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="55dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
         android:text="종료" />
 
     <TextView

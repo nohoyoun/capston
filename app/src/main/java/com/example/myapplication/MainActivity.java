@@ -3,9 +3,6 @@ package com.example.myapplication;
 import android.content.DialogInterface;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.media.SoundPool;
-import android.os.Build;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
@@ -70,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
                 alert.show();
             }
         });
-
 
     }
 }
