@@ -19,6 +19,17 @@ public class Select_Menu_Activity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
+        MySoundPlayer.initSounds(getApplicationContext());
+
+        findViewById(R.id.selectcafe).setOnClickListener((v)->{
+            // MySoundPlayer.play(MySoundPlayer.Blop_Sound);
+        });
+        findViewById(R.id.selectperson).setOnClickListener((v)->{
+            // MySoundPlayer.play(MySoundPlayer.Blop_Sound);
+        });
+        findViewById(R.id.selectfood).setOnClickListener((v)->{
+            // MySoundPlayer.play(MySoundPlayer.Blop_Sound);
+        });
 
         ImageButton button1 = findViewById(R.id.selectperson);
         button1.setOnClickListener(new View.OnClickListener() {
@@ -26,6 +37,7 @@ public class Select_Menu_Activity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(Select_Menu_Activity.this, MainActivity2.class);
                 startActivity(intent);
+                MySoundPlayer.play(MySoundPlayer.Blop_Sound);
             }
         });
 
@@ -33,6 +45,7 @@ public class Select_Menu_Activity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MySoundPlayer.play(MySoundPlayer.Blop_Sound);
                 Intent intent = new Intent(Select_Menu_Activity.this, RandomMain18Activity.class);
                 startActivity(intent);
             }
@@ -42,6 +55,7 @@ public class Select_Menu_Activity extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MySoundPlayer.play(MySoundPlayer.Blop_Sound);
                 Intent intent = new Intent(Select_Menu_Activity.this, MapsActivity.class);
                 startActivity(intent);
             }

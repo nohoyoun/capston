@@ -41,6 +41,7 @@ public class Horse_game_Activity extends AppCompatActivity {
     SharedPreferences.Editor editor; // 에디터
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -58,6 +59,11 @@ public class Horse_game_Activity extends AppCompatActivity {
         number3 = random3.nextInt(200)*3+15000;
         number4 = random4.nextInt(200)*3+15000;
 
+        MySoundPlayer.initSounds(getApplicationContext());
+
+        findViewById(R.id.start1).setOnClickListener((v)->{
+
+        });
         Intent intent = new Intent(Horse_game_Activity.this, MainActivity16.class);
         startActivity(intent);
 
@@ -72,7 +78,7 @@ public class Horse_game_Activity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                MySoundPlayer.play(MySoundPlayer.Toy_Train_Whistle_Sound);
                     TranslateAnimation ani = new TranslateAnimation(
                             0, 2200, 0, 0);
                     ani.setDuration(number1);

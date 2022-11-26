@@ -23,7 +23,6 @@ public class Random_Food_Choice_Slot_Activity extends AppCompatActivity {
     Random random = new Random();
     int i;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //supportRequestWindowFeature(Window.FEATURE_NO_TITLE);

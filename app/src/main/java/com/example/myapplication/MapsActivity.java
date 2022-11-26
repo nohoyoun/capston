@@ -192,6 +192,7 @@ public class MapsActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        MySoundPlayer.initSounds(getApplicationContext());
         super.onCreate(savedInstanceState);
         pref = getSharedPreferences("pref3", Activity.MODE_PRIVATE);//11/23 추가부분
 
@@ -240,6 +241,7 @@ public class MapsActivity extends AppCompatActivity
                 showPlaceInformation(currentPosition);
             }
 
+
         });
 
 
@@ -261,7 +263,7 @@ public class MapsActivity extends AppCompatActivity
         button_insert.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-
+                MySoundPlayer.play(MySoundPlayer.Blop_Sound);
               /*  new StyleableToast   --> toast 메세지 디자인 보완
                         .Builder(c)
                         .text("Hello world!")
@@ -281,6 +283,7 @@ public class MapsActivity extends AppCompatActivity
                     @Override
                     public void onClick(DialogInterface dialogInterface, int which) {
                         // 토스트 메시지
+                        MySoundPlayer.play(MySoundPlayer.Blop_Sound);
                         String restname = location_name.getText().toString();//11/23 추가분
                         editor.putString("restname", restname);//11/23 추가분
                         editor.apply();//11/23 추가분
@@ -343,7 +346,7 @@ public class MapsActivity extends AppCompatActivity
 
                     @Override
                     public void onClick(View view) {
-
+                        MySoundPlayer.play(MySoundPlayer.Blop_Sound);
                         // 3-3. 사용자에게 퍼미션 요청을 합니다. 요청 결과는 onRequestPermissionResult에서 수신됩니다.
                         ActivityCompat.requestPermissions( MapsActivity.this, REQUIRED_PERMISSIONS,
                                 PERMISSIONS_REQUEST_CODE);
@@ -701,6 +704,7 @@ public class MapsActivity extends AppCompatActivity
         builder.setPositiveButton("설정", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int id) {
+                MySoundPlayer.play(MySoundPlayer.Blop_Sound);
                 Intent callGPSSettingIntent
                         = new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
                 startActivityForResult(callGPSSettingIntent, GPS_ENABLE_REQUEST_CODE);
