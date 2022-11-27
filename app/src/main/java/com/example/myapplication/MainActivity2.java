@@ -9,6 +9,7 @@ import android.widget.Button;
 
 public class MainActivity2 extends AppCompatActivity {
 
+    MySoundPlayer mySoundPlayer;
 
 
     @Override
@@ -16,7 +17,7 @@ public class MainActivity2 extends AppCompatActivity {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_select_game);
         super.onCreate(savedInstanceState);
-
+        MySoundPlayer.initSounds(getApplicationContext());
         String dir = "./src";
         String file_path = "main.java";
 
@@ -24,6 +25,7 @@ public class MainActivity2 extends AppCompatActivity {
         button0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MySoundPlayer.play(MySoundPlayer.Coin_5);
                 Intent intent = new Intent(MainActivity2.this, Random_Game_Choice_Slot_Activity.class);
                 startActivity(intent);
             }
@@ -33,6 +35,7 @@ public class MainActivity2 extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MySoundPlayer.play(MySoundPlayer.Air_Sound);
                 Intent intent = new Intent(MainActivity2.this, Niddle_game_Activity.class);
                 startActivity(intent);
             }
@@ -42,6 +45,7 @@ public class MainActivity2 extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MySoundPlayer.play(MySoundPlayer.Coin_1);
                 Intent intent = new Intent(MainActivity2.this, Dice_game_Activity.class);
                 startActivity(intent);
             }
@@ -51,6 +55,7 @@ public class MainActivity2 extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MySoundPlayer.play(MySoundPlayer.Gun_Fire_Sound);
                 Intent intent = new Intent(MainActivity2.this, Horse_game_Activity.class);
                 startActivity(intent);
             }
@@ -61,6 +66,7 @@ public class MainActivity2 extends AppCompatActivity {
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MySoundPlayer.play(MySoundPlayer.DING_DONG);
                 Intent intent = new Intent(MainActivity2.this, Cat_Game_Main_Activity.class);
                 startActivity(intent);
             }
@@ -70,6 +76,7 @@ public class MainActivity2 extends AppCompatActivity {
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MySoundPlayer.play(MySoundPlayer.Pling_Sound);
                 Intent intent = new Intent(MainActivity2.this, Hamburger_game_Activity.class);
                 startActivity(intent);
             }
@@ -79,6 +86,7 @@ public class MainActivity2 extends AppCompatActivity {
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MySoundPlayer.play(MySoundPlayer.Tiny_Button_Push_Sound);
                 Intent intent = new Intent(MainActivity2.this, Roullet_Game_Activity.class);
                 startActivity(intent);
             }
@@ -87,6 +95,7 @@ public class MainActivity2 extends AppCompatActivity {
         button7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //MySoundPlayer.play(MySoundPlayer.Gun_Fire_Sound);
                 Intent intent = new Intent(MainActivity2.this, Select_Menu_Activity.class);
                 startActivity(intent);
             }

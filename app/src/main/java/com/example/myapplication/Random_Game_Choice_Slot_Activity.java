@@ -28,7 +28,7 @@ public class Random_Game_Choice_Slot_Activity extends AppCompatActivity {
         }
     }
 
-
+    MySoundPlayer mySoundPlayer;
     private Animation flowAnim;
     private Button mSlotMechine;
     private TextView mSlotText;
@@ -38,11 +38,12 @@ public class Random_Game_Choice_Slot_Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        MySoundPlayer.initSounds(getApplicationContext());
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_choice_slot);
         mSlotText = (TextView) findViewById(R.id.slottext);
-
+        MySoundPlayer.play(MySoundPlayer.Coin_5);
         i = random.nextInt(6) + 1;
         j = 0;
 

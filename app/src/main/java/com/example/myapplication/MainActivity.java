@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     Button button;
     boolean play;
     int playSoundId;
- //   MediaPlayer mediaPlayer;   //배경음악
+  //  MediaPlayer mediaPlayer;   //배경음악
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,14 +25,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*mediaPlayer = MediaPlayer.create(this, R.raw.sellbuymusic_under);
-        mediaPlayer.start();*/    // bgm 넣어보려다 잘안되서 우선 나중에 시도할 예정.
+     //   mediaPlayer = MediaPlayer.create(this, R.raw.main_thema_bgm);
+    //    mediaPlayer.start();   // bgm 넣어보려다 잘안되서 우선 나중에 시도할 예정.
 
         MySoundPlayer.initSounds(getApplicationContext());
        // MySoundPlayer.play(MySoundPlayer.Sell_Buy_Music_Under);
      /*   findViewById(R.id.startbtn).setOnClickListener((v)->{
             // MySoundPlayer.play(MySoundPlayer.DING_DONG);
         });*/
+       // MySoundPlayer.play(MySoundPlayer.Thema_Sound);
 
 
         Button button1=findViewById(R.id.startbtn);

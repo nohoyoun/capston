@@ -24,13 +24,14 @@ public class Niddle_game_Activity extends AppCompatActivity {
     private RadioGroup sel;
     int whichRadioButton = 1;
     boolean flag1;
+    MySoundPlayer mySoundPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_niddle_game);
-
+        MySoundPlayer.initSounds(getApplicationContext());
         // 애니메이션 이미지 인식
         sel = findViewById(R.id.sel);
         iv_needle = (ImageView) findViewById(R.id.needle);
