@@ -6,7 +6,9 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.Window;
 import android.view.animation.AccelerateDecelerateInterpolator;
@@ -25,13 +27,23 @@ public class Niddle_game_Activity extends AppCompatActivity {
     int whichRadioButton = 1;
     boolean flag1;
     MySoundPlayer mySoundPlayer;
+    AnimationDrawable ania;
+    ImageView background;
+    Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_niddle_game);
-        MySoundPlayer.initSounds(getApplicationContext());
+
+        background = findViewById(R.id.background);
+
+        MySoundPlayer_Congratulation.initSounds(getApplicationContext());
+        MySoundPlayer.initSounds(getApplicationContext());   // 효과음
+
+
+        //MySoundPlayer.initSounds(getApplicationContext());
         // 애니메이션 이미지 인식
         sel = findViewById(R.id.sel);
         iv_needle = (ImageView) findViewById(R.id.needle);
@@ -84,8 +96,20 @@ public class Niddle_game_Activity extends AppCompatActivity {
                 @Override
                 public void onAnimationEnd(Animator animation) {
                     super.onAnimationEnd(animation);
-                    Intent intent = new Intent(Niddle_game_Activity.this, MainActivity10.class);
-                    startActivity(intent);
+
+                    MySoundPlayer_Congratulation.play(MySoundPlayer_Congratulation.DING_DONG1);
+                    //코드입력
+                    background.setImageResource(R.drawable.cg);
+                    ania= (AnimationDrawable) background.getDrawable();
+                    ania.start();
+                    handler.postDelayed(new Runnable()  {
+                        public void run() {
+                            // 시간 지난 후 실행할 코딩
+                            Intent intent = new Intent(Niddle_game_Activity.this, MainActivity10.class);
+                            startActivity(intent);
+                        }
+                    }, 2000); // 2초후
+
 
                 }
             });

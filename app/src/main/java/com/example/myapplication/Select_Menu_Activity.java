@@ -12,9 +12,11 @@ import android.widget.ImageButton;
 
 public class Select_Menu_Activity extends AppCompatActivity {
 
-  //  MediaPlayer mediaPlayer;
+   // MediaPlayer mediaPlayer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //mediaPlayer = MediaPlayer.create(this, R.raw.main_thema_bgm);
         //supportRequestWindowFeature(Window.FEATURE_NO_TITLE); //타이틀바없애는 명령
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_menu);
@@ -37,6 +39,8 @@ public class Select_Menu_Activity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+            //    mediaPlayer.stop();
+            //    mediaPlayer.reset();
                 Intent intent = new Intent(Select_Menu_Activity.this, MainActivity2.class);
                 startActivity(intent);
                 MySoundPlayer.play(MySoundPlayer.Blop_Sound);
@@ -49,6 +53,8 @@ public class Select_Menu_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
             //    mediaPlayer.stop();
+            //    mediaPlayer.reset();
+            //    mediaPlayer.stop();
                 MySoundPlayer.play(MySoundPlayer.Blop_Sound);
                 Intent intent = new Intent(Select_Menu_Activity.this, RandomMain18Activity.class);
                 startActivity(intent);
@@ -59,6 +65,8 @@ public class Select_Menu_Activity extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+            //    mediaPlayer.stop();
+            //    mediaPlayer.reset();
              //   mediaPlayer.stop();
                 MySoundPlayer.play(MySoundPlayer.Blop_Sound);
                 Intent intent = new Intent(Select_Menu_Activity.this, MapsActivity.class);
