@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -39,8 +40,12 @@ public class Random_Game_Choice_Slot_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         MySoundPlayer.initSounds(getApplicationContext());
-        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
+        //supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         setContentView(R.layout.activity_game_choice_slot);
         mSlotText = (TextView) findViewById(R.id.slottext);
         MySoundPlayer.play(MySoundPlayer.Coin_5);

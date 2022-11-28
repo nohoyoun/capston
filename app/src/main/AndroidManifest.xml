@@ -42,7 +42,8 @@
         </activity>
         <activity
             android:name=".Random_Food_Choice_Slot_Activity"
-            android:exported="false">
+            android:exported="false"
+            android:parentActivityName=".Select_Menu_Activity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -64,7 +65,8 @@
             android:value="@string/google_maps_key" /> <!-- android:value="AIzaSyCimPoY5IPaXYOMGjAvyS3f1MDT2raSfqg" -->
         <activity
             android:name=".Random_Game_Choice_Slot_Activity"
-            android:exported="false"></activity>
+            android:exported="false"
+            android:parentActivityName=".Select_Menu_Activity"></activity>
         <activity
             android:name=".MainActivity19"
             android:exported="false"
@@ -76,21 +78,24 @@
         </activity>
         <activity
             android:name=".Cat_Game_3_Activity"
-            android:exported="false">
+            android:exported="false"
+            android:parentActivityName=".Select_Menu_Activity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".Cat_Game_Main_Activity"
-            android:exported="false">
+            android:exported="false"
+            android:parentActivityName=".Select_Menu_Activity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".Cat_Game_2_Activity"
-            android:exported="false">
+            android:exported="false"
+            android:parentActivityName=".Select_Menu_Activity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -104,7 +109,8 @@
         </activity>
         <activity
             android:name=".Roullet_Game_Activity"
-            android:exported="false">
+            android:exported="false"
+            android:parentActivityName=".Select_Menu_Activity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -131,7 +137,8 @@
         </activity>
         <activity
             android:name=".Food_Choice_Roullet_Activity"
-            android:exported="false">
+            android:exported="false"
+            android:parentActivityName=".Select_Menu_Activity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -163,7 +170,8 @@
         <activity
             android:name=".Horse_game_Activity"
             android:exported="false"
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape"
+            android:parentActivityName=".Select_Menu_Activity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -179,7 +187,8 @@
         <activity
             android:name=".Select_Menu_Activity"
             android:exported="false"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -193,7 +202,8 @@
         </activity>
         <activity
             android:name=".Hamburger_game_Activity"
-            android:exported="false">
+            android:exported="false"
+            android:parentActivityName=".Select_Menu_Activity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -214,21 +224,24 @@
         </activity>
         <activity
             android:name=".Dice_game_Activity"
-            android:exported="false">
+            android:exported="false"
+            android:parentActivityName=".Select_Menu_Activity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".Cat_Game_1_Activity"
-            android:exported="false">
+            android:exported="false"
+            android:parentActivityName=".Select_Menu_Activity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".Niddle_game_Activity"
-            android:exported="false">
+            android:exported="false"
+            android:parentActivityName=".Select_Menu_Activity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
