@@ -33,6 +33,7 @@ public class Cat_Game_1_Activity extends AppCompatActivity {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cat_game_1);
+        MySoundPlayer.initSounds(getApplicationContext());
 
         btn1 = findViewById(R.id.btn1);
         btn2 = findViewById(R.id.btn2);
@@ -50,7 +51,7 @@ public class Cat_Game_1_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int number1 = 1;
-
+                MySoundPlayer.play(MySoundPlayer.Woosh_Sound);
                 if(number == number1){
                     btn1.setVisibility(View.INVISIBLE);
                     btn2.setVisibility(View.INVISIBLE);
@@ -79,6 +80,7 @@ public class Cat_Game_1_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int number2 = 2;
+                MySoundPlayer.play(MySoundPlayer.Woosh_Sound);
 
                 if(number == number2){
                     btn1.setVisibility(View.INVISIBLE);
@@ -107,7 +109,7 @@ public class Cat_Game_1_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int number3 = 3;
-
+                MySoundPlayer.play(MySoundPlayer.Woosh_Sound);
                 if(number == number3){
                     btn1.setVisibility(View.INVISIBLE);
                     btn2.setVisibility(View.INVISIBLE);
@@ -136,7 +138,7 @@ public class Cat_Game_1_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int number4=4;
-
+                MySoundPlayer.play(MySoundPlayer.Woosh_Sound);
                 if(number == number4){
                     btn1.setVisibility(View.INVISIBLE);
                     btn2.setVisibility(View.INVISIBLE);
@@ -165,7 +167,7 @@ public class Cat_Game_1_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int number5=5;
-
+                MySoundPlayer.play(MySoundPlayer.Woosh_Sound);
                 if(number == number5){
                     btn1.setVisibility(View.INVISIBLE);
                     btn2.setVisibility(View.INVISIBLE);

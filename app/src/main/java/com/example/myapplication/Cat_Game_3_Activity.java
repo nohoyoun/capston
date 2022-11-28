@@ -52,7 +52,7 @@ public class Cat_Game_3_Activity extends AppCompatActivity {
             public void onClick(View view) {
 
                 int number1 = 1;
-
+                MySoundPlayer.play(MySoundPlayer.Woosh_Sound);
                 if(number == number1){
                     btn1.setVisibility(View.INVISIBLE);
                     btn2.setVisibility(View.INVISIBLE);
@@ -76,7 +76,7 @@ public class Cat_Game_3_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int number2 = 2;
-
+                MySoundPlayer.play(MySoundPlayer.Woosh_Sound);
                 if(number == number2){
                     btn1.setVisibility(View.INVISIBLE);
                     btn2.setVisibility(View.INVISIBLE);
@@ -99,7 +99,7 @@ public class Cat_Game_3_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int number3 = 3;
-
+                MySoundPlayer.play(MySoundPlayer.Woosh_Sound);
                 if(number == number3){
                     btn1.setVisibility(View.INVISIBLE);
                     btn2.setVisibility(View.INVISIBLE);
@@ -123,7 +123,7 @@ public class Cat_Game_3_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int number4=4;
-
+                MySoundPlayer.play(MySoundPlayer.Woosh_Sound);
                 if(number == number4){
                     btn1.setVisibility(View.INVISIBLE);
                     btn2.setVisibility(View.INVISIBLE);
@@ -147,7 +147,7 @@ public class Cat_Game_3_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int number5=5;
-
+                MySoundPlayer.play(MySoundPlayer.Woosh_Sound);
                 if(number == number5){
                     btn1.setVisibility(View.INVISIBLE);
                     btn2.setVisibility(View.INVISIBLE);

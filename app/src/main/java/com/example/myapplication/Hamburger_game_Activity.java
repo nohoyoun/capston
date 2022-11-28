@@ -32,8 +32,10 @@ public class Hamburger_game_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hamburger_game);
 
+
         btn1 = findViewById(R.id.hamburger);
         MySoundPlayer_Congratulation.initSounds(getApplicationContext());
+        MySoundPlayer.initSounds(getApplicationContext());   // 효과음
         final Animation shake = AnimationUtils.loadAnimation(
                 this,R.anim.shake);
 
@@ -79,6 +81,7 @@ public class Hamburger_game_Activity extends AppCompatActivity {
                     one.startAnimation(shake);
                     one.setVisibility(View.VISIBLE);
                     a++;
+
                 } else if (a == 1) {
                     two.startAnimation(shake);
                     number = random.nextInt(7) + 1;

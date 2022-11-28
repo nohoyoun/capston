@@ -16,14 +16,13 @@ public class Help_Activity extends AppCompatActivity {
 
     int soundId;
     SoundPool sound;
-
+    MySoundPlayer mySoundPlayer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help);
         MySoundPlayer.initSounds(getApplicationContext());
-
         findViewById(R.id.finish_help).setOnClickListener((v)->{
            // MySoundPlayer.play(MySoundPlayer.DING_DONG);
         });
@@ -33,7 +32,7 @@ public class Help_Activity extends AppCompatActivity {
             public void onClick(View view) {  // finish 기능 이용해서 닫기버튼이벤트 발생.
                 Intent intent = new Intent(Help_Activity.this, MainActivity.class);
                 startActivity(intent);
-                MySoundPlayer.play(MySoundPlayer.DING_DONG);
+                MySoundPlayer.play(MySoundPlayer.Blop_Sound);
             }
         });
 

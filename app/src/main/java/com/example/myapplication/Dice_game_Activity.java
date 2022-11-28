@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,6 +31,7 @@ public class Dice_game_Activity extends AppCompatActivity {
     int a;
     int count;
     int n1, n2, n3, n4, n5, n6;
+
 
     SharedPreferences pref;          // 프리퍼런스
     SharedPreferences.Editor editor; // 에디터
@@ -69,10 +71,8 @@ public class Dice_game_Activity extends AppCompatActivity {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dice_game);
-
         final Animation shake = AnimationUtils.loadAnimation(
                 this,R.anim.shake);
-
         pref = getSharedPreferences("pref2", Activity.MODE_PRIVATE);
         editor = pref.edit();
         editor.clear().apply();
