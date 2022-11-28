@@ -32,6 +32,7 @@ public class Help_Activity extends AppCompatActivity {
             public void onClick(View view) {  // finish 기능 이용해서 닫기버튼이벤트 발생.
                 Intent intent = new Intent(Help_Activity.this, MainActivity.class);
                 startActivity(intent);
+                finish();
                 MySoundPlayer.play(MySoundPlayer.Blop_Sound);
             }
         });

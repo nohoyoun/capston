@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     Button button;
     boolean play;
     int playSoundId;
-  //  MediaPlayer mediaPlayer;   //배경음악
+    MediaPlayer mediaPlayer;   //배경음악
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,21 +25,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-     //   mediaPlayer = MediaPlayer.create(this, R.raw.main_thema_bgm);
-    //    mediaPlayer.start();   // bgm 넣어보려다 잘안되서 우선 나중에 시도할 예정.
+        mediaPlayer = MediaPlayer.create(this, R.raw.main_thema_bgm);
+        mediaPlayer.start();   // bgm 넣어보려다 잘안되서 우선 나중에 시도할 예정.
 
-        MySoundPlayer.initSounds(getApplicationContext());
-       // MySoundPlayer.play(MySoundPlayer.Sell_Buy_Music_Under);
-     /*   findViewById(R.id.startbtn).setOnClickListener((v)->{
-            // MySoundPlayer.play(MySoundPlayer.DING_DONG);
-        });*/
-       // MySoundPlayer.play(MySoundPlayer.Thema_Sound);
-
+        MySoundPlayer.initSounds(getApplicationContext());  // 효과음
 
         Button button1=findViewById(R.id.startbtn);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mediaPlayer.stop();  // bgm 스톱
+                mediaPlayer.reset(); // bgm 리셋 후 처음 재생하기 위한 장치
                 MySoundPlayer.play(MySoundPlayer.Blop_Sound);
                 Intent intent=new Intent(MainActivity.this, Select_Menu_Activity.class);
                 startActivity(intent);
@@ -51,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mediaPlayer.stop();  //bgm 스톱
+                mediaPlayer.reset();   //bgm 리셋 후 처음 재생하기 위한 장치
                 MySoundPlayer.play(MySoundPlayer.Blop_Sound);
                 Intent intent1=new Intent(MainActivity.this, Help_Activity.class);
                 startActivity(intent1);
@@ -63,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mediaPlayer.stop();
+                mediaPlayer.reset();
                 MySoundPlayer.play(MySoundPlayer.Blop_Sound);
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setMessage("종료하시겠습니까?");
