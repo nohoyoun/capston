@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -19,6 +20,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -35,6 +37,10 @@ public class Roullet_Game_Activity extends AppCompatActivity {
     private float initAngle = 0.0f;
     private int num_roulette;
 
+    AnimationDrawable ania;
+    ImageView background;
+    Handler handler = new Handler();
+
     //SharedPreferences.Editor editor; // 에디터
     SharedPreferences sharedPreferences;
 
@@ -49,6 +55,11 @@ public class Roullet_Game_Activity extends AppCompatActivity {
         btnRotate = findViewById(R.id.btnRotate);
         layoutRoulette = findViewById(R.id.layoutRoulette);
         start = findViewById(R.id.startbtn17);
+
+        background = findViewById(R.id.background);
+
+        MySoundPlayer_Congratulation.initSounds(getApplicationContext());
+        MySoundPlayer.initSounds(getApplicationContext());   // 효과음
 
         layoutRoulette.setVisibility(View.INVISIBLE);
         btnRotate.setVisibility(View.INVISIBLE);
@@ -231,9 +242,20 @@ public class Roullet_Game_Activity extends AppCompatActivity {
     // if you want use AlertDialog then use this
     private void buildAlert(String text) {
 
-        Intent intent = new Intent(Roullet_Game_Activity.this, MainActivity11.class);
-        intent.putExtra("team", text);
-        startActivity(intent);
+        MySoundPlayer_Congratulation.play(MySoundPlayer_Congratulation.DING_DONG1);
+        //코드입력
+        background.setImageResource(R.drawable.cg);
+        ania= (AnimationDrawable) background.getDrawable();
+        ania.start();
+        handler.postDelayed(new Runnable()  {
+            public void run() {
+                // 시간 지난 후 실행할 코딩
+                Intent intent = new Intent(Roullet_Game_Activity.this, MainActivity11.class);
+                intent.putExtra("team", text);
+                startActivity(intent);
+            }
+        }, 2000); // 2초후
+
 
         /*AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("알림")

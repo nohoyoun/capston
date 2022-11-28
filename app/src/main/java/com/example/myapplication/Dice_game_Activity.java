@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.AnimationDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -31,7 +33,8 @@ public class Dice_game_Activity extends AppCompatActivity {
     int a;
     int count;
     int n1, n2, n3, n4, n5, n6;
-
+    AnimationDrawable ania;
+    ImageView background;
 
     SharedPreferences pref;          // 프리퍼런스
     SharedPreferences.Editor editor; // 에디터
@@ -71,6 +74,9 @@ public class Dice_game_Activity extends AppCompatActivity {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dice_game);
+        MySoundPlayer_Congratulation.initSounds(getApplicationContext());
+        MySoundPlayer.initSounds(getApplicationContext());   // 효과음
+
         final Animation shake = AnimationUtils.loadAnimation(
                 this,R.anim.shake);
         pref = getSharedPreferences("pref2", Activity.MODE_PRIVATE);
@@ -90,6 +96,7 @@ public class Dice_game_Activity extends AppCompatActivity {
         dice_image2 = findViewById(R.id.dice2);
         pushnum = findViewById(R.id.pushnum);
         nametag = findViewById(R.id.nametag);
+        background = findViewById(R.id.background);
 
         a = 1;
         count = 1;
@@ -100,6 +107,7 @@ public class Dice_game_Activity extends AppCompatActivity {
         n5 = 0;
         n6 = 0;
 
+        Handler handler = new Handler();
 
         pushnum.setText(String.valueOf(a));
         dice_image2.setVisibility(View.INVISIBLE);
@@ -229,36 +237,89 @@ public class Dice_game_Activity extends AppCompatActivity {
                 } else if (count == 3) {
                     nametag.setText(count-1 + "번째"+ name2 +"의 숫자는" + a + "입니다.");
                     if(name3.length() == 0) {
-                        Intent intent = new Intent(Dice_game_Activity.this, MainActivity14.class);
-                        startActivity(intent);
+                        MySoundPlayer_Congratulation.play(MySoundPlayer_Congratulation.DING_DONG1);
+                        //코드입력
+                        background.setImageResource(R.drawable.cg);
+                        ania= (AnimationDrawable) background.getDrawable();
+                        ania.start();
+                        handler.postDelayed(new Runnable()  {
+                            public void run() {
+                                // 시간 지난 후 실행할 코딩
+
+                                Intent intent = new Intent(Dice_game_Activity.this, MainActivity14.class);
+                                startActivity(intent);
+                            }
+                        }, 2000); // 2초후
                     }
                 }else if (count == 4) {
                     nametag.setText(count-1 + "번째"+ name3 +"의 숫자는" + a + "입니다.");
                     if(name4.length() == 0) {
-                        Intent intent = new Intent(Dice_game_Activity.this, MainActivity14.class);
-                        startActivity(intent);
+                        MySoundPlayer_Congratulation.play(MySoundPlayer_Congratulation.DING_DONG1);
+                        //코드입력
+                        background.setImageResource(R.drawable.cg);
+                        ania= (AnimationDrawable) background.getDrawable();
+                        ania.start();
+                        handler.postDelayed(new Runnable()  {
+                            public void run() {
+                                // 시간 지난 후 실행할 코딩
+
+                                Intent intent = new Intent(Dice_game_Activity.this, MainActivity14.class);
+                                startActivity(intent);
+                            }
+                        }, 2000); // 2초후
                     }
                 }else if (count == 5) {
                     //name1에 대한 숫자가 있을경우의 조건 작성
                     nametag.setText(count-1 + "번째"+ name4 +"의 숫자는" + a + "입니다.");
                     if(name5.length() == 0) {
-                        Intent intent = new Intent(Dice_game_Activity.this, MainActivity14.class);
-                        startActivity(intent);
+                        MySoundPlayer_Congratulation.play(MySoundPlayer_Congratulation.DING_DONG1);
+                        //코드입력
+                        background.setImageResource(R.drawable.cg);
+                        ania= (AnimationDrawable) background.getDrawable();
+                        ania.start();
+                        handler.postDelayed(new Runnable()  {
+                            public void run() {
+                                // 시간 지난 후 실행할 코딩
+
+                                Intent intent = new Intent(Dice_game_Activity.this, MainActivity14.class);
+                                startActivity(intent);
+                            }
+                        }, 2000); // 2초후
                     }
                 }else if (count == 6) {
                     //name1에 대한 숫자가 있을경우의 조건 작성
                     nametag.setText(count-1 + "번째"+ name5 +"의 숫자는" + a + "입니다.");
                     if(name6.length() == 0) {
-                        Intent intent = new Intent(Dice_game_Activity.this, MainActivity14.class);
-                        startActivity(intent);
+                        MySoundPlayer_Congratulation.play(MySoundPlayer_Congratulation.DING_DONG1);
+                        //코드입력
+                        background.setImageResource(R.drawable.cg);
+                        ania= (AnimationDrawable) background.getDrawable();
+                        ania.start();
+                        handler.postDelayed(new Runnable()  {
+                            public void run() {
+                                // 시간 지난 후 실행할 코딩
+
+                                Intent intent = new Intent(Dice_game_Activity.this, MainActivity14.class);
+                                startActivity(intent);
+                            }
+                        }, 2000); // 2초후
                     }
                 }else if (count == 7) {
                     //name1에 대한 숫자가 있을경우의 조건 작성
                     nametag.setText(count-1 + "번째"+ name6 +"의 숫자는" + a + "입니다.");
+                    MySoundPlayer_Congratulation.play(MySoundPlayer_Congratulation.DING_DONG1);
+                    //코드입력
+                    background.setImageResource(R.drawable.cg);
+                    ania= (AnimationDrawable) background.getDrawable();
+                    ania.start();
+                    handler.postDelayed(new Runnable()  {
+                        public void run() {
+                            // 시간 지난 후 실행할 코딩
 
-                        Intent intent = new Intent(Dice_game_Activity.this, MainActivity14.class);
-                        startActivity(intent);
-
+                            Intent intent = new Intent(Dice_game_Activity.this, MainActivity14.class);
+                            startActivity(intent);
+                        }
+                    }, 2000); // 2초후
                 }
             }//end
 

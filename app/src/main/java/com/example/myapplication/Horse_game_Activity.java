@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.Window;
 import android.view.animation.Animation;
@@ -35,6 +36,10 @@ public class Horse_game_Activity extends AppCompatActivity {
 
     AnimationDrawable ania, anib, anic, anid;
 
+    AnimationDrawable ani1;
+    ImageView background;
+    Handler handler = new Handler();
+
     private ArrayList<Integer> list;
 
     SharedPreferences pref;          // 프리퍼런스
@@ -59,7 +64,11 @@ public class Horse_game_Activity extends AppCompatActivity {
         number3 = random3.nextInt(200)*3+15000;
         number4 = random4.nextInt(200)*3+15000;
 
-        MySoundPlayer.initSounds(getApplicationContext());
+        //MySoundPlayer.initSounds(getApplicationContext());
+        background = findViewById(R.id.background);
+
+        MySoundPlayer_Congratulation.initSounds(getApplicationContext());
+        MySoundPlayer.initSounds(getApplicationContext());   // 효과음
 
         findViewById(R.id.start1).setOnClickListener((v)->{
 
@@ -383,10 +392,18 @@ public class Horse_game_Activity extends AppCompatActivity {
                         public void onAnimationEnd(Animation animation) {
                             img.setImageResource(R.drawable.flag);
                             if(number1 == j) {
-
-
-                                Intent intent = new Intent(Horse_game_Activity.this, MainActivity19.class);
-                                startActivity(intent);
+                                MySoundPlayer_Congratulation.play(MySoundPlayer_Congratulation.DING_DONG1);
+                                //코드입력
+                                background.setImageResource(R.drawable.cg);
+                                ani1= (AnimationDrawable) background.getDrawable();
+                                ani1.start();
+                                handler.postDelayed(new Runnable()  {
+                                    public void run() {
+                                        // 시간 지난 후 실행할 코딩
+                                        Intent intent = new Intent(Horse_game_Activity.this, MainActivity19.class);
+                                        startActivity(intent);
+                                    }
+                                }, 2000); // 2초후
                             }
                         }
                         @Override
@@ -402,8 +419,18 @@ public class Horse_game_Activity extends AppCompatActivity {
                     public void onAnimationEnd(Animation animation) {
                         img2.setImageResource(R.drawable.flag);
                         if(number2 == j) {
-                            Intent intent = new Intent(Horse_game_Activity.this, MainActivity19.class);
-                            startActivity(intent);
+                            MySoundPlayer_Congratulation.play(MySoundPlayer_Congratulation.DING_DONG1);
+                            //코드입력
+                            background.setImageResource(R.drawable.cg);
+                            ani1= (AnimationDrawable) background.getDrawable();
+                            ani1.start();
+                            handler.postDelayed(new Runnable()  {
+                                public void run() {
+                                    // 시간 지난 후 실행할 코딩
+                                    Intent intent = new Intent(Horse_game_Activity.this, MainActivity19.class);
+                                    startActivity(intent);
+                                }
+                            }, 2000); // 2초후
                         }
                     }
                     @Override
@@ -419,8 +446,18 @@ public class Horse_game_Activity extends AppCompatActivity {
                     public void onAnimationEnd(Animation animation) {
                         img3.setImageResource(R.drawable.flag);
                         if(number3 == j) {
-                            Intent intent = new Intent(Horse_game_Activity.this, MainActivity19.class);
-                            startActivity(intent);
+                            MySoundPlayer_Congratulation.play(MySoundPlayer_Congratulation.DING_DONG1);
+                            //코드입력
+                            background.setImageResource(R.drawable.cg);
+                            ani1= (AnimationDrawable) background.getDrawable();
+                            ani1.start();
+                            handler.postDelayed(new Runnable()  {
+                                public void run() {
+                                    // 시간 지난 후 실행할 코딩
+                                    Intent intent = new Intent(Horse_game_Activity.this, MainActivity19.class);
+                                    startActivity(intent);
+                                }
+                            }, 2000); // 2초후
                         }
                     }
                     @Override
@@ -436,8 +473,18 @@ public class Horse_game_Activity extends AppCompatActivity {
                     public void onAnimationEnd(Animation animation) {
                         img4.setImageResource(R.drawable.flag);
                         if(number4 == j) {
-                            Intent intent = new Intent(Horse_game_Activity.this, MainActivity19.class);
-                            startActivity(intent);
+                            MySoundPlayer_Congratulation.play(MySoundPlayer_Congratulation.DING_DONG1);
+                            //코드입력
+                            background.setImageResource(R.drawable.cg);
+                            ani1= (AnimationDrawable) background.getDrawable();
+                            ani1.start();
+                            handler.postDelayed(new Runnable()  {
+                                public void run() {
+                                    // 시간 지난 후 실행할 코딩
+                                    Intent intent = new Intent(Horse_game_Activity.this, MainActivity19.class);
+                                    startActivity(intent);
+                                }
+                            }, 2000); // 2초후
                         }
                     }
                     @Override
