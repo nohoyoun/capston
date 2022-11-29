@@ -26,17 +26,17 @@
             android:id="@+id/name1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="-150dp"
-            android:layout_marginTop="-40dp"
-            android:textSize="30dp"></TextView>
+            android:layout_marginStart="-50dp"
+            android:layout_marginTop="-60dp"
+            android:textSize="20dp"></TextView>
 
         <TextView
             android:id="@+id/restaurant"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="-120dp"
+            android:layout_marginStart="-50dp"
             android:layout_marginTop="0dp"
-            android:textSize="30dp"></TextView>
+            android:textSize="20dp"></TextView>
 
     </LinearLayout>
 

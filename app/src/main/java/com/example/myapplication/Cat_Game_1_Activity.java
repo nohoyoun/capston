@@ -99,6 +99,7 @@ public class Cat_Game_1_Activity extends AppCompatActivity {
                             // 시간 지난 후 실행할 코딩
                             Intent intent = new Intent(Cat_Game_1_Activity.this, MainActivity10.class);
                             startActivity(intent);
+
                         }
                     }, 2000); // 2초후
                 }else {

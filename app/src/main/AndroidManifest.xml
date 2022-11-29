@@ -125,7 +125,14 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
-
+        <activity
+            android:name=".Help_Activity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.DayNight.Dialog">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".MainActivity16"
             android:exported="false"

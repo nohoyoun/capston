@@ -57,7 +57,7 @@ public class Share_Activity extends AppCompatActivity {
         txt1.setText(push);
 
         SharedPreferences sharedPreferences = getSharedPreferences("pref3", MODE_PRIVATE);
-        String restname = sharedPreferences.getString("restname", "알빠노");
+        String restname = sharedPreferences.getString("restname", "이 자리");
         txt2.setText(restname);
 
         btn1.setOnClickListener(new View.OnClickListener() {
