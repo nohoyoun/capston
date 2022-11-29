@@ -29,7 +29,7 @@ public class MySoundPlayer {
     public static final int Sad_Trombone_Sound = R.raw.sad_trombone_sound;
     public static final int Water_Sound = R.raw.water_sound;
     public static final int Thema_Sound = R.raw.main_thema_bgm;
-
+    public static final int Slot_Sound = R.raw.realslot_sound;
 
     //  public static final int SUCCESS = R.raw.success;
 
@@ -66,6 +66,7 @@ public class MySoundPlayer {
         soundPoolMap.put(Sad_Trombone_Sound, soundPool.load(context, Sad_Trombone_Sound, 1));
         soundPoolMap.put(Water_Sound, soundPool.load(context, Water_Sound, 1));
         soundPoolMap.put(Thema_Sound, soundPool.load(context, Thema_Sound, 1));
+        soundPoolMap.put(Slot_Sound, soundPool.load(context, Slot_Sound, 1));
 
        // soundPoolMap.put(SUCCESS, soundPool.load(context, SUCCESS, 2));
     }

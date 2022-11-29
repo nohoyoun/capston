@@ -17,6 +17,7 @@ public class Help_Activity extends AppCompatActivity {
     int soundId;
     SoundPool sound;
     MySoundPlayer mySoundPlayer;
+    // 221129 help_Activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
