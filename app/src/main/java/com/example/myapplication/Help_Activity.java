@@ -30,10 +30,10 @@ public class Help_Activity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {  // finish 기능 이용해서 닫기버튼이벤트 발생.
-                Intent intent = new Intent(Help_Activity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
+                //Intent intent = new Intent(Help_Activity.this, MainActivity.class);
+                //startActivity(intent);
                 MySoundPlayer.play(MySoundPlayer.Blop_Sound);
+                finish();
             }
         });
 
