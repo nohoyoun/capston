@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.Window;
 import android.view.animation.Animation;
@@ -29,6 +30,7 @@ public class Random_Game_Choice_Slot_Activity extends AppCompatActivity {
         }
     }
 
+    Handler handler = new Handler();
     MySoundPlayer mySoundPlayer;
     private Animation flowAnim;
     private Button mSlotMechine;
@@ -65,6 +67,7 @@ public class Random_Game_Choice_Slot_Activity extends AppCompatActivity {
                     }
                     @Override
                     public void onAnimationEnd(Animation animation) {
+                        mSlotMechine.setVisibility(View.INVISIBLE);
                         switch (i) {
                             case 1: {
                                 mSlotText.setText("주사위굴리기");
@@ -101,38 +104,68 @@ public class Random_Game_Choice_Slot_Activity extends AppCompatActivity {
                         switch (j) {
                             case 1 : {
                                 c.start();
-                                Intent intent = new Intent(Random_Game_Choice_Slot_Activity.this, Dice_game_Activity.class);
-                                startActivity(intent);
+                                handler.postDelayed(new Runnable()  {
+                                    public void run() {
+                                        // 시간 지난 후 실행할 코딩
+                                        Intent intent = new Intent(Random_Game_Choice_Slot_Activity.this, Dice_game_Activity.class);
+                                        startActivity(intent);
+                                    }
+                                }, 2000); // 2초후
                                 break;
                             }
                             case 2 : {
                                 c.start();
-                                Intent intent = new Intent(Random_Game_Choice_Slot_Activity.this, Niddle_game_Activity.class);
-                                startActivity(intent);
+                                handler.postDelayed(new Runnable()  {
+                                    public void run() {
+                                        // 시간 지난 후 실행할 코딩
+                                        Intent intent = new Intent(Random_Game_Choice_Slot_Activity.this, Niddle_game_Activity.class);
+                                        startActivity(intent);
+                                    }
+                                }, 2000); // 2초후
                                 break;
                             }
                             case 3 : {
                                 c.start();
-                                Intent intent = new Intent(Random_Game_Choice_Slot_Activity.this, Horse_game_Activity.class);
-                                startActivity(intent);
+                                handler.postDelayed(new Runnable()  {
+                                    public void run() {
+                                        // 시간 지난 후 실행할 코딩
+                                        Intent intent = new Intent(Random_Game_Choice_Slot_Activity.this, Horse_game_Activity.class);
+                                        startActivity(intent);
+                                    }
+                                }, 2000); // 2초후
                                 break;
                             }
                             case 4 : {
                                 c.start();
-                                Intent intent = new Intent(Random_Game_Choice_Slot_Activity.this, Cat_Game_Main_Activity.class);
-                                startActivity(intent);
+                                handler.postDelayed(new Runnable()  {
+                                    public void run() {
+                                        // 시간 지난 후 실행할 코딩
+                                        Intent intent = new Intent(Random_Game_Choice_Slot_Activity.this, Cat_Game_Main_Activity.class);
+                                        startActivity(intent);
+                                    }
+                                }, 2000); // 2초후
                                 break;
                             }
                             case 5 : {
                                 c.start();
-                                Intent intent = new Intent(Random_Game_Choice_Slot_Activity.this, Hamburger_game_Activity.class);
-                                startActivity(intent);
+                                handler.postDelayed(new Runnable()  {
+                                    public void run() {
+                                        // 시간 지난 후 실행할 코딩
+                                        Intent intent = new Intent(Random_Game_Choice_Slot_Activity.this, Hamburger_game_Activity.class);
+                                        startActivity(intent);
+                                    }
+                                }, 2000); // 2초후
                                 break;
                             }
                             case 6 : {
                                 c.start();
-                                Intent intent = new Intent(Random_Game_Choice_Slot_Activity.this, Roullet_Game_Activity.class);
-                                startActivity(intent);
+                                handler.postDelayed(new Runnable()  {
+                                    public void run() {
+                                        // 시간 지난 후 실행할 코딩
+                                        Intent intent = new Intent(Random_Game_Choice_Slot_Activity.this, Roullet_Game_Activity.class);
+                                        startActivity(intent);
+                                    }
+                                }, 2000); // 2초후
                                 break;
                             }
                         }

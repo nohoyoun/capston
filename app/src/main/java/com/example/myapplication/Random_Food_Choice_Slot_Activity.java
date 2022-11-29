@@ -50,6 +50,8 @@ public class Random_Food_Choice_Slot_Activity extends AppCompatActivity {
                     }
                     @Override
                     public void onAnimationEnd(Animation animation) {
+                        mSlotMechine.setVisibility(View.INVISIBLE);
+
                         switch (i) {
                             case 1: {
                                 mSlotText.setText("치킨");
