@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.io.File;
@@ -21,6 +22,7 @@ public class Share_Activity extends AppCompatActivity {
 
     Button btn1;
     TextView txt1, txt2;
+    LinearLayout capture;
 
     public File ScreenShot(View view){
         view.setDrawingCacheEnabled(true);  //화면에 뿌릴때 캐시를 사용하게 한다
@@ -48,6 +50,8 @@ public class Share_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_share);
 
+        capture = findViewById(R.id.capturelayout);
+
         btn1 = findViewById(R.id.sharebtn);
         txt1 = (TextView)findViewById(R.id.name1);
         txt2 = (TextView)findViewById(R.id.restaurant);
@@ -57,7 +61,7 @@ public class Share_Activity extends AppCompatActivity {
         txt1.setText(push);
 
         SharedPreferences sharedPreferences = getSharedPreferences("pref3", MODE_PRIVATE);
-        String restname = sharedPreferences.getString("restname", "알빠노");
+        String restname = sharedPreferences.getString("restname", "이 자리");
         txt2.setText(restname);
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +70,7 @@ public class Share_Activity extends AppCompatActivity {
             public void onClick(View v) {
                 View rootView = getWindow().getDecorView();
 
-                File screenShot = ScreenShot(rootView);
+                File screenShot = ScreenShot(capture);
                 if(screenShot!=null){
                     //갤러리에 추가
                     sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(screenShot)));

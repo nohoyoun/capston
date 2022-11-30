@@ -46,8 +46,6 @@ public class Horse_game_Activity extends AppCompatActivity {
     SharedPreferences pref;          // 프리퍼런스
     SharedPreferences.Editor editor; // 에디터
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -63,10 +61,10 @@ public class Horse_game_Activity extends AppCompatActivity {
         img4 = (ImageView)findViewById(R.id.horse4);
         img5 = (ImageView)findViewById(R.id.flag);
 
-        number1 = random.nextInt(200)*3+15000;
-        number2 = random2.nextInt(200)*3+15000;
-        number3 = random3.nextInt(200)*3+15000;
-        number4 = random4.nextInt(200)*3+15000;
+        number1 = random.nextInt(300)*3+10000;
+        number2 = random2.nextInt(300)*3+10000;
+        number3 = random3.nextInt(300)*3+10000;
+        number4 = random4.nextInt(300)*3+10000;
 
         //MySoundPlayer.initSounds(getApplicationContext());
         background = findViewById(R.id.background);

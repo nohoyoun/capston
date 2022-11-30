@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.media.SoundPool;
+import android.os.Handler;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -27,6 +28,7 @@ public class Cat_Game_3_Activity extends AppCompatActivity {
     SoundPool sound;
     Random random = new Random();
     int soundId;
+    Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,8 +67,14 @@ public class Cat_Game_3_Activity extends AppCompatActivity {
                     cat_image.setVisibility(View.VISIBLE);
                     sound.play(soundId, 1f, 1f, 0, 0, 1f);
 
-                    Intent intent = new Intent(Cat_Game_3_Activity.this, MainActivity10.class);
-                    startActivity(intent);
+                    handler.postDelayed(new Runnable()  {
+                        public void run() {
+                            // 시간 지난 후 실행할 코딩
+                            Intent intent = new Intent(Cat_Game_3_Activity.this, MainActivity10.class);
+                            startActivity(intent);
+                            }
+                        }, 2000); // 2초후
+
                 }else {
                     btn1.setVisibility(View.INVISIBLE);
                 }
@@ -89,8 +97,14 @@ public class Cat_Game_3_Activity extends AppCompatActivity {
                     cat_image.setVisibility(View.VISIBLE);
                     sound.play(soundId, 1f, 1f, 0, 0, 1f);
 
-                    Intent intent = new Intent(Cat_Game_3_Activity.this, MainActivity10.class);
-                    startActivity(intent);
+                    handler.postDelayed(new Runnable()  {
+                        public void run() {
+                            // 시간 지난 후 실행할 코딩
+                            Intent intent = new Intent(Cat_Game_3_Activity.this, MainActivity10.class);
+                            startActivity(intent);
+                        }
+                    }, 2000); // 2초후
+
                 }else {
                     btn2.setVisibility(View.INVISIBLE);
                 }
@@ -112,8 +126,14 @@ public class Cat_Game_3_Activity extends AppCompatActivity {
                     cat_image.setVisibility(View.VISIBLE);
                     sound.play(soundId, 1f, 1f, 0, 0, 1f);
 
-                    Intent intent = new Intent(Cat_Game_3_Activity.this, MainActivity10.class);
-                    startActivity(intent);
+                    handler.postDelayed(new Runnable()  {
+                        public void run() {
+                            // 시간 지난 후 실행할 코딩
+                            Intent intent = new Intent(Cat_Game_3_Activity.this, MainActivity10.class);
+                            startActivity(intent);
+                        }
+                    }, 2000); // 2초후
+
                 }
                 else {
                     btn3.setVisibility(View.INVISIBLE);
@@ -136,8 +156,14 @@ public class Cat_Game_3_Activity extends AppCompatActivity {
                     cat_image.setVisibility(View.VISIBLE);
                     sound.play(soundId, 1f, 1f, 0, 0, 1f);
 
-                    Intent intent = new Intent(Cat_Game_3_Activity.this, MainActivity10.class);
-                    startActivity(intent);
+                    handler.postDelayed(new Runnable()  {
+                        public void run() {
+                            // 시간 지난 후 실행할 코딩
+                            Intent intent = new Intent(Cat_Game_3_Activity.this, MainActivity10.class);
+                            startActivity(intent);
+                        }
+                    }, 2000); // 2초후
+
                 }
                 else {
                     btn4.setVisibility(View.INVISIBLE);
@@ -160,8 +186,14 @@ public class Cat_Game_3_Activity extends AppCompatActivity {
                     cat_image.setVisibility(View.VISIBLE);
                     sound.play(soundId, 1f, 1f, 0, 0, 1f);
 
-                    Intent intent = new Intent(Cat_Game_3_Activity.this, MainActivity10.class);
-                    startActivity(intent);
+                    handler.postDelayed(new Runnable()  {
+                        public void run() {
+                            // 시간 지난 후 실행할 코딩
+                            Intent intent = new Intent(Cat_Game_3_Activity.this, MainActivity10.class);
+                            startActivity(intent);
+                        }
+                    }, 2000); // 2초후
+
                 }
                 else {
                     btn5.setVisibility(View.INVISIBLE);
