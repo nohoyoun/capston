@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -28,6 +29,8 @@ public class Random_Food_Choice_Slot_Activity extends AppCompatActivity {
         //supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_choice_slot);
+
+
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -55,38 +58,86 @@ public class Random_Food_Choice_Slot_Activity extends AppCompatActivity {
                         switch (i) {
                             case 1: {
                                 mSlotText.setText("치킨");
+                                //mapsactivity에 음식이름 넘겨주는 기능
+                                String temp = mSlotText.getText().toString();
+                                Intent intent = new Intent(Random_Food_Choice_Slot_Activity.this, MapsActivity.class);
+                                intent.putExtra("foodname", temp);
+                                startActivity(intent);
+
                                 break;
                             }
                             case 2: {
                                 mSlotText.setText("피자");
+                                //mapsactivity에 음식이름 넘겨주는 기능
+                                String temp = mSlotText.getText().toString();
+                                Intent intent = new Intent(Random_Food_Choice_Slot_Activity.this, MapsActivity.class);
+                                intent.putExtra("foodname", temp);
+                                startActivity(intent);
+
                                 break;
                             }
                             case 3: {
                                 mSlotText.setText("햄버거");
+                                //mapsactivity에 음식이름 넘겨주는 기능
+                                String temp = mSlotText.getText().toString();
+                                Intent intent = new Intent(Random_Food_Choice_Slot_Activity.this, MapsActivity.class);
+                                intent.putExtra("foodname", temp);
+                                startActivity(intent);
+
                                 break;
                             }
                             case 4: {
                                 mSlotText.setText("중식");
+                                //mapsactivity에 음식이름 넘겨주는 기능
+                                String temp = mSlotText.getText().toString();
+                                Intent intent = new Intent(Random_Food_Choice_Slot_Activity.this, MapsActivity.class);
+                                intent.putExtra("foodname", temp);
+                                startActivity(intent);
                                 break;
                             }
                             case 5: {
                                 mSlotText.setText("양식");
+                                //mapsactivity에 음식이름 넘겨주는 기능
+                                String temp = mSlotText.getText().toString();
+                                Intent intent = new Intent(Random_Food_Choice_Slot_Activity.this, MapsActivity.class);
+                                intent.putExtra("foodname", temp);
+                                startActivity(intent);
                                 break;
                             }
                             case 6: {
                                 mSlotText.setText("한식");
+                                //mapsactivity에 음식이름 넘겨주는 기능
+                                String temp = mSlotText.getText().toString();
+                                Intent intent = new Intent(Random_Food_Choice_Slot_Activity.this, MapsActivity.class);
+                                intent.putExtra("foodname", temp);
+                                startActivity(intent);
                                 break;
                             }
                             case 7: {
                                 mSlotText.setText("일식");
+                                //mapsactivity에 음식이름 넘겨주는 기능
+                                String temp = mSlotText.getText().toString();
+                                Intent intent = new Intent(Random_Food_Choice_Slot_Activity.this, MapsActivity.class);
+                                intent.putExtra("foodname", temp);
+                                startActivity(intent);
                                 break;
                             }
                             case 8: {
                                 mSlotText.setText("고기");
+                                //mapsactivity에 음식이름 넘겨주는 기능
+                                String temp = mSlotText.getText().toString();
+                                Intent intent = new Intent(Random_Food_Choice_Slot_Activity.this, MapsActivity.class);
+                                intent.putExtra("foodname", temp);
+                                startActivity(intent);
                                 break;
                             }
                             case 9: {
-                                mSlotText.setText("고기");
+                                mSlotText.setText("분식");
+                                //mapsactivity에 음식이름 넘겨주는 기능
+                                String temp = mSlotText.getText().toString();
+                                Intent intent = new Intent(Random_Food_Choice_Slot_Activity.this, MapsActivity.class);
+                                intent.putExtra("foodname", temp);
+                                startActivity(intent);
                                 break;
                             }
                             //이동하는 함수 작성

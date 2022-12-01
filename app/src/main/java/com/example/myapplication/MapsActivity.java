@@ -2,11 +2,11 @@ package com.example.myapplication;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -63,6 +64,7 @@ import noman.googleplaces.PlacesListener;
         git push origin main
 
  */
+
 public class MapsActivity extends AppCompatActivity
         implements OnMapReadyCallback,
         ActivityCompat.OnRequestPermissionsResultCallback,
@@ -71,10 +73,12 @@ public class MapsActivity extends AppCompatActivity
         {
 
             //**********************************************221120**//
-            static public EditText location_name;  //게임 장소 입력받는 변수
-            static public String name;
+            public EditText location_name;  //게임 장소 입력받는 변수
+            public String name;
             SharedPreferences pref;          // 프리퍼런스-11/23 추가부분
             SharedPreferences.Editor editor; // 에디터-11/23 추가부분
+            TextView foodname;
+            MarkerOptions markerOptions;
 
 
             //221118 private ActionBar marker;
@@ -104,7 +108,7 @@ public class MapsActivity extends AppCompatActivity
 
                     String markerSnippet = getCurrentAddress(latLng);
 
-                    MarkerOptions markerOptions = new MarkerOptions();
+                    markerOptions = new MarkerOptions();
                     markerOptions.position(latLng);
                     markerOptions.title(place.getName());
                     markerOptions.snippet(markerSnippet);
@@ -159,8 +163,28 @@ public class MapsActivity extends AppCompatActivity
     private View mLayout;  // Snackbar 사용하기 위해서는 View가 필요합니다.
     // (참고로 Toast에서는 Context가 필요했습니다.)
 
+            public  Location getLocationFromAddress(Context context, String address) {
+                Geocoder geocoder = new Geocoder(context);
+                List<Address> addresses;
+                Location resLocation = new Location("");
+                try {
+                    addresses = geocoder.getFromLocationName(address, 5);
+                    if((addresses == null) || (addresses.size() == 0)) {
+                        return null;
+                    }
+                    Address addressLoc = addresses.get(0);
+
+                    resLocation.setLatitude(addressLoc.getLatitude());
+                    resLocation.setLongitude(addressLoc.getLongitude());
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                return resLocation;
+            }
 
 // 장소 검색 누른 후 실행
+
     public void showPlaceInformation(LatLng location)
     {
         mMap.clear();//지도 클리어
@@ -179,9 +203,29 @@ public class MapsActivity extends AppCompatActivity
                 .build()
                 .execute();
     }
+            public void showPlaceInformation1(LatLng location)
+            {
+                mMap.clear();//지도 클리어
+                    if (previous_marker != null)
+                        previous_marker.clear();//지역정보 마커 클리어
+// places api 사용할 때 이용한 것
+                    new NRPlaces.Builder()
+                            .listener(MapsActivity.this)
+                            .key("AIzaSyC1RfRmQR7bhxDe_RbZ0y1mri_e9UXjlJk")
+                            .latlng(location.latitude, location.longitude)//현재 위치
+                            .radius(500) //500 미터 내에서 검색
+                            .type(PlaceType.RESTAURANT) //음식점
+                            //.type(PlaceType.STORE) //음식점
+                            //.type(PlaceType.CHURCH) //음식점
+                            .keyword(foodname.getText().toString())
+                            .build()
+                            .execute();
+            }
 
 
-    //221118
+
+
+            //221118
 
     List<Marker> previous_marker = null;
 
@@ -197,6 +241,8 @@ public class MapsActivity extends AppCompatActivity
         pref = getSharedPreferences("pref3", Activity.MODE_PRIVATE);//11/23 추가부분
 
 
+
+
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON,
                 WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
@@ -205,6 +251,17 @@ public class MapsActivity extends AppCompatActivity
         mLayout = findViewById(R.id.layout_maps);
         location_name = (EditText) findViewById(R.id.edit_text); // 장소입력 받아오기 - location_name에 저장!
 
+        foodname = (TextView) findViewById(R.id.foodname);
+        //foodname.setVisibility(View.INVISIBLE);
+
+
+        Intent intent = getIntent();
+        if(foodname.getText().toString() == "default") {
+            foodname.setText("default");
+        }else {
+            String push = intent.getStringExtra("foodname");
+            foodname.setText(push);
+        }
 
         locationRequest = new LocationRequest()
                 .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
@@ -235,12 +292,17 @@ public class MapsActivity extends AppCompatActivity
         editor.clear().apply();//11/23 추가부분
 
         Button button = (Button)findViewById(R.id.button_search);
-        button.setOnClickListener(new View.OnClickListener(){
+        button.setOnClickListener(new View.OnClickListener() {//수정한부분
             @Override
-            public void onClick(View v){
-                showPlaceInformation(currentPosition);
-            }
-
+            public void onClick(View v) {
+                if (foodname.getText() == "") {
+                    showPlaceInformation(currentPosition);
+                    //음식없이 그냥 눌럿을때는 기존대로
+                } else
+                {
+                    showPlaceInformation1(currentPosition);
+                }
+        }
 
         });
 
@@ -304,7 +366,7 @@ public class MapsActivity extends AppCompatActivity
 
 
 
-    @Override
+            @Override
     public void onMapReady(final GoogleMap googleMap) {
         Log.d(TAG, "onMapReady :");
 
@@ -403,6 +465,7 @@ public class MapsActivity extends AppCompatActivity
 
 
     }
+
 
 
     LocationCallback locationCallback = new LocationCallback() {

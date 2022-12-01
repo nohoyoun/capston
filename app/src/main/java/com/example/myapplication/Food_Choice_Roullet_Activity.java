@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Bitmap;
@@ -33,9 +34,11 @@ public class Food_Choice_Roullet_Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
+        //supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_choice_roullet);
+
+
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
