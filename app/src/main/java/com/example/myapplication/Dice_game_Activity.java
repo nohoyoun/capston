@@ -35,7 +35,9 @@ public class Dice_game_Activity extends AppCompatActivity {
     int count;
     int n1, n2, n3, n4, n5, n6;
     AnimationDrawable ania;
+    AnimationDrawable diceani;
     ImageView background;
+    ImageView dicerolling;
 
     SharedPreferences pref;          // 프리퍼런스
     SharedPreferences.Editor editor; // 에디터
@@ -101,6 +103,11 @@ public class Dice_game_Activity extends AppCompatActivity {
         pushnum = findViewById(R.id.pushnum);
         nametag = findViewById(R.id.nametag);
         background = findViewById(R.id.background);
+        dicerolling = findViewById(R.id.dicerolling);
+
+
+
+        dicerolling.setVisibility(View.INVISIBLE);
 
         a = 1;
         count = 1;
@@ -174,6 +181,21 @@ public class Dice_game_Activity extends AppCompatActivity {
 
                 }
                     if (whichRadioButton == 2) {
+                        dicerolling.setVisibility(View.VISIBLE);
+                        dicerolling.setImageResource(R.drawable.dicerolling);
+                        diceani= (AnimationDrawable) dicerolling.getDrawable();
+
+                        diceani.setOneShot(true);
+                        diceani.start();
+
+                        handler.postDelayed(new Runnable()  {
+                            public void run() {
+                                // 시간 지난 후 실행할 코딩
+                                dicerolling.setVisibility(View.INVISIBLE);
+                                diceani.stop();
+                            }
+                        }, 2000); // 2초후
+
                         dice_image.startAnimation(shake);
                         dice_image2.startAnimation(shake);
 
@@ -219,6 +241,9 @@ public class Dice_game_Activity extends AppCompatActivity {
                         }
 
                         a = numberofDice+numberofDice2;
+
+
+
                     }
 
                 pushnum.setText(String.valueOf(a));
@@ -253,7 +278,7 @@ public class Dice_game_Activity extends AppCompatActivity {
                                 Intent intent = new Intent(Dice_game_Activity.this, MainActivity14.class);
                                 startActivity(intent);
                             }
-                        }, 2000); // 2초후
+                        }, 3000); // 3초후
                     }
                 }else if (count == 4) {
                     nametag.setText(count-1 + "번째"+ name3 +"의 숫자는" + a + "입니다.");
@@ -270,7 +295,7 @@ public class Dice_game_Activity extends AppCompatActivity {
                                 Intent intent = new Intent(Dice_game_Activity.this, MainActivity14.class);
                                 startActivity(intent);
                             }
-                        }, 2000); // 2초후
+                        }, 3000); // 3초후
                     }
                 }else if (count == 5) {
                     //name1에 대한 숫자가 있을경우의 조건 작성
@@ -288,7 +313,7 @@ public class Dice_game_Activity extends AppCompatActivity {
                                 Intent intent = new Intent(Dice_game_Activity.this, MainActivity14.class);
                                 startActivity(intent);
                             }
-                        }, 2000); // 2초후
+                        }, 3000); // 3초후
                     }
                 }else if (count == 6) {
                     //name1에 대한 숫자가 있을경우의 조건 작성
@@ -306,7 +331,7 @@ public class Dice_game_Activity extends AppCompatActivity {
                                 Intent intent = new Intent(Dice_game_Activity.this, MainActivity14.class);
                                 startActivity(intent);
                             }
-                        }, 2000); // 2초후
+                        }, 3000); // 3초후
                     }
                 }else if (count == 7) {
                     //name1에 대한 숫자가 있을경우의 조건 작성
@@ -323,7 +348,7 @@ public class Dice_game_Activity extends AppCompatActivity {
                             Intent intent = new Intent(Dice_game_Activity.this, MainActivity14.class);
                             startActivity(intent);
                         }
-                    }, 2000); // 2초후
+                    }, 3000); // 3초후
                 }
             }//end
 

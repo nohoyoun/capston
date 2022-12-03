@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.content.Intent;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -13,6 +14,18 @@ public class MainActivity2 extends AppCompatActivity {
 
     MySoundPlayer mySoundPlayer;
     MediaPlayer mediaPlayer;
+
+    @Override
+    public boolean onKeyDown(int keycode, KeyEvent event){  //뒤로가기 버튼클릭시!
+        if(keycode == KeyEvent.KEYCODE_BACK){
+            Intent intent = new Intent(MainActivity2.this, Select_Menu_Activity.class);
+            startActivity(intent);
+            finish();
+            return true;
+        }
+
+        return false;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,6 +113,7 @@ public class MainActivity2 extends AppCompatActivity {
                 //MySoundPlayer.play(MySoundPlayer.Gun_Fire_Sound);
                 Intent intent = new Intent(MainActivity2.this, Select_Menu_Activity.class);
                 startActivity(intent);
+                finish();
             }
         });
         

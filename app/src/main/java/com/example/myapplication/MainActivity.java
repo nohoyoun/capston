@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
 
         mediaPlayer = MediaPlayer.create(this, R.raw.main_thema_bgm);
         mediaPlayer.start();   // bgm 넣어보려다 잘안되서 우선 나중에 시도할 예정.
+        mediaPlayer.setLooping(true);   //bgm 무한루프 = true,  횟수 = 원하는 횟수에 대한 상수값
+
 
         MySoundPlayer.initSounds(getApplicationContext());  // 효과음
 
@@ -47,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mediaPlayer.stop();  //bgm 스톱
+
                 mediaPlayer.reset();   //bgm 리셋 후 처음 재생하기 위한 장치
                 MySoundPlayer.play(MySoundPlayer.Blop_Sound);
                 Intent intent1=new Intent(MainActivity.this, Help_Activity.class);
@@ -61,8 +63,9 @@ public class MainActivity extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mediaPlayer.stop();
+
                 mediaPlayer.reset();
+
                 MySoundPlayer.play(MySoundPlayer.Blop_Sound);
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setMessage("종료하시겠습니까?");

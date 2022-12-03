@@ -39,6 +39,7 @@ public class Random_Game_Choice_Slot_Activity extends AppCompatActivity {
     int i, j;
     Car c = new Car();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         MySoundPlayer.initSounds(getApplicationContext());
@@ -60,7 +61,9 @@ public class Random_Game_Choice_Slot_Activity extends AppCompatActivity {
         mSlotMechine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MySoundPlayer.play(MySoundPlayer.Slot_Sound);
                 mSlotText.startAnimation(flowAnim);
+
                 flowAnim.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {

@@ -6,6 +6,13 @@
     android:id="@+id/layout_maps"
     android:orientation="vertical"
     tools:context=".MapsActivity" >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/foodname"
+        android:text="default"
+        >
+    </TextView>
 
     <fragment
         android:layout_width="match_parent"

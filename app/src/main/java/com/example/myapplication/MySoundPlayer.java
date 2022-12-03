@@ -30,6 +30,12 @@ public class MySoundPlayer {
     public static final int Water_Sound = R.raw.water_sound;
     public static final int Thema_Sound = R.raw.main_thema_bgm;
     public static final int Slot_Sound = R.raw.realslot_sound;
+    public static final int Door_Bell_Sound = R.raw.door_bell_sound;
+    public static final int Faucet_Water = R.raw.faucet_water;
+    public static final int Rolls_Dice_Sound = R.raw.rolls_dice_sound;
+    public static final int Flush_Toilet = R.raw.flush_toilet;
+    public static final int Rollet_Sound = R.raw.rollet_sound;
+    public static final int Turn_Sound = R.raw.turn_sound;
 
     //  public static final int SUCCESS = R.raw.success;
 
@@ -67,11 +73,20 @@ public class MySoundPlayer {
         soundPoolMap.put(Water_Sound, soundPool.load(context, Water_Sound, 1));
         soundPoolMap.put(Thema_Sound, soundPool.load(context, Thema_Sound, 1));
         soundPoolMap.put(Slot_Sound, soundPool.load(context, Slot_Sound, 1));
+        soundPoolMap.put(Pling_Sound, soundPool.load(context, Pling_Sound, 1));
+        soundPoolMap.put(Sad_Trombone_Sound, soundPool.load(context, Sad_Trombone_Sound, 1));
+        soundPoolMap.put(Water_Sound, soundPool.load(context, Water_Sound, 1));
+        soundPoolMap.put(Thema_Sound, soundPool.load(context, Thema_Sound, 1));
+        soundPoolMap.put(Slot_Sound, soundPool.load(context, Slot_Sound, 1));
+        soundPoolMap.put(Door_Bell_Sound, soundPool.load(context, Door_Bell_Sound, 1));
+        soundPoolMap.put(Faucet_Water, soundPool.load(context, Faucet_Water, 1));
+        soundPoolMap.put(Rolls_Dice_Sound, soundPool.load(context, Rolls_Dice_Sound, 1));
+        soundPoolMap.put(Flush_Toilet, soundPool.load(context, Flush_Toilet, 1));
+        soundPoolMap.put(Rollet_Sound, soundPool.load(context, Rollet_Sound, 1));
+        soundPoolMap.put(Turn_Sound, soundPool.load(context, Turn_Sound, 1));
 
        // soundPoolMap.put(SUCCESS, soundPool.load(context, SUCCESS, 2));
     }
-
-
 
     public static void play(int raw_id){
         if( soundPoolMap.containsKey(raw_id) ) {

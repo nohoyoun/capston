@@ -21,7 +21,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="-20dp"
             android:gravity="center"
-            android:text="치킨\n피자\n햄버거\n중식\n양식\n한식\n족발\n고기\n분식"
+            android:text="치킨\n피자\n햄버거\n중식\n양식\n한식\n일식\n고기\n분식"
             android:textColor="@color/white"
             android:textSize="35dp"></TextView>
         <ImageView
