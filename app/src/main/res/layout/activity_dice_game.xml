@@ -6,6 +6,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     tools:context=".Dice_game_Activity">
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -69,8 +70,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:src="@drawable/diceroll" />
-
         </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -102,13 +103,23 @@
             android:text="주사위 던지기"
             android:textSize="24dp" />
 
-
     </LinearLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/dicerolling"
+        android:id="@+id/dicerolling"
+        android:scaleType = "fitCenter"
+        >
+    </ImageView>
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/background"
         android:scaleType = "fitXY">
     </ImageView>
+
+
+
 
 </RelativeLayout>

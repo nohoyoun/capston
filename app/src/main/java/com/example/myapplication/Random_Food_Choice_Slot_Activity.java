@@ -77,7 +77,7 @@ public class Random_Food_Choice_Slot_Activity extends AppCompatActivity {
                                 break;
                             }
                             case 3: {
-                                mSlotText.setText("햄버거");
+                                mSlotText.setText("패스트푸드");
                                 //mapsactivity에 음식이름 넘겨주는 기능
                                 String temp = mSlotText.getText().toString();
                                 Intent intent = new Intent(Random_Food_Choice_Slot_Activity.this, MapsActivity.class);
