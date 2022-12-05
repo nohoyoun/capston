@@ -56,9 +56,11 @@ public class Select_Menu_Activity extends AppCompatActivity {
                 editor.apply();
                 //맵찾기에서 입력된 변수삭제
 
+
+                MySoundPlayer.play(MySoundPlayer.Blop_Sound);
                 Intent intent = new Intent(Select_Menu_Activity.this, MainActivity2.class);
                 startActivity(intent);
-                MySoundPlayer.play(MySoundPlayer.Blop_Sound);
+                finish();
            //     mediaPlayer.stop();
             }
         });
@@ -74,6 +76,7 @@ public class Select_Menu_Activity extends AppCompatActivity {
                 MySoundPlayer.play(MySoundPlayer.Blop_Sound);
                 Intent intent = new Intent(Select_Menu_Activity.this, RandomMain18Activity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -87,6 +90,7 @@ public class Select_Menu_Activity extends AppCompatActivity {
                 MySoundPlayer.play(MySoundPlayer.Blop_Sound);
                 Intent intent = new Intent(Select_Menu_Activity.this, MapsActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 

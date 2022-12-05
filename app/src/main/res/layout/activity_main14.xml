@@ -280,7 +280,7 @@
                 android:layout_height="24dp"
                 android:layout_weight="2"
                 android:text="쏘러가기!"
-                android:textSize="13dp"></Button>
+                android:textSize="14dp"></Button>
         </LinearLayout>
         </LinearLayout>
 

@@ -45,12 +45,14 @@ public class Roullet_Game_Activity extends AppCompatActivity {
     //SharedPreferences.Editor editor; // 에디터
     SharedPreferences sharedPreferences;
 
+    MySoundPlayer mySoundPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_roullet_game);
+
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -90,10 +92,13 @@ public class Roullet_Game_Activity extends AppCompatActivity {
         });
 
         btnRotate.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
+                MySoundPlayer.play(MySoundPlayer.Rollet_Sound);
                 rotateLayout(layoutRoulette, num_roulette);
             }
+
         });
     }
 

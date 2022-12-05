@@ -12,11 +12,14 @@ import android.widget.ImageButton;
 public class Cat_Game_Main_Activity extends AppCompatActivity {
 
     ImageButton room1, room2, room3;
+    MySoundPlayer mySoundPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cat_game_main);
+
+        MySoundPlayer.initSounds(getApplicationContext());  // 효과음
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -28,6 +31,7 @@ public class Cat_Game_Main_Activity extends AppCompatActivity {
         room1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MySoundPlayer.play(MySoundPlayer.Hello_Baby_Girl_Sound);
                 Intent intent = new Intent(Cat_Game_Main_Activity.this, Cat_Game_1_Activity.class);
                 startActivity(intent);
             }
@@ -37,6 +41,7 @@ public class Cat_Game_Main_Activity extends AppCompatActivity {
         room2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MySoundPlayer.play(MySoundPlayer.Flush_Toilet);
                 Intent intent = new Intent(Cat_Game_Main_Activity.this, Cat_Game_2_Activity.class);
                 startActivity(intent);
             }
@@ -45,6 +50,7 @@ public class Cat_Game_Main_Activity extends AppCompatActivity {
         room3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MySoundPlayer.play(MySoundPlayer.Door_Bell_Sound);
                 Intent intent = new Intent(Cat_Game_Main_Activity.this, Cat_Game_3_Activity.class);
                 startActivity(intent);
             }

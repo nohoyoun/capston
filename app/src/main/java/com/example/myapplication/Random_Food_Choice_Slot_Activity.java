@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.animation.Animation;
@@ -23,12 +24,27 @@ public class Random_Food_Choice_Slot_Activity extends AppCompatActivity {
     private TextView mSlotText;
     Random random = new Random();
     int i;
+    MySoundPlayer mySoundPlayer;
+
+    @Override
+    public boolean onKeyDown(int keycode, KeyEvent event){  //뒤로가기 버튼클릭시!
+        if(keycode == KeyEvent.KEYCODE_BACK){
+            Intent intent = new Intent(Random_Food_Choice_Slot_Activity.this, Select_Menu_Activity.class);
+            startActivity(intent);
+            finish();
+            return true;
+        }
+
+        return false;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_choice_slot);
+
+        MySoundPlayer.initSounds(getApplicationContext());
 
 
 
@@ -46,6 +62,7 @@ public class Random_Food_Choice_Slot_Activity extends AppCompatActivity {
         mSlotMechine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MySoundPlayer.play(MySoundPlayer.Slot_Sound);
                 mSlotText.startAnimation(flowAnim);
                 flowAnim.setAnimationListener(new Animation.AnimationListener() {
                     @Override

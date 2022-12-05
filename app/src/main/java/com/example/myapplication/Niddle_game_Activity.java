@@ -81,6 +81,7 @@ public class Niddle_game_Activity extends AppCompatActivity {
 // 룰렛 이미지 터치 시에 호출되는 메소드
         public void rotate (View view){
 
+            MySoundPlayer.play(MySoundPlayer.Turn_Sound);
             // ---------- 회전각도 설정 ----------
             startDegree = endDegree;    // 이전 정지 각도를 시작 각도로 설정
             Random rand = new Random(); // 랜덤 객체 생성
