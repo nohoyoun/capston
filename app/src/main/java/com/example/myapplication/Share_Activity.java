@@ -6,11 +6,13 @@ import androidx.core.content.FileProvider;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -23,6 +25,7 @@ public class Share_Activity extends AppCompatActivity {
     Button btn1;
     TextView txt1, txt2;
     LinearLayout capture;
+    ImageView mapsview;
 
     public File ScreenShot(View view){
         view.setDrawingCacheEnabled(true);  //화면에 뿌릴때 캐시를 사용하게 한다
@@ -52,6 +55,8 @@ public class Share_Activity extends AppCompatActivity {
 
         capture = findViewById(R.id.capturelayout);
 
+        mapsview = findViewById(R.id.mapview);
+
         btn1 = findViewById(R.id.sharebtn);
         txt1 = (TextView)findViewById(R.id.name1);
         txt2 = (TextView)findViewById(R.id.restaurant);
@@ -63,6 +68,15 @@ public class Share_Activity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("pref3", MODE_PRIVATE);
         String restname = sharedPreferences.getString("restname", "이 자리");
         txt2.setText(restname);
+
+        String filename = "maps" + "11" + ".png";
+        File imgFile = new File(Environment.getExternalStorageDirectory()+"/Pictures", filename);
+
+        if(imgFile.exists()){
+            Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+            mapsview.setImageBitmap(myBitmap);
+        }
+
 
         btn1.setOnClickListener(new View.OnClickListener() {
 

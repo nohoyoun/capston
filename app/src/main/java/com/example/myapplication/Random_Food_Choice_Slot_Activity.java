@@ -12,6 +12,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -79,6 +80,7 @@ public class Random_Food_Choice_Slot_Activity extends AppCompatActivity {
                                 String temp = mSlotText.getText().toString();
                                 Intent intent = new Intent(Random_Food_Choice_Slot_Activity.this, MapsActivity.class);
                                 intent.putExtra("foodname", temp);
+                                Toast.makeText(Random_Food_Choice_Slot_Activity.this,"치킨 먹을곳을 검색합니다.", Toast.LENGTH_LONG).show();
                                 startActivity(intent);
 
                                 break;
@@ -89,6 +91,7 @@ public class Random_Food_Choice_Slot_Activity extends AppCompatActivity {
                                 String temp = mSlotText.getText().toString();
                                 Intent intent = new Intent(Random_Food_Choice_Slot_Activity.this, MapsActivity.class);
                                 intent.putExtra("foodname", temp);
+                                Toast.makeText(Random_Food_Choice_Slot_Activity.this,"치킨 먹을곳을 검색합니다.", Toast.LENGTH_LONG).show();
                                 startActivity(intent);
 
                                 break;
@@ -99,6 +102,7 @@ public class Random_Food_Choice_Slot_Activity extends AppCompatActivity {
                                 String temp = mSlotText.getText().toString();
                                 Intent intent = new Intent(Random_Food_Choice_Slot_Activity.this, MapsActivity.class);
                                 intent.putExtra("foodname", temp);
+                                Toast.makeText(Random_Food_Choice_Slot_Activity.this,"패스트푸드점을 찾아봅시다!", Toast.LENGTH_LONG).show();
                                 startActivity(intent);
 
                                 break;
@@ -109,6 +113,7 @@ public class Random_Food_Choice_Slot_Activity extends AppCompatActivity {
                                 String temp = mSlotText.getText().toString();
                                 Intent intent = new Intent(Random_Food_Choice_Slot_Activity.this, MapsActivity.class);
                                 intent.putExtra("foodname", temp);
+                                Toast.makeText(Random_Food_Choice_Slot_Activity.this,"중식 먹을곳을 찾아봅시다!", Toast.LENGTH_LONG).show();
                                 startActivity(intent);
                                 break;
                             }
@@ -118,6 +123,7 @@ public class Random_Food_Choice_Slot_Activity extends AppCompatActivity {
                                 String temp = mSlotText.getText().toString();
                                 Intent intent = new Intent(Random_Food_Choice_Slot_Activity.this, MapsActivity.class);
                                 intent.putExtra("foodname", temp);
+                                Toast.makeText(Random_Food_Choice_Slot_Activity.this,"양식 먹을곳을 찾아봅시다!", Toast.LENGTH_LONG).show();
                                 startActivity(intent);
                                 break;
                             }
@@ -127,6 +133,7 @@ public class Random_Food_Choice_Slot_Activity extends AppCompatActivity {
                                 String temp = mSlotText.getText().toString();
                                 Intent intent = new Intent(Random_Food_Choice_Slot_Activity.this, MapsActivity.class);
                                 intent.putExtra("foodname", temp);
+                                Toast.makeText(Random_Food_Choice_Slot_Activity.this,"한식 먹을곳을 찾아봅시다!", Toast.LENGTH_LONG).show();
                                 startActivity(intent);
                                 break;
                             }
@@ -136,6 +143,7 @@ public class Random_Food_Choice_Slot_Activity extends AppCompatActivity {
                                 String temp = mSlotText.getText().toString();
                                 Intent intent = new Intent(Random_Food_Choice_Slot_Activity.this, MapsActivity.class);
                                 intent.putExtra("foodname", temp);
+                                Toast.makeText(Random_Food_Choice_Slot_Activity.this,"일식 먹을곳을 찾아봅시다!", Toast.LENGTH_LONG).show();
                                 startActivity(intent);
                                 break;
                             }
@@ -145,6 +153,7 @@ public class Random_Food_Choice_Slot_Activity extends AppCompatActivity {
                                 String temp = mSlotText.getText().toString();
                                 Intent intent = new Intent(Random_Food_Choice_Slot_Activity.this, MapsActivity.class);
                                 intent.putExtra("foodname", temp);
+                                Toast.makeText(Random_Food_Choice_Slot_Activity.this,"고기 먹을곳을 찾아봅시다!", Toast.LENGTH_LONG).show();
                                 startActivity(intent);
                                 break;
                             }
@@ -154,6 +163,7 @@ public class Random_Food_Choice_Slot_Activity extends AppCompatActivity {
                                 String temp = mSlotText.getText().toString();
                                 Intent intent = new Intent(Random_Food_Choice_Slot_Activity.this, MapsActivity.class);
                                 intent.putExtra("foodname", temp);
+                                Toast.makeText(Random_Food_Choice_Slot_Activity.this,"분식 먹을곳을 찾아봅시다!", Toast.LENGTH_LONG).show();
                                 startActivity(intent);
                                 break;
                             }
