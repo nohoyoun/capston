@@ -7,11 +7,14 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Looper;
 import android.util.Log;
 import android.view.View;
@@ -22,10 +25,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -44,6 +49,8 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.snackbar.Snackbar;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -65,13 +72,36 @@ import noman.googleplaces.PlacesListener;
 
  */
 
+
+
 public class MapsActivity extends AppCompatActivity
         implements OnMapReadyCallback,
         ActivityCompat.OnRequestPermissionsResultCallback,
         PlacesListener
        // GoogleMap.OnInfoWindowClickListener
         {
+//캡쳐하기
+            public File ScreenShot(View view){
+                view.setDrawingCacheEnabled(true);  //화면에 뿌릴때 캐시를 사용하게 한다
 
+                Bitmap screenBitmap = view.getDrawingCache();   //캐시를 비트맵으로 변환
+
+                String filename = "maps" + "123" +".png";
+                File file = new File(Environment.getExternalStorageDirectory()+"/Pictures", filename);  //Pictures폴더 screenshot.png 파일
+                FileOutputStream os = null;
+                try{
+                    os = new FileOutputStream(file);
+                    screenBitmap.compress(Bitmap.CompressFormat.JPEG, 90, os);   //비트맵을 PNG파일로 변환
+                    os.close();
+                }catch (IOException e){
+                    e.printStackTrace();
+                    return null;
+                }
+
+                view.setDrawingCacheEnabled(false);
+                return file;
+            }
+//여기까지가 캡쳐 메소드
             //**********************************************221120**//
             public EditText location_name;  //게임 장소 입력받는 변수
             public String name;
@@ -79,6 +109,7 @@ public class MapsActivity extends AppCompatActivity
             SharedPreferences.Editor editor; // 에디터-11/23 추가부분
             TextView foodname;
             MarkerOptions markerOptions;
+
 
 
             //221118 private ActionBar marker;
@@ -141,8 +172,8 @@ public class MapsActivity extends AppCompatActivity
 
     private static final String TAG = "googlemap_example";
     private static final int GPS_ENABLE_REQUEST_CODE = 2001;
-    private static final int UPDATE_INTERVAL_MS = 2000;  // 1초
-    private static final int FASTEST_UPDATE_INTERVAL_MS = 1000; // 0.5초
+    private static final int UPDATE_INTERVAL_MS = 1000;  // 1초
+    private static final int FASTEST_UPDATE_INTERVAL_MS = 10000; // 0.5초
 
 
     // onRequestPermissionsResult에서 수신된 결과에서 ActivityCompat.requestPermissions를 사용한 퍼미션 요청을 구별하기 위해 사용됩니다.
@@ -325,6 +356,7 @@ public class MapsActivity extends AppCompatActivity
         button_insert.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                v.setDrawingCacheEnabled(true);  //화면에 뿌릴때 캐시를 사용하게 한다
                 MySoundPlayer.play(MySoundPlayer.Blop_Sound);
               /*  new StyleableToast   --> toast 메세지 디자인 보완
                         .Builder(c)
@@ -349,6 +381,37 @@ public class MapsActivity extends AppCompatActivity
                         String restname = location_name.getText().toString();//11/23 추가분
                         editor.putString("restname", restname);//11/23 추가분
                         editor.apply();//11/23 추가분
+
+                        //12/06 추가분
+
+                        GoogleMap.SnapshotReadyCallback callback = new GoogleMap.SnapshotReadyCallback() {
+                            Bitmap getMap;
+                            @Override
+                            public void onSnapshotReady(Bitmap snapshot) {
+                                getMap = snapshot;
+
+                                try {
+                                    String path = Environment.getExternalStorageDirectory().getAbsolutePath()+"/Pictures/" + "maps11.png";
+                                    FileOutputStream out = new FileOutputStream(path);
+
+                                    getMap.compress(Bitmap.CompressFormat.PNG, 90, out);
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        };
+                        mMap.snapshot(callback);
+
+
+                        /*View rootView = mapFragment.getView();
+
+                        File screenShot = ScreenShot(rootView);
+                        if(screenShot!=null){
+                            //갤러리에 추가
+                            sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(screenShot)));
+                        }*/
+
+
                         Toast.makeText(MapsActivity.this, location_name.getText() +"에서 복불복 게임을 진행합니다.", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getBaseContext(), Random_Game_Choice_Slot_Activity.class);
                         startActivity(intent);

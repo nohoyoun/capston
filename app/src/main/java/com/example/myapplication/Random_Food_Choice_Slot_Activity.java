@@ -47,6 +47,8 @@ public class Random_Food_Choice_Slot_Activity extends AppCompatActivity {
 
         MySoundPlayer.initSounds(getApplicationContext());
 
+
+
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 

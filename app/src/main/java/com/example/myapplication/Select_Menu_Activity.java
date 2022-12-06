@@ -55,6 +55,8 @@ public class Select_Menu_Activity extends AppCompatActivity {
                 editor.putString("restfood", text);
                 editor.apply();
                 //맵찾기에서 입력된 변수삭제
+
+
                 MySoundPlayer.play(MySoundPlayer.Blop_Sound);
                 Intent intent = new Intent(Select_Menu_Activity.this, MainActivity2.class);
                 startActivity(intent);
