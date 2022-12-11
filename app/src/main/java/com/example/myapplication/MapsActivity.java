@@ -172,8 +172,8 @@ public class MapsActivity extends AppCompatActivity
 
     private static final String TAG = "googlemap_example";
     private static final int GPS_ENABLE_REQUEST_CODE = 2001;
-    private static final int UPDATE_INTERVAL_MS = 1000;  // 1초
-    private static final int FASTEST_UPDATE_INTERVAL_MS = 10000; // 0.5초
+    private static final int UPDATE_INTERVAL_MS = 1000*60*1;  // 1초->1분
+    private static final int FASTEST_UPDATE_INTERVAL_MS = 1000*10; // 0.5초->10초
 
 
     // onRequestPermissionsResult에서 수신된 결과에서 ActivityCompat.requestPermissions를 사용한 퍼미션 요청을 구별하기 위해 사용됩니다.

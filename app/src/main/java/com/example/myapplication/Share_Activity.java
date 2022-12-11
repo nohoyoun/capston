@@ -22,7 +22,7 @@ import java.io.IOException;
 
 public class Share_Activity extends AppCompatActivity {
 
-    Button btn1;
+    Button btn1, gohome;
     TextView txt1, txt2;
     LinearLayout capture;
     ImageView mapsview;
@@ -58,6 +58,8 @@ public class Share_Activity extends AppCompatActivity {
         mapsview = findViewById(R.id.mapview);
 
         btn1 = findViewById(R.id.sharebtn);
+        gohome = findViewById(R.id.gohome);
+
         txt1 = (TextView)findViewById(R.id.name1);
         txt2 = (TextView)findViewById(R.id.restaurant);
 
@@ -98,6 +100,15 @@ public class Share_Activity extends AppCompatActivity {
                 shareintent.setType("image/JPEG");
                 startActivity(Intent.createChooser(shareintent, "공유"));
 
+            }
+        });
+
+        gohome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Share_Activity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
